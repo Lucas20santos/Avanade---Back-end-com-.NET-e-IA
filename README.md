@@ -13,4 +13,11 @@ Curso de desenvolvimento e criação de aplicação para melhorar os conceitos e
 - rodando o npm init -y
 - rodando o npm install typescript para instalar o typescript
 - rodando o comando npx tsc --init
+- npm i --save-dev @types/express
 - npm install express
+
+## criação da pasta de trabalho
+
+|-- /vendas-ingressos
+    |-- src
+            |--app.ts
