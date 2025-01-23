@@ -6,6 +6,8 @@ Curso de desenvolvimento e criação de aplicação para melhorar os conceitos e
 
 - rest client
 - MySQL Shell for VS Code
+- material icon
+- docker
 
 ## Instalações das biblioteca do projeto vendas ingressos
 
