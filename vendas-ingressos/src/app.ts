@@ -2,13 +2,14 @@ import express from 'express';
 
 const app = express()
 
+
 app.get("/", (req, res) => {
     res.json({message: "Hello World"});
 });
 
 app.post("/auth/login", (req, res) => {
-    const {name, password} = req.body;
-    console.log(`name = ${name}, password = ${password}`);
+    const {email, password} = req.body;
+    console.log(`name = ${email}, password = ${password}`);
     res.send();
 });
 
