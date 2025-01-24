@@ -10,6 +10,46 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "email": "lucas",
+    "email": "lucas@lucas.com",
     "password": "secret password"
 }
+
+###
+POST http://localhost:3000/partners
+Content-Type: application/json
+
+{
+    "name": "lucas de souza santos",
+    "email": "lucas@gmail.com",
+    "password": "my secret password",
+    "company_name": "My Company name"
+}
+
+###
+POST http://localhost:3000/curstomers
+Content-Type: application/json
+
+{
+    "name": "lucas de souza santos",
+    "email": "lucas@gmail.com",
+    "password": "my secret password",
+    "address": "Rua H, N 79",
+    "phone": "82991234567"
+}
+
+###
+POST http://localhost:3000/events
+Content-Type: application/json
+
+{
+    "name": "lucas de souza santos",
+    "description": "my description and name of events",
+    "date": "2025-01-01T00:00:00",
+    "location": "this is the company location."
+}
+
+###
+GET http://localhost:3000/events
+
+###
+GET http://localhost:3000/events/1
