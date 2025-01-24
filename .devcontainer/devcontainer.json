@@ -1,0 +1,15 @@
+{
+    "name": "My Dev Container",
+    "customizations": 
+    {
+        "vscode": 
+        {
+            "extensions": 
+            [
+                "PKief.material-icon-theme",
+                "ms-azuretools.vscode-docker",
+                "humao.rest-client"
+            ]
+        }
+  }
+}
