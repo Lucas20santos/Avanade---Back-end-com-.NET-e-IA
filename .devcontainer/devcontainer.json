@@ -5,7 +5,14 @@
         "extensions": [
           "PKief.material-icon-theme",
           "ms-azuretools.vscode-docker",
-          "humao.rest-client"
+          "humao.rest-client",
+          "ms-vscode.vscode-typescript-next",
+          "xabikos.javascriptsnipp",
+          "ms-vscode.js-debug-nightly",
+          "dbaeumer.vscode-eslint",
+          "esbenp.prettier-vscode",
+          "christian-kohler.npm-intellisense",
+          "dskwrk.vscode-generate-getter-setter"
         ],
         "workbench.iconTheme": "material-icon-theme"
       }
