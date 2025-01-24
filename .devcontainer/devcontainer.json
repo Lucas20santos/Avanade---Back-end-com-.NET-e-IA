@@ -6,7 +6,8 @@
           "PKief.material-icon-theme",
           "ms-azuretools.vscode-docker",
           "humao.rest-client"
-        ]
+        ],
+        "workbench.iconTheme": "material-icon-theme"
       }
     }
   }
