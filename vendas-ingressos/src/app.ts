@@ -6,9 +6,6 @@ app.get("/", (req, res) => {
     res.json({message: "Hello World"});
 });
 
-
-
-
 app.listen(3000, () => {
     console.log("running in http://localhost:3000");
 });
