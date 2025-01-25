@@ -17,6 +17,8 @@ Curso de desenvolvimento e criação de aplicação para melhorar os conceitos e
 - rodando o comando npx tsc --init
 - npm i --save-dev @types/express
 - npm install express
+- npm install mysql2
+- npm install bcrypt
 
 ## criação da pasta de trabalho
 

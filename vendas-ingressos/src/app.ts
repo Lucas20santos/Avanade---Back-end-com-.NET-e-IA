@@ -1,5 +1,6 @@
 import express from 'express';
 import * as mysql from 'mysql2/promise';
+import bcrypt from 'bcrypt';
 
 // criação da conecção do banco de dados
 function createConnection(){
