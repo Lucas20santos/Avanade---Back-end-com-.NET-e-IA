@@ -25,9 +25,19 @@ app.post("/auth/login", (req, res) => {
     res.send();
 });
 
-app.post("/partners", (req, res) => {
+app.post("/partners", async (req, res) => {
     const { name, email, password, company_name } = req.body;
-    res.send();
+    
+    const connection = await createConnection();
+
+    const createdAt = new Date();
+    connection.execute('INSERT INTO users (name, email, password, created_at)', [
+        name, email,,createdAt
+    ]);
+
+    connection.execute('INSERT INTO partners (user_id, company_name, created_at)', [
+        
+    ]);
 });
 
 app.post("/partners/events", (req, res) => {
