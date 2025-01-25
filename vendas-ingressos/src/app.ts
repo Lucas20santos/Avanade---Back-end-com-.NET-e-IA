@@ -30,15 +30,26 @@ app.post("/partners", async (req, res) => {
     const { name, email, password, company_name } = req.body;
     
     const connection = await createConnection();
+    
+    try
+    {
+        const createdAt = new Date();
+        const hashedPassword = bcrypt.hashSync(password, 10);
 
-    const createdAt = new Date();
-    connection.execute('INSERT INTO users (name, email, password, created_at)', [
-        name, email,,createdAt
-    ]);
+        const [ userResult ] = await connection.execute<mysql.ResultSetHeader>('INSERT INTO users (name, email, password, created_at)', [
+            name, email,hashedPassword,createdAt
+        ]);
+        const userId = userResult.insertId;
 
-    connection.execute('INSERT INTO partners (user_id, company_name, created_at)', [
-        
-    ]);
+        const [ partnersResult ] = await connection.execute<mysql.ResultSetHeader>(
+            'INSERT INTO partners (user_id, company_name, created_at)', 
+            [userId, company_name, createdAt]
+        );
+        res.status(201).json({id: partnersResult.insertId, userId, company_name, createdAt})
+    }finally
+    {
+        await connection.end();
+    }
 });
 
 app.post("/partners/events", (req, res) => {
