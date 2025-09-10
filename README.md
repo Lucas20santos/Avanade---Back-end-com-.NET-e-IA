@@ -1,27 +1,17 @@
-# Level Up For Juniors
+# ✈️ Formação Avanade Back End Com dotnet e Inteligência Artificial
 
-Curso de desenvolvimento e criação de aplicação para melhorar os conceitos e aprender novos
+## 💯 [Primeiros Passos Com Avanade](Primeiros-Passos-Com-Avanade)
 
-## extersões para o vscode
+## 💯 [Principios De Desenvolvimento De Aplicacoes](Principios-De-Desenvolvimento-De-Aplicacoes)
 
-- rest client
-- MySQL Shell for VS Code
-- material icon
-- docker
+## 💯 [Sintaxe Básica Com Dotnet](Sintaxe-Basica-Com-Dotnet)
 
-## Instalações das biblioteca do projeto vendas ingressos
+## 💯 [Programação Orientação A Objetos](Programacao-Orientacao-A-Objetos)
 
-- criando pasta usando mkdir no terminal do linux
-- rodando o npm init -y
-- rodando o npm install typescript para instalar o typescript
-- rodando o comando npx tsc --init
-- npm i --save-dev @types/express
-- npm install express
-- npm install mysql2
-- npm install bcrypt
+## 💯 [Desenvolvimento de APIs](Desenvolvimento-De-APIs)
 
-## criação da pasta de trabalho
+## 💯 [Integracao Com Banco De Dados](Integracao-Com-Banco-De-Dados)
 
-|-- /vendas-ingressos
-    |-- src
-            |--app.ts
+## 💯 [Introdução A Servições De IA Na Cloud Com A Azure](Introducao-A-Servicoes-De-IA-Na-Cloud-Com-A-Azure)
+
+
