@@ -20,6 +20,8 @@
 
 ### 🥈 Contribuindo em um Projeto Open Source no Github
 
+### 📚 🧑‍💻 [Power point da Aula](./Principios-De-Desenvolvimento-De-Aplicacoes/PrincipiosDeDesenvolvimentoDeAplicativos.pptx)
+
 ## 💯 [Sintaxe Básica Com Dotnet](Sintaxe-Basica-Com-Dotnet)
 
 ### 🥈 Sintaxe e Tipos de Dados em C#
