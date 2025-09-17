@@ -3,7 +3,8 @@
 
 Console.WriteLine("Data: " + dataAtual);
 Console.WriteLine(dataAtual.ToString("dd/MM/yyyy"));
-
+Console.WriteLine();
+Console.WriteLine();
 
 // using codigos.Models;
 
