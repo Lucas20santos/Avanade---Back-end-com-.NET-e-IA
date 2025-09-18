@@ -3,8 +3,11 @@
 
 Console.WriteLine("Data: " + dataAtual);
 Console.WriteLine(dataAtual.ToString("dd/MM/yyyy"));
-Console.WriteLine();
-Console.WriteLine();
+
+int a = Convert.ToInt32("5"); // recebe valores "null"
+int b = int.Parse("6"); // não recebe valores "null"
+
+Console.WriteLine(a + " " + b);
 
 // using codigos.Models;
 
