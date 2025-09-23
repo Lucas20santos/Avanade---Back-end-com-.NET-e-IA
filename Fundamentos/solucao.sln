@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "principal", "\workspaces\Avanade---Back-end-com-.NET-e-IA\Fundamentos\principal\principal.csproj", "{8F181953-D570-453D-BDA5-D17EAF6522DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "principal", "principal\principal.csproj", "{8F181953-D570-453D-BDA5-D17EAF6522DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comum", "\workspaces/Avanade---Back-end-com-.NET-e-IA\Fundamentos\comum\comum.csproj", "{AC72A5DD-0F4D-4D62-AB59-9C9921AAD40C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comum", "comum\comum.csproj", "{AC72A5DD-0F4D-4D62-AB59-9C9921AAD40C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
