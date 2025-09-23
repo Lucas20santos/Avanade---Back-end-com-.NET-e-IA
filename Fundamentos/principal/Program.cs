@@ -1,10 +1,18 @@
 ﻿using comum.Models;
 
-
-Pessoa p1 = new()
+namespace pricinpal
 {
-    Nome = "Lucas de Souza Santos",
-    idade = 23
-};
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            Pessoa p1 = new()
+            {
+                Nome = "Lucas de Souza Santos",
+                idade = 23
+            };
 
-p1.apresentar();
+            p1.apresentar();
+        }
+    }
+}
