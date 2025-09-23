@@ -1,10 +1,10 @@
-﻿namespace Fundamentos.principal
+﻿using comum.Models;
+
+
+Pessoa p1 = new()
 {
-    class Program
-    {
-        public static void Main(string[] args)
-        {
-            Console.WriteLine("Aló, mundo.");
-        }
-    }
-}
+    Nome = "Lucas de Souza Santos",
+    idade = 23
+};
+
+p1.apresentar();

@@ -1,0 +1,12 @@
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/comum/bin/Debug/net8.0/comum.deps.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/comum/bin/Debug/net8.0/comum.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/comum/bin/Debug/net8.0/comum.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/comum/obj/Debug/net8.0/comum.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/comum/obj/Debug/net8.0/comum.AssemblyInfoInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/comum/obj/Debug/net8.0/comum.AssemblyInfo.cs
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/comum/obj/Debug/net8.0/comum.csproj.CoreCompileInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/comum/obj/Debug/net8.0/comum.sourcelink.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/comum/obj/Debug/net8.0/comum.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/comum/obj/Debug/net8.0/refint/comum.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/comum/obj/Debug/net8.0/comum.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/comum/obj/Debug/net8.0/ref/comum.dll

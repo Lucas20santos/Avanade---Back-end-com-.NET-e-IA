@@ -7,14 +7,30 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "principal/1.0.0": {
+        "dependencies": {
+          "comum": "1.0.0"
+        },
         "runtime": {
           "principal.dll": {}
+        }
+      },
+      "comum/1.0.0": {
+        "runtime": {
+          "comum.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "principal/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "comum/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
