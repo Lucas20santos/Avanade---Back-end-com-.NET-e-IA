@@ -1,0 +1,5 @@
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/obj/Debug/net8.0/Fundamentos.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/obj/Debug/net8.0/Fundamentos.AssemblyInfoInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/obj/Debug/net8.0/Fundamentos.AssemblyInfo.cs
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/obj/Debug/net8.0/Fundamentos.csproj.CoreCompileInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/obj/Debug/net8.0/Fundamentos.sourcelink.json

@@ -1,2 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Common.Models;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Pessoa p1 = new Pessoa();
+    }
+}
