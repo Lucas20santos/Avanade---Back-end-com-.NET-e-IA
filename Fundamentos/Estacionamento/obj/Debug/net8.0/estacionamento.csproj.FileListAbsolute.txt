@@ -1,0 +1,15 @@
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/bin/Debug/net8.0/estacionamento
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/bin/Debug/net8.0/estacionamento.deps.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/bin/Debug/net8.0/estacionamento.runtimeconfig.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/bin/Debug/net8.0/estacionamento.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/bin/Debug/net8.0/estacionamento.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/obj/Debug/net8.0/estacionamento.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/obj/Debug/net8.0/estacionamento.AssemblyInfoInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/obj/Debug/net8.0/estacionamento.AssemblyInfo.cs
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/obj/Debug/net8.0/estacionamento.csproj.CoreCompileInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/obj/Debug/net8.0/estacionamento.sourcelink.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/obj/Debug/net8.0/estacionamento.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/obj/Debug/net8.0/refint/estacionamento.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/obj/Debug/net8.0/estacionamento.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/obj/Debug/net8.0/estacionamento.genruntimeconfig.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos/Estacionamento/obj/Debug/net8.0/ref/estacionamento.dll
