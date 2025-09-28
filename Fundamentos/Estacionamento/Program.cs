@@ -9,7 +9,8 @@ namespace Estacionamento
 
             Console.WriteLine("Seja Bem-Vindo EstacionaBEM");
             Menu m1 = new Menu();
-            Estacionamentos e1 = new Estacionamentos(m1.PRECOFIXO, m1.PRECOPORHORA);
+            Estacionamentos e1 = new Estacionamentos();
+            Custo c1 = new Custo();
 
             while (true)
             {

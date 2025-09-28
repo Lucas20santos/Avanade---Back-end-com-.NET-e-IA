@@ -7,12 +7,6 @@ namespace Estacionamento.Models
         private decimal precoPorHora = 0;
         private List<string> veiculos = new List<string>();
 
-        public Estacionamentos(decimal precoInicial, decimal precoPorHora)
-        {
-            this.precoInicial = precoInicial;
-            this.precoPorHora = precoPorHora;
-        }
-
         public void AdicionarVeiculo()
         {
             string? placa;
@@ -35,7 +29,19 @@ namespace Estacionamento.Models
 
         public void ListarVeiculos()
         {
-
+            if (this.veiculos.Any())
+            {
+                Console.WriteLine("Os veículos estacionadas são: ");
+                int cont = 1;
+                foreach (var item in this.veiculos)
+                {
+                    Console.WriteLine($"{cont} - {item}.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Não há veículos estacionadas.");
+            }
         }
     }
 }
