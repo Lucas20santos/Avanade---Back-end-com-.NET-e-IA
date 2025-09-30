@@ -27,7 +27,20 @@ namespace Estacionamento.Models
         }
 
         public void RemoverVeiculo()
-        {            
+        {
+            Console.Clear();
+            string? placa;
+            Console.Write("Informe a Placa do Veiculo: ");
+            placa = Console.ReadLine();
+
+            if (!string.IsNullOrWhiteSpace(placa) && this.veiculos.Contains(placa))
+            {
+                this.veiculos.Remove(placa);
+            }
+            else
+            {
+                Console.WriteLine("Placa inválida. Veículo não se encontra no pátio.");
+            }            
 
         }
 
