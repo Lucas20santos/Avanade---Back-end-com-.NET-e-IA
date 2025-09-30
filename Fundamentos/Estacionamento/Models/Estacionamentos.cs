@@ -11,19 +11,19 @@ namespace Estacionamento.Models
 
         public void AdicionarVeiculo()
         {
+            Console.Clear();
             string? placa;
             Console.Write("Informe a Placa do Veiculo: ");
             placa = Console.ReadLine();
-            Console.WriteLine(placa);
 
-            // if (!string.IsNullOrWhiteSpace(placa))
-            // {
-                // this.veiculos.Add(placa);
-            // }
-            // else
-            // {
-                // Console.WriteLine("Placa inválida. Veículo não adicionado.");
-            // }
+            if (!string.IsNullOrWhiteSpace(placa))
+            {
+                this.veiculos.Add(placa);
+            }
+            else
+            {
+                Console.WriteLine("Placa inválida. Veículo não adicionado.");
+            }
         }
 
         public void RemoverVeiculo()
@@ -35,10 +35,12 @@ namespace Estacionamento.Models
         {
             if(this.veiculos.Any() && veiculos != null)
             {
+                Console.Clear();
                 Console.WriteLine("Os veículos estacionadas são: ");
-                int cont = 1;
+                int cont = 0;
                 foreach (var item in this.veiculos)
                 {
+                    cont++;
                     Console.WriteLine($"{cont} - {item}.");
                 }
             }
