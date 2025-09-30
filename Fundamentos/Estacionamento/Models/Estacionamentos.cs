@@ -1,3 +1,5 @@
+using System.Net.Http.Headers;
+
 namespace Estacionamento.Models
 {
     class Estacionamentos
@@ -10,16 +12,18 @@ namespace Estacionamento.Models
         public void AdicionarVeiculo()
         {
             string? placa;
-            Console.WriteLine("Informe a Placa do Veiculo: ");
+            Console.Write("Informe a Placa do Veiculo: ");
             placa = Console.ReadLine();
-            if (!string.IsNullOrWhiteSpace(placa))
-            {
-                this.veiculos.Add(placa);
-            }
-            else
-            {
-                Console.WriteLine("Placa inválida. Veículo não adicionado.");
-            }
+            Console.WriteLine(placa);
+
+            // if (!string.IsNullOrWhiteSpace(placa))
+            // {
+                // this.veiculos.Add(placa);
+            // }
+            // else
+            // {
+                // Console.WriteLine("Placa inválida. Veículo não adicionado.");
+            // }
         }
 
         public void RemoverVeiculo()
@@ -29,7 +33,7 @@ namespace Estacionamento.Models
 
         public void ListarVeiculos()
         {
-            if(this.veiculos.Any())
+            if(this.veiculos.Any() && veiculos != null)
             {
                 Console.WriteLine("Os veículos estacionadas são: ");
                 int cont = 1;
