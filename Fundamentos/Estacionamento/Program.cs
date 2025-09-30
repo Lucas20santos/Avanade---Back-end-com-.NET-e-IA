@@ -14,27 +14,36 @@ namespace Estacionamento
 
             while (true)
             {
+                Console.Clear();
                 m1.apresentar();
                 int opcao = Convert.ToInt32(Console.ReadLine());
 
-                switch (opcao)
+                if (opcao != 4)
                 {
-                    case 1:
-                        e1.AdicionarVeiculo();
-                        break;
-                    case 2:
-                        e1.RemoverVeiculo();
-                        break;
-                    case 3:
-                        e1.ListarVeiculos();
-                        break;
-                    case 4:
-                        break;
-                    default:
-                        Console.WriteLine("Valor Informando não consta no Menu.");
-                        break;
+                    switch (opcao)
+                    {
+                        case 1:
+                            e1.AdicionarVeiculo();
+                            break;
+                        case 2:
+                            e1.RemoverVeiculo();
+                            break;
+                        case 3:
+                            e1.ListarVeiculos();
+                            break;
+                        case 4:
+                            break;
+                        default:
+                            Console.WriteLine("Valor Informando não consta no Menu.");
+                            break;
+                    }
+
                 }
-                break;
+                else
+                {
+                    break;
+                }
+
             }
         }
     }
