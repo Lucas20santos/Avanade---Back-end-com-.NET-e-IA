@@ -6,7 +6,6 @@ namespace Estacionamento
     {
         static void Main(string[] args)
         {
-
             Menu menu = new Menu();
             Estacionamentos estacionamento = new Estacionamentos();
             Custo custo = new Custo();
@@ -36,13 +35,11 @@ namespace Estacionamento
                             Console.WriteLine("Valor Informando não consta no Menu.");
                             break;
                     }
-
                 }
                 else
                 {
                     break;
                 }
-
             }
         }
     }
