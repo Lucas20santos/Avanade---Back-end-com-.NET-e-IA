@@ -7,14 +7,16 @@ namespace Estacionamento
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Seja Bem-Vindo EstacionaBEM");
-            Menu m1 = new Menu();
-            Estacionamentos e1 = new Estacionamentos();
-            Custo c1 = new Custo();
+            Menu menu = new Menu();
+            Estacionamentos estacionamento = new Estacionamentos();
+            Custo custo = new Custo();
+            Cliente cliente = new Cliente();
+            Historico historico = new Historico();
+            Pagamento pagamento = new Pagamento();
 
             while (true)
             {
-                m1.apresentar();
+                menu.apresentar();
                 int opcao = Convert.ToInt32(Console.ReadLine());
 
                 if (opcao != 4)
@@ -22,13 +24,13 @@ namespace Estacionamento
                     switch (opcao)
                     {
                         case 1:
-                            e1.AdicionarVeiculo();
+                            estacionamento.AdicionarVeiculo();
                             break;
                         case 2:
-                            e1.RemoverVeiculo();
+                            estacionamento.RemoverVeiculo();
                             break;
                         case 3:
-                            e1.ListarVeiculos();
+                            estacionamento.ListarVeiculos();
                             break;
                         default:
                             Console.WriteLine("Valor Informando não consta no Menu.");
