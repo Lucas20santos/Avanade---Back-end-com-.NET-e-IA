@@ -5,13 +5,11 @@ namespace Estacionamento.Models
     class Estacionamentos
     {
         private List<string> veiculos = new List<string>();
+        public string? placaVeiculo { get; set; }
 
-        public void AdicionarVeiculo()
+        public void AdicionarVeiculo(string? placa)
         {
-            Console.Clear();
-            string? placa;
-            Console.Write("Informe a Placa do Veiculo: ");
-            placa = Console.ReadLine();
+            this.placaVeiculo = placa;
 
             if (!string.IsNullOrWhiteSpace(placa))
             {

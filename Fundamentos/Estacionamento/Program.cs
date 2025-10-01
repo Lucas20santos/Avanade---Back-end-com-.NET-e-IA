@@ -23,7 +23,19 @@ namespace Estacionamento
                     switch (opcao)
                     {
                         case 1:
-                            estacionamento.AdicionarVeiculo();
+                            // Cadastrar Cliente: uma melhor prática seria ter um classe para cadastrar todas as informações.
+                            Console.Write("Qual é o seu nome: ");
+                            cliente.Nome = Console.ReadLine();
+                            Console.Write("Qual é o seu sobrenome: ");
+                            cliente.Sobrenome = Console.ReadLine();
+                            Console.Write("Qual é o seu CPF: ");
+                            cliente.CPF = Console.ReadLine();
+                            Console.Write("Informe a placa do veiculo: ");
+
+                            string? placa = Console.ReadLine();
+                            estacionamento.AdicionarVeiculo(placa);
+
+                            historico.atualizarHistoricoEntrada(cliente.Nome, cliente.Sobrenome, cliente.CPF, estacionamento.placaVeiculo);
                             break;
                         case 2:
                             estacionamento.RemoverVeiculo();
