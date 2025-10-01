@@ -1,6 +1,6 @@
 namespace Estacionamento.Models
 {
-    class FormaDePagamento
+    class Pagamento
     {
         public decimal valor;
 
@@ -11,7 +11,7 @@ namespace Estacionamento.Models
 
         public void Dinheiro()
         {
-            Console.WriteLine("Pagamento realizado com sucesso.");
+            Console.WriteLine($"Pagamento de {this.valor} realizado com sucesso.");
         }
         public void cartaoDeCredito()
         {
@@ -19,11 +19,11 @@ namespace Estacionamento.Models
             int opcao = Convert.ToInt32(Console.ReadLine());
             if (opcao == 1)
             {
-                Console.WriteLine("Pagamento realizado no Debito com sucesso.");
+            Console.WriteLine($"Pagamento de {this.valor} realizado com sucesso.");
             }
             else
             {
-                Console.WriteLine("Pagamento realizado no Credito com sucesso.");
+            Console.WriteLine($"Pagamento de {this.valor} realizado com sucesso.");
             }
         }
     }
