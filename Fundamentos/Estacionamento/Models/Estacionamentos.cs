@@ -4,9 +4,6 @@ namespace Estacionamento.Models
 {
     class Estacionamentos
     {
-        Custo c1 = new Custo();
-        private decimal precoInicial = 0;
-        private decimal precoPorHora = 0;
         private List<string> veiculos = new List<string>();
 
         public void AdicionarVeiculo()
