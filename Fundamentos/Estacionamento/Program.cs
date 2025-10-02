@@ -28,13 +28,13 @@ namespace Estacionamento
                     switch (opcao)
                     {
                         case 1:
-                            estacionamento.AdicionarVeiculo("");
+                            estacionamento.adicionarAutomovel(cliente, automovel);
                             break;
                         case 2:
-                            estacionamento.RemoverVeiculo();
+                            estacionamento.removerVeiculo(cliente, automovel);
                             break;
                         case 3:
-                            estacionamento.ListarVeiculos();
+                            estacionamento.mostrarVeiculos(cliente, automovel);
                             break;
                         default:
                             Console.WriteLine("Valor Informando não consta no Menu.");

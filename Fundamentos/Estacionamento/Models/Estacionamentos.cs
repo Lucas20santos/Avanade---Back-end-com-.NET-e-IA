@@ -6,16 +6,14 @@ namespace Estacionamento.Models
     class Estacionamentos
     {
         Cadastro cadastro = new Cadastro();
+        Historico historico = new Historico();
         private List<string> veiculos = new List<string>();
-        public string? placaVeiculo { get; set; }
-
         public void cadastrarCliente(Cliente cliente)
         {
             cadastro.cadastrarNome(cliente);
             cadastro.cadastrarSobrenome(cliente);
             cadastro.cadastrarCPF(cliente);
         }
-
         public void cadastrarAutomovel(Automovel automovel)
         {
             cadastro.cadastrarModelo(automovel);
@@ -23,52 +21,25 @@ namespace Estacionamento.Models
             cadastro.cadastrarCor(automovel);
             cadastro.cadastrarQuantidadeRodas(automovel);
         }
-
-        public void AdicionarVeiculo(string? placa)
+        public void historicoEntrada(Cliente cliente, Automovel automovel)
         {
-            this.placaVeiculo = placa;
-            if (!string.IsNullOrWhiteSpace(placa))
-            {
-                this.veiculos.Add(placa);
-            }
-            else
-            {
-                Console.WriteLine("Placa inválida. Veículo não adicionado.");
-            }
+            historico.atualizarHistoricoEntrada(cliente, automovel);
         }
-
-        public void RemoverVeiculo()
+        public void historicoSaida(Cliente cliente, Automovel automovel)
         {
-            Console.Write("Informe a Placa do Veiculo: ");
-            string? placa = Console.ReadLine();
-
-            if (!string.IsNullOrWhiteSpace(placa) && this.veiculos.Contains(placa))
-            {
-                this.veiculos.Remove(placa);
-            }
-            else
-            {
-                Console.WriteLine("Placa inválida. Veículo não se encontra no pátio.");
-            }
+            historico.atualizarHistoricoSaida(cliente, automovel);
         }
-
-        public void ListarVeiculos()
+        public void adicionarAutomovel(Cliente cliente, Automovel automovel)
         {
-            if(this.veiculos.Any() && veiculos != null)
-            {
-                Console.WriteLine("Os veículos estacionadas são: ");
-                int cont = 0;
-             
-                foreach (var item in this.veiculos)
-                {
-                    cont++;
-                    Console.WriteLine($"{cont} - {item}.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Não há veículos estacionadas.");
-            }
+            cadastro.AdicionarVeiculo(cliente, automovel);
+        }
+        public void removerVeiculo(Cliente cliente, Automovel automovel)
+        {
+            cadastro.RemoverVeiculo(cliente, automovel);
+        }
+        public void mostrarVeiculos(Cliente cliente, Automovel automovel)
+        {
+            cadastro.ListarVeiculos(cliente, automovel);
         }
     }
 }

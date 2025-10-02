@@ -56,5 +56,17 @@ namespace Fundation.Models
             Console.WriteLine($"Modelo: {automovel.cor}");
             Console.WriteLine($"Modelo: {automovel.quantidadeRodas}");
         }
+        public void AdicionarVeiculo(Cliente cliente, Automovel automovel)
+        {
+            
+        }
+        public void RemoverVeiculo(Cliente cliente, Automovel automovel)
+        {
+
+        }
+        public void ListarVeiculos(Cliente cliente, Automovel automovel)
+        {
+
+        }
     }
 }
