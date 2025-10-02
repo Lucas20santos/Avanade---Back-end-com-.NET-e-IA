@@ -1,6 +1,6 @@
 # 🚗 Projeto Estacionamento
 
-Este projeto simula o funcionamento de um sistema de estacionamento, permitindo cadastrar, remover e listar veículos, além de gerenciar clientes, custos, pagamentos e históricos de entrada/saída.
+Este projeto simula o funcionamento de um sistema de estacionamento, permitindo cadastrar, remover e listar veículos, além de gerenciar clientes, custos, pagamentos, históricos de entrada/saída e cadastro de usuários.
 
 ## 🏗️ Estrutura de Classes
 
@@ -59,7 +59,18 @@ Armazena o histórico de entrada e saída de veículos.
   - `mostrarHistoricoEntrada()`: Exibe o histórico de entrada.
   - `mostrarHistoricoSaida()`: Exibe o histórico de saída.
 
-### 🏁 7. [`Program`](../Program.cs)
+### 📝 7. [`Cadastro`](Models/Cadastro.cs)
+
+Gerencia o cadastro de usuários/clientes no sistema.
+
+- Propriedades: `Nome`, `Sobrenome`, `CPF`, `Email`, `Telefone`.
+- Métodos:
+  - `CadastrarCliente(...)`: Realiza o cadastro de um novo cliente.
+  - `ValidarDados(...)`: Valida os dados informados no cadastro.
+  - `ListarClientes()`: Lista todos os clientes cadastrados.
+  - `RemoverCliente(string cpf)`: Remove um cliente pelo CPF.
+
+### 🏁 8. [`Program`](../Program.cs)
 
 Classe principal que executa o sistema, gerenciando o fluxo do menu e integrando todas as funcionalidades.
 
@@ -68,13 +79,28 @@ Classe principal que executa o sistema, gerenciando o fluxo do menu e integrando
 ## ▶️ Como usar
 
 1. Execute o projeto.
-2. Escolha uma opção no menu para adicionar, remover ou listar veículos.
+2. Escolha uma opção no menu para adicionar, remover ou listar veículos, cadastrar clientes ou consultar históricos.
 3. Informe os dados solicitados para cada operação.
-4. O sistema calcula custos, registra históricos e simula pagamentos.
+4. O sistema calcula custos, registra históricos, simula pagamentos e gerencia cadastros.
 
 ---
 
 ## 💡 Observações
 
-- O projeto pode ser expandido para incluir persistência de dados e interface gráfica.
+- O projeto pode ser expandido para incluir persistência de dados, interface gráfica e autenticação de usuários.
 - Cada classe pode ser adaptada para novas funcionalidades conforme necessidade.
+- A classe `Cadastro` foi adicionada para facilitar o gerenciamento dos clientes e usuários do sistema.
+
+---
+
+## 📅 Histórico de Alterações
+
+- **02/10/2025**:  
+  - Adicionada documentação detalhada das classes: `Menu`, `Cliente`, `Estacionamentos`, `Custo`, `Pagamento`, `Historico` e `Program`.
+  - Incluída seção "Como usar" com instruções de execução.
+  - Acrescentadas observações sobre possíveis expansões do projeto.
+  - Estrutura do arquivo organizada por tópicos.
+- **03/10/2025**:  
+  - Adicionada a classe `Cadastro` para gerenciamento de clientes.
+  - Documentação atualizada com detalhes da classe `Cadastro` e seus métodos.
+  - Ajustada a seção "Como usar" para incluir funcionalidades de cadastro.
