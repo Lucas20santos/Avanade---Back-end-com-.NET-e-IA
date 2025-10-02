@@ -38,10 +38,22 @@ namespace Estacionamento
                             historico.atualizarHistoricoEntrada(cliente.Nome, cliente.Sobrenome, cliente.CPF, estacionamento.placaVeiculo);
                             break;
                         case 2:
+                            Console.Write("Qual é o seu nome: ");
+                            cliente.Nome = Console.ReadLine();
+                            Console.Write("Qual é o seu sobrenome: ");
+                            cliente.Sobrenome = Console.ReadLine();
+                            Console.Write("Qual é o seu CPF: ");
+                            cliente.CPF = Console.ReadLine();
+                            Console.Write("Informe a placa do veiculo: ");
+
                             estacionamento.RemoverVeiculo();
+
+                            historico.atualizarHistoricoSaida(cliente.Nome, cliente.Sobrenome, cliente.CPF, estacionamento.placaVeiculo);
                             break;
                         case 3:
+
                             estacionamento.ListarVeiculos();
+
                             break;
                         default:
                             Console.WriteLine("Valor Informando não consta no Menu.");

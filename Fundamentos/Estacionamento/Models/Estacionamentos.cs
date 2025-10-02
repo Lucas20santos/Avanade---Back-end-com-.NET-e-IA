@@ -10,7 +10,6 @@ namespace Estacionamento.Models
         public void AdicionarVeiculo(string? placa)
         {
             this.placaVeiculo = placa;
-
             if (!string.IsNullOrWhiteSpace(placa))
             {
                 this.veiculos.Add(placa);
@@ -23,10 +22,8 @@ namespace Estacionamento.Models
 
         public void RemoverVeiculo()
         {
-            Console.Clear();
-            string? placa;
             Console.Write("Informe a Placa do Veiculo: ");
-            placa = Console.ReadLine();
+            string? placa = Console.ReadLine();
 
             if (!string.IsNullOrWhiteSpace(placa) && this.veiculos.Contains(placa))
             {
@@ -35,17 +32,16 @@ namespace Estacionamento.Models
             else
             {
                 Console.WriteLine("Placa inválida. Veículo não se encontra no pátio.");
-            }            
-
+            }
         }
 
         public void ListarVeiculos()
         {
             if(this.veiculos.Any() && veiculos != null)
             {
-                Console.Clear();
                 Console.WriteLine("Os veículos estacionadas são: ");
                 int cont = 0;
+             
                 foreach (var item in this.veiculos)
                 {
                     cont++;

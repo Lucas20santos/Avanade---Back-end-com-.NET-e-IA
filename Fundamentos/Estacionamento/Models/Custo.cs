@@ -4,16 +4,23 @@ namespace Estacionamento.Models
     {
         public decimal PRECOFIXO { get; set; }
         public decimal PRECOPORHORA { get; set; }
+        public decimal precoDoAluguel { get; set; }
 
         public decimal CalculoDoEstacionamento(decimal horas)
         {
-            return this.PRECOFIXO + this.PRECOPORHORA * horas;
+            this.precoDoAluguel = this.PRECOFIXO + this.PRECOPORHORA * horas;
+
+            return this.precoDoAluguel;
         }
 
-        public void FixarPrecosDoAluguel(decimal fixo, decimal porHora)
+        public void FixarPrecosFixo(decimal fixo)
         {
             this.PRECOFIXO = fixo;
-            this.PRECOPORHORA = porHora;
+        }
+
+        public void fixarPrecoPorHora(decimal precoPorHora)
+        {
+            this.PRECOPORHORA = precoPorHora;
         }
     }
 }
