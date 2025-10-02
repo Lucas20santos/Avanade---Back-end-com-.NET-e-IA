@@ -6,9 +6,5 @@ namespace Estacionamento.Models
         public string? Sobrenome { get; set; }
         public string? CPF { get; set; }
 
-        public void formaDePagamento()
-        {
-
-        }
     }
 }

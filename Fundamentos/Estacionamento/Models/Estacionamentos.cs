@@ -16,12 +16,12 @@ namespace Estacionamento.Models
             cadastro.cadastrarCPF(cliente);
         }
 
-        public void cadastrarAutomovel()
+        public void cadastrarAutomovel(Automovel automovel)
         {
-            cadastro.cadastrarModelo();
-            cadastro.cadastrarMarca();
-            cadastro.cadastrarCor();
-            cadastro.cadastrarQuantidadeRodas();
+            cadastro.cadastrarModelo(automovel);
+            cadastro.cadastrarMarca(automovel);
+            cadastro.cadastrarCor(automovel);
+            cadastro.cadastrarQuantidadeRodas(automovel);
         }
 
         public void AdicionarVeiculo(string? placa)

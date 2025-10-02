@@ -4,19 +4,16 @@ namespace Fundation.Models
 {
     class Cadastro
     {
-
         public void cadastrarNome(Cliente cliente)
         {
             Console.Write($"Informe o Nome: ");
             cliente.Nome = Console.ReadLine();
         }
-
         public void cadastrarSobrenome(Cliente cliente)
         {
             Console.Write($"Informe o Sobrenome: ");
             cliente.Sobrenome = Console.ReadLine();
         }
-
         public void cadastrarCPF(Cliente cliente)
         {
             Console.Write($"Informe o CPF: ");
