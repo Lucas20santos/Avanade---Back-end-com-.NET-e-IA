@@ -23,7 +23,6 @@ namespace Estacionamento
                     switch (opcao)
                     {
                         case 1:
-                            // Cadastrar Cliente: uma melhor prática seria ter um classe para cadastrar todas as informações.
                             Console.Write("Qual é o seu nome: ");
                             cliente.Nome = Console.ReadLine();
                             Console.Write("Qual é o seu sobrenome: ");
