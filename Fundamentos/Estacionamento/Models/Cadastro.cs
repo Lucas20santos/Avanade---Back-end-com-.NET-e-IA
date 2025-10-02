@@ -30,24 +30,23 @@ namespace Fundation.Models
         public void cadastrarModelo(Automovel automovel)
         {
             Console.Write($"Informe o Modelo do Veículo: ");
-            this.automovel.modelo = Console.ReadLine();
+            automovel.modelo = Console.ReadLine();
         }
         public void cadastrarCor(Automovel automovel)
         {
             Console.Write($"Informe a Cor do Veículo: ");
-            this.automovel.cor = Console.ReadLine();
+            automovel.cor = Console.ReadLine();
         }
         public void cadastrarMarca(Automovel automovel)
         {
             Console.Write($"Informe a Marca do Veículo: ");
-            this.automovel.marca = Console.ReadLine();
+            automovel.marca = Console.ReadLine();
         }
-        public void cadastrarQuantidadeRodas()
+        public void cadastrarQuantidadeRodas(Automovel automovel)
         {
             Console.Write($"Informe a Quantidade de Rodas do Veículo: ");
-            this.automovel.quantidadeRodas = Convert.ToInt32(Console.ReadLine());
+            automovel.quantidadeRodas = Convert.ToInt32(Console.ReadLine());
         }
-
         public void apresentarCadastro(Cliente cliente, Automovel automovel)
         {
             Console.WriteLine($"Nome: {cliente.Nome}");
