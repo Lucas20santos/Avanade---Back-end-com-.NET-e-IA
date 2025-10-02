@@ -4,25 +4,24 @@ namespace Fundation.Models
 {
     class Cadastro
     {
-        Cliente cliente = new Cliente();
         Automovel automovel = new Automovel();
 
-        public void cadastrarNome()
+        public void cadastrarNome(Cliente cliente)
         {
             Console.Write($"Informe o Nome: ");
-            this.cliente.Nome = Console.ReadLine();
+            cliente.Nome = Console.ReadLine();
         }
 
-        public void cadastrarSobrenome()
+        public void cadastrarSobrenome(Cliente cliente)
         {
             Console.Write($"Informe o Sobrenome: ");
-            this.cliente.Sobrenome = Console.ReadLine();
+            cliente.Sobrenome = Console.ReadLine();
         }
 
-        public void cadastrarCPF()
+        public void cadastrarCPF(Cliente cliente)
         {
             Console.Write($"Informe o CPF: ");
-            this.cliente.CPF = Console.ReadLine();
+            cliente.CPF = Console.ReadLine();
         }
         public void cadastrarPlaca()
         {
@@ -50,12 +49,12 @@ namespace Fundation.Models
             this.automovel.quantidadeRodas = Convert.ToInt32(Console.ReadLine());
         }
 
-        public void apresentarCadastro()
+        public void apresentarCadastro(Cliente cliente)
         {
-            Console.WriteLine($"Nome: {this.cliente.Nome}");
-            Console.WriteLine($"Sobrenome: {this.cliente.Sobrenome}");
-            Console.WriteLine($"CPF: {this.cliente.CPF}");
-            Console.WriteLine($"Placa do Veículo: {this.cliente.CPF}");
+            Console.WriteLine($"Nome: {cliente.Nome}");
+            Console.WriteLine($"Sobrenome: {cliente.Sobrenome}");
+            Console.WriteLine($"CPF: {cliente.CPF}");
+            Console.WriteLine($"Placa do Veículo: {cliente.CPF}");
         }
     }
 }

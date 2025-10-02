@@ -9,11 +9,11 @@ namespace Estacionamento.Models
         private List<string> veiculos = new List<string>();
         public string? placaVeiculo { get; set; }
 
-        public void cadastrarCliente()
+        public void cadastrarCliente(Cliente cliente)
         {
-            cadastro.cadastrarNome();
-            cadastro.cadastrarSobrenome();
-            cadastro.cadastrarCPF();
+            cadastro.cadastrarNome(cliente);
+            cadastro.cadastrarSobrenome(cliente);
+            cadastro.cadastrarCPF(cliente);
         }
 
         public void cadastrarAutomovel()
