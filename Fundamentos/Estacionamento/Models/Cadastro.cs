@@ -24,10 +24,30 @@ namespace Fundation.Models
             Console.WriteLine($"Informe o CPF: ");
             this.cliente.CPF = Console.ReadLine();
         }
-        public void cadastrarAutomovel()
+        public void cadastrarPlaca()
         {
             Console.WriteLine($"Informe a Placa do Veículo: ");
             this.automovel.placa = Console.ReadLine();
+        }
+        public void cadastrarModelo()
+        {
+            Console.WriteLine($"Informe o Modelo do Veículo: ");
+            this.automovel.modelo = Console.ReadLine();
+        }
+        public void cadastrarCor()
+        {
+            Console.WriteLine($"Informe a Cor do Veículo: ");
+            this.automovel.cor = Console.ReadLine();
+        }
+        public void cadastrarMarca()
+        {
+            Console.WriteLine($"Informe a Marca do Veículo: ");
+            this.automovel.marca = Console.ReadLine();
+        }
+        public void cadastrarQuantidadeRodas()
+        {
+            Console.WriteLine($"Informe a Quantidade de Rodas do Veículo: ");
+            this.automovel.quantidadeRodas = Convert.ToInt32(Console.ReadLine());
         }
 
         public void apresentarCadastro()
