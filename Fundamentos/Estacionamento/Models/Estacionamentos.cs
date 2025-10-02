@@ -1,11 +1,28 @@
-using System.Net.Http.Headers;
+using Estacionamento.Models;
+using Fundation.Models;
 
 namespace Estacionamento.Models
 {
     class Estacionamentos
     {
+        Cadastro cadastro = new Cadastro();
         private List<string> veiculos = new List<string>();
         public string? placaVeiculo { get; set; }
+
+        public void cadastrarCliente()
+        {
+            cadastro.cadastrarNome();
+            cadastro.cadastrarSobrenome();
+            cadastro.cadastrarCPF();
+        }
+
+        public void cadastrarAutomovel()
+        {
+            cadastro.cadastrarModelo();
+            cadastro.cadastrarMarca();
+            cadastro.cadastrarCor();
+            cadastro.cadastrarQuantidadeRodas();
+        }
 
         public void AdicionarVeiculo(string? placa)
         {
