@@ -12,11 +12,12 @@ namespace Estacionamento
             {
                 Estacionamentos estacionamento = new Estacionamentos();
                 Cliente cliente = new Cliente();
+                Automovel automovel = new Automovel();
 
                 Console.WriteLine("Cadastro De Cliente: ");
 
                 estacionamento.cadastrarCliente(cliente);
-                estacionamento.cadastrarAutomovel();
+                estacionamento.cadastrarAutomovel(automovel);
 
                 menu.apresentar();
 
