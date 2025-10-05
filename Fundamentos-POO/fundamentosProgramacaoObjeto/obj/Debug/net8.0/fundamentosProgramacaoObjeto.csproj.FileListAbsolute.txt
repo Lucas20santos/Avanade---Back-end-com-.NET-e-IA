@@ -1,0 +1,15 @@
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/bin/Debug/net8.0/fundamentosProgramacaoObjeto
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/bin/Debug/net8.0/fundamentosProgramacaoObjeto.deps.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/bin/Debug/net8.0/fundamentosProgramacaoObjeto.runtimeconfig.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/bin/Debug/net8.0/fundamentosProgramacaoObjeto.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/bin/Debug/net8.0/fundamentosProgramacaoObjeto.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/obj/Debug/net8.0/fundamentosProgramacaoObjeto.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/obj/Debug/net8.0/fundamentosProgramacaoObjeto.AssemblyInfoInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/obj/Debug/net8.0/fundamentosProgramacaoObjeto.AssemblyInfo.cs
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/obj/Debug/net8.0/fundamentosProgramacaoObjeto.csproj.CoreCompileInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/obj/Debug/net8.0/fundamentosProgramacaoObjeto.sourcelink.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/obj/Debug/net8.0/fundamentosProgramacaoObjeto.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/obj/Debug/net8.0/refint/fundamentosProgramacaoObjeto.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/obj/Debug/net8.0/fundamentosProgramacaoObjeto.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/obj/Debug/net8.0/fundamentosProgramacaoObjeto.genruntimeconfig.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/obj/Debug/net8.0/ref/fundamentosProgramacaoObjeto.dll
