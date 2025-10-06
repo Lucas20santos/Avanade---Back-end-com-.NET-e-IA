@@ -4,7 +4,7 @@ namespace FundamentosProgramacaoObjeto.Models
     {
         private string _nome;
         private int _idade;
-        public string? Nome
+        public string Nome
         {
             get { return _nome; }
             set
