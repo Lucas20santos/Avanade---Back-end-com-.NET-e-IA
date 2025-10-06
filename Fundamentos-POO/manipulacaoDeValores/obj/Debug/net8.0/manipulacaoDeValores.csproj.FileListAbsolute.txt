@@ -1,0 +1,15 @@
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/bin/Debug/net8.0/manipulacaoDeValores
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/bin/Debug/net8.0/manipulacaoDeValores.deps.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/bin/Debug/net8.0/manipulacaoDeValores.runtimeconfig.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/bin/Debug/net8.0/manipulacaoDeValores.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/bin/Debug/net8.0/manipulacaoDeValores.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/obj/Debug/net8.0/manipulacaoDeValores.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/obj/Debug/net8.0/manipulacaoDeValores.AssemblyInfoInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/obj/Debug/net8.0/manipulacaoDeValores.AssemblyInfo.cs
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/obj/Debug/net8.0/manipulacaoDeValores.csproj.CoreCompileInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/obj/Debug/net8.0/manipulacaoDeValores.sourcelink.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/obj/Debug/net8.0/manipulacaoDeValores.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/obj/Debug/net8.0/refint/manipulacaoDeValores.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/obj/Debug/net8.0/manipulacaoDeValores.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/obj/Debug/net8.0/manipulacaoDeValores.genruntimeconfig.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/manipulacaoDeValores/obj/Debug/net8.0/ref/manipulacaoDeValores.dll
