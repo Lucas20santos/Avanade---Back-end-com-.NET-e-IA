@@ -2,7 +2,7 @@
 
 ## Explorando a linguagem csharp
 
-### Classe Principal
+### Classe Principal - Aula 01
 
 ```csharp
     namespace FundamentosProgramacaoObjeto
@@ -18,7 +18,7 @@
     }
 ```
 
-### Classe Pessoa
+### Classe Pessoa - Aula 01
 
 ```csharp
     namespace FundamentosProgramacaoObjeto.Models
@@ -87,3 +87,11 @@
         }
     }
 ```
+
+## Manipulação de Valores
+
+### Classe Princiapa - Aula 02
+
+### Classe Pessoa - Aula 02
+
+### Clase Curso - Aula 02

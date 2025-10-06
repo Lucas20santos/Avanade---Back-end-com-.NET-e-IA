@@ -34,7 +34,7 @@ namespace FundamentosProgramacaoObjeto.Models
         }
         public void apresentar()
         {
-            Console.WriteLine($"Olá, me chamo {this._nome} e tenho {this._idade}.");
+            Console.WriteLine($"Olá, me chamo {this._nome} {this._sobrenome} e tenho {this._idade}.");
         }
     }
 }
