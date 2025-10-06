@@ -2,7 +2,7 @@ namespace FundamentosProgramacaoObjeto.Models
 {
     class Curso
     {
-        public string? Nome { get; set; }
+        public string Nome { get; set; }
         public List<Pessoa> Alunos { get; set; }
         public void AdicionarAluno(Pessoa alunos)
         {
