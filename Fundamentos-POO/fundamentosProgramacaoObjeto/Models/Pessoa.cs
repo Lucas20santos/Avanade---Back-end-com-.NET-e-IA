@@ -2,7 +2,7 @@ namespace FundamentosProgramacaoObjeto.Models
 {
     class Pessoa
     {
-        private string? _nome;
+        private string _nome;
         private int _idade;
         public string? Nome
         {

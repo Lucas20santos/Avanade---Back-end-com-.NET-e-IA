@@ -1,36 +1,8 @@
-# Códigos
+# Código
 
-```csharp
-    Console.WriteLine("Hello, World");
-```
+## Explorando a linguagem csharp
 
-## Introdução ao Módulo
-
-```csharp
-    Console.WriteLine("Hello, World");
-```
-
-## Introdução Propriedades e Propriedades práticas
-
-### Classe Pessoa
-
-```csharp
-    namespace FundamentosProgramacaoObjeto.Models
-    {
-        class Pessoa
-        {
-            public string? Nome { get; set; }
-            public int idade { get; set; }
-
-            public void apresentar()
-            {
-                Console.WriteLine($"Olá, me chamo {this.Nome} e tenho {this.idade}.");
-            }
-        }
-    }
-```
-
-### Classe principal
+### Classe Principal
 
 ```csharp
     namespace FundamentosProgramacaoObjeto
@@ -46,111 +18,72 @@
     }
 ```
 
-## Criando um método
+### Classe Pessoa
 
 ```csharp
-    Console.WriteLine("Hello, World");
+    namespace FundamentosProgramacaoObjeto.Models
+{
+    class Pessoa
+    {
+        private string _nome;
+        private int _idade;
+        public string? Nome
+        {
+            get { return _nome; }
+            set
+            {
+                if (value == "") throw new ArgumentException("O nome não pode ser vazio.");
+                _nome = value;
+            }
+        }
+        public int idade
+        {
+            get { return _idade; }
+            set {
+                if (value < 0) throw new ArgumentException("Idade não pode recebe um valor negativo.");
+                _idade = value;
+            } 
+        }
+
+        public void apresentar()
+        {
+            Console.WriteLine($"Olá, me chamo {this._nome} e tenho {this._idade}.");
+        }
+    }
+}
 ```
 
-## Validações no GET e SET
+## Classe Curso
 
 ```csharp
     namespace FundamentosProgramacaoObjeto.Models
     {
-        class Pessoa
+        class Curso
         {
-            private string? _nome;
-            private int _idade;
-            public string? Nome
+            public string? Nome { get; set; }
+            public List<Pessoa> Alunos { get; set; }
+
+            public void AdicionarAluno(Pessoa alunos)
             {
-                get { return _nome; }
-                set
-                {
-                    if (value == "") throw new ArgumentException("O nome não pode ser vazio.");
-                    _nome = value;
-                }
-            }
-            public int idade
-            {
-                get { return _idade; }
-                set {
-                    if (value < 0) throw new ArgumentException("Idade não pode recebe um valor negativo.");
-                    _idade = value;
-                } 
+                Alunos.Add(alunos);
             }
 
-            public void apresentar()
+            public int ObterQuantidadeDeAlunosMatriculados()
             {
-                Console.WriteLine($"Olá, me chamo {this._nome} e tenho {this._idade}.");
+                int quantidadeAlunos = Alunos.Count;
+                return quantidadeAlunos;
+            }
+            public void RemoverAluno(Pessoa aluno)
+            {
+                Alunos.Remove(aluno);
+            }
+            public void ListarAlunos()
+            {
+                foreach (var item in Alunos)
+                {
+                    Console.WriteLine($"Aluno -> {item.Nome}");
+                }
             }
         }
     }
 ```
-
-## Body Expression
-
-```csharp
-    Console.WriteLine("Hello, World");
-```
-
-## Validando a propriedade idade
-
-```csharp
-    Console.WriteLine("Hello, World");
-```
-
-## Modificadores de acesso
-
-```csharp
-    Console.WriteLine("Hello, World");
-```
-
-## Propriedades somente de leitura
-
-```csharp
-    Console.WriteLine("Hello, World");
-```
-
-## Introdução ao métodos
-
-```csharp
-    Console.WriteLine("Hello, World");
-```
-
-## Implementando a classe curso
-
-```csharp
-    Console.WriteLine("Hello, World");
-```
-
-## Tipos de retorno
-
-```csharp
-    Console.WriteLine("Hello, World");
-```
-
-## Implementando o método Remover
-
-```csharp
-    Console.WriteLine("Hello, World");
-```
-
-## Implementando o método listar alunos
-
-```csharp
-    Console.WriteLine("Hello, World");
-```
-
-## Trabalhando com construtores
-
-```csharp
-    Console.WriteLine("Hello, World");
-```
-
-## Inplementando construtor
-
-```csharp
-    Console.WriteLine("Hello, World");
-```
-
-## Finalizando
