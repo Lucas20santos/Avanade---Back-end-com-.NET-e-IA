@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/fundamentosProgramacaoObjeto.csproj",
-      "projectName": "fundamentosProgramacaoObjeto",
-      "projectPath": "/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/fundamentosProgramacaoObjeto.csproj",
+      "projectUniqueName": "/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/explorandoALinguagemCsharp.csproj",
+      "projectName": "explorandoALinguagemCsharp",
+      "projectPath": "/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/explorandoALinguagemCsharp.csproj",
       "packagesPath": "/home/codespace/.nuget/packages/",
-      "outputPath": "/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/fundamentosProgramacaoObjeto/obj/",
+      "outputPath": "/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/codespace/.nuget/NuGet/NuGet.Config"

@@ -1,0 +1,15 @@
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/bin/Debug/net8.0/explorandoALinguagemCsharp
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/bin/Debug/net8.0/explorandoALinguagemCsharp.deps.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/bin/Debug/net8.0/explorandoALinguagemCsharp.runtimeconfig.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/bin/Debug/net8.0/explorandoALinguagemCsharp.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/bin/Debug/net8.0/explorandoALinguagemCsharp.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/obj/Debug/net8.0/explorandoALinguagemCsharp.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/obj/Debug/net8.0/explorandoALinguagemCsharp.AssemblyInfoInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/obj/Debug/net8.0/explorandoALinguagemCsharp.AssemblyInfo.cs
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/obj/Debug/net8.0/explorandoALinguagemCsharp.csproj.CoreCompileInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/obj/Debug/net8.0/explorandoALinguagemCsharp.sourcelink.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/obj/Debug/net8.0/explorandoALinguagemCsharp.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/obj/Debug/net8.0/refint/explorandoALinguagemCsharp.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/obj/Debug/net8.0/explorandoALinguagemCsharp.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/obj/Debug/net8.0/explorandoALinguagemCsharp.genruntimeconfig.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/explorandoALinguagemCsharp/obj/Debug/net8.0/ref/explorandoALinguagemCsharp.dll
