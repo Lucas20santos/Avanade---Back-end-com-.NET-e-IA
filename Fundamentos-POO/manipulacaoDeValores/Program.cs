@@ -13,8 +13,17 @@ namespace FundamentosProgramacaoObjeto
                 Nome = "Lucas",
                 idade = 19
             };
+            Pessoa p2 = new()
+            {
+                Nome = "Fernanda",
+                Sobrenome = "Maria",
+                idade = 32
+            };
 
-            p1.apresentar();
+            Curso c1 = new Curso();
+            c1.AdicionarAluno(p1);
+            c1.AdicionarAluno(p2);
+            c1.ListarAlunos();
         }
     }
 }
