@@ -89,3 +89,21 @@ Pessoa p1 = new Pessoa(nome="Lucas", sobrenome="Santos");
 // ele descontroi o objeto e transforma os valores em variáveis
 
 ```
+
+### If ternario
+
+```csharp
+    int numero = 20;
+    if(numero % 2 == 0)
+    {
+        Console.WriteLine($"O numero {numero} é par");
+    }
+    else
+    {
+        Console.WriteLine($"O numero {numero} é impar");
+    }
+
+    // usando operador ternario
+    bool ehPar = numero % 2 == 0 ? "Par": "Impar";
+    Console.WriteLine(ehPar);
+```
