@@ -20,6 +20,17 @@ namespace FundamentosProgramacaoObjeto
             {
                 Console.WriteLine(item);
             }
+
+            string chave = "Ba";
+            Console.WriteLine($"Verificando a chave: {chave}");
+            if (estado.ContainsKey(chave))
+            {
+                Console.WriteLine($"A chave {chave} já foi adicionada.");
+            }
+            else
+            {
+                Console.WriteLine($"A chave {chave} ainda não foi adicionada.");
+            }
         }
     }
 }
