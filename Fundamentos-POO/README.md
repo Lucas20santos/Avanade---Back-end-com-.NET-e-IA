@@ -128,3 +128,82 @@
 ```
 
 ## Usando o Throw
+
+```csharp
+    int a = 1;
+    int b = 0;
+
+    if (b == 0)
+    {
+        throw new Exception("Divisão por zero, não pode acontecer.");
+    }
+    else
+    {
+        Console.WriteLine($"{a / b}");
+    }
+```
+
+Esse bloco lança uma excessão para ser tratada
+
+## Coleções
+
+### Queue ou FIFO - First In First Out
+
+```csharp
+Queue<int> fila = new Queue<int>();
+
+            // adicionando elementos na fila
+            fila.Enqueue(1);
+            fila.Enqueue(2);
+            fila.Enqueue(3);
+            fila.Enqueue(4);
+
+            foreach (var item in fila)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
+            // removendo os elementos do primeiro ao ultimo na fila não se pode 
+            // remover um item do meio ou ultimo
+            fila.Dequeue();
+            fila.Dequeue();
+            fila.Dequeue();
+            fila.Dequeue();
+```
+
+### Pilha ou Stack - LIFO - Last In First Out
+
+```csharp
+    Stack<int> pilha = new Stack<int>();
+
+    // adicionando elementos na pilha
+    pilha.Push(1);
+    pilha.Push(2);
+    pilha.Push(3);
+    pilha.Push(4);
+
+    // removendo elementos na pilha
+    pilha.Pop();
+    pilha.Pop();
+    pilha.Pop();
+    pilha.Pop();
+```
+
+### Dicionario
+
+```csharp
+    Dictionary<string, string> estado = new Dictionary<string, string>();
+    estado.Add("PE", "Pernambuco");
+    estado.Add("Ba", "Bahia");
+    estado.Add("Mg", "Minas Gerais");
+    estado.Add("Sp", "São Paulo");
+
+    foreach (var item in estado)
+    {
+        Console.WriteLine(item);
+    }
+    foreach (KeyValuePair<string, string> item in estado)
+    {
+        Console.WriteLine(item);
+    }
+```

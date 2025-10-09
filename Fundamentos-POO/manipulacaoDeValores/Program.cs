@@ -6,18 +6,20 @@ namespace FundamentosProgramacaoObjeto
     {
         public static void Main(string[] args)
         {
-            int a = 1;
-            int b = 0;
+            Dictionary<string, string> estado = new Dictionary<string, string>();
+            estado.Add("Pe", "Pernambuco");
+            estado.Add("Ba", "Bahia");
+            estado.Add("Mg", "Minas Gerais");
+            estado.Add("Sp", "São Paulo");
 
-            if (b == 0)
+            foreach (var item in estado)
             {
-                throw new Exception("Divisão por zero, não pode acontecer.");
+                Console.WriteLine(item);
             }
-            else
+            foreach (KeyValuePair<string, string> item in estado)
             {
-                Console.WriteLine($"{a / b}");
+                Console.WriteLine(item);
             }
-
         }
     }
 }
