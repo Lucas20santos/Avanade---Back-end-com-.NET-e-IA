@@ -32,19 +32,42 @@
 ### Retornando uma tupla como retorno de um método
 
 ```csharp
-class LeituraArquivo
+namespace tupasOperadorTernarioDesconstrucaoDeObjeto
 {
-    public (bool sucesso, string[] linhas, int quantLinhas) LerArquivo(string caminho)
+
+    class LeituraArquivo
     {
-        try
+        public (bool sucesso, string[] linhas, int quantLinhas) LerArquivo(string caminho)
         {
-            string[] texto = File.ReadAllLines(caminho);
-            return (true, texto, texto.Count());
-        }
-        catch (System.Exception)
-        {
-            return (false, new string[0], 0);
+            try
+            {
+                string[] texto = File.ReadAllLines(caminho);
+                return (true, texto, texto.Count());
+            }
+            catch (System.Exception)
+            {
+                return (false, new string[0], 0);
+            }
         }
     }
 }
+// Programa principal
+using tupasOperadorTernarioDesconstrucaoDeObjeto;
+
+LeituraArquivo arquivo = new LeituraArquivo();
+
+var (sucesso, texto, quantLinhas) = arquivo.LerArquivo("./arquivo.txt");
+
+if (sucesso)
+{
+    foreach (var item in texto)
+    {
+        Console.WriteLine(item);
+    }
+}
+else
+{
+    Console.WriteLine("Não foi possivel ler o arquivo.");
+}
+
 ```

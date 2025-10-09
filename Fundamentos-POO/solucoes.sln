@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
@@ -6,6 +6,8 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "explorandoALinguagemCsharp", "explorandoALinguagemCsharp\explorandoALinguagemCsharp.csproj", "{D5F2E1EE-9790-4647-AA16-4900D8B65068}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manipulacaoDeValores", "manipulacaoDeValores\manipulacaoDeValores.csproj", "{17667C57-CF60-4238-A663-E4B1E9B2B891}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tupasOperadorTernarioDesconstrucaoDeObjeto", "tupasOperadorTernarioDesconstrucaoDeObjeto\tupasOperadorTernarioDesconstrucaoDeObjeto.csproj", "{938A6CD9-CD43-49E5-BF1F-CDE8B726343A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +26,9 @@ Global
 		{17667C57-CF60-4238-A663-E4B1E9B2B891}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17667C57-CF60-4238-A663-E4B1E9B2B891}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17667C57-CF60-4238-A663-E4B1E9B2B891}.Release|Any CPU.Build.0 = Release|Any CPU
+		{938A6CD9-CD43-49E5-BF1F-CDE8B726343A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{938A6CD9-CD43-49E5-BF1F-CDE8B726343A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{938A6CD9-CD43-49E5-BF1F-CDE8B726343A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{938A6CD9-CD43-49E5-BF1F-CDE8B726343A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

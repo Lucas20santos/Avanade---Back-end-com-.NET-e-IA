@@ -1,15 +1,19 @@
-class LeituraArquivo
+namespace tupasOperadorTernarioDesconstrucaoDeObjeto
 {
-    public (bool sucesso, string[] linhas, int quantLinhas) LerArquivo(string caminho)
+    
+    class LeituraArquivo
     {
-        try
+        public (bool sucesso, string[] linhas, int quantLinhas) LerArquivo(string caminho)
         {
-            string[] texto = File.ReadAllLines(caminho);
-            return (true, texto, texto.Count());
-        }
-        catch (System.Exception)
-        {
-            return (false, new string[0], 0);
+            try
+            {
+                string[] texto = File.ReadAllLines(caminho);
+                return (true, texto, texto.Count());
+            }
+            catch (System.Exception)
+            {
+                return (false, new string[0], 0);
+            }
         }
     }
 }
