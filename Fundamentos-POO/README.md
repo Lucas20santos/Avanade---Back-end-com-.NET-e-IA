@@ -87,10 +87,44 @@
     }
 ```
 
-## Manipulação de Valores
+## Leitura de um arquivo
 
-### Classe Princiapa - Aula 02
+```csharp
+    string[] texto = File.ReadAllLines("./arquivo.txt");
 
-### Classe Pessoa - Aula 02
+    foreach (var item in texto)
+    {
+        Console.WriteLine(item);
+    }
+```
 
-### Clase Curso - Aula 02
+## Leitura de um arquivo com try catch
+
+```csharp
+    try
+    {
+        string[] texto = File.ReadAllLines("arquivoLeitura.txt");
+        foreach (var item in texto)
+        {
+            Console.WriteLine(item);
+        }
+    }
+    catch (DirectoryNotFoundException err)
+    {
+        Console.WriteLine("Diretório não encontrado, reveja o caminho passado: " + err.Message);
+    }
+    catch(FileNotFoundException err)
+    {
+        Console.WriteLine("Arquivo não encontrado ou não existe: " + err.Message);
+    }
+    catch (Exception err)
+    {
+        Console.WriteLine(err.Message);
+    }
+    finally
+    {
+        Console.WriteLine("Finalizando o processo.");
+    }
+```
+
+## Usando o Throw
