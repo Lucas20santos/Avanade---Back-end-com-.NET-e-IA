@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tupasOperadorTernarioDesconstrucaoDeObjeto")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fdf2bb7841e946bd5aab4e5c5e737b387d27a0cd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+223f64b49d7cde2b14d07d4d829dd0d0afa3ab4d")]
 [assembly: System.Reflection.AssemblyProductAttribute("tupasOperadorTernarioDesconstrucaoDeObjeto")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tupasOperadorTernarioDesconstrucaoDeObjeto")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
