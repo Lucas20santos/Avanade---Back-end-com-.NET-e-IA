@@ -80,10 +80,12 @@ public void Desconstruct(out string nome, out string sobrenome)
     Nome = nome;
     Sobrenome = sobrenome;
 }
-// Chmando o meu Desconstrutor
+// Chamando o meu Desconstrutor
 
 Pessoa p1 = new Pessoa(nome="Lucas", sobrenome="Santos");
 
 (string nome, string sobrenome) = p1;
+
+// ele descontroi o objeto e transforma os valores em variáveis
 
 ```
