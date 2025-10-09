@@ -71,3 +71,19 @@ else
 }
 
 ```
+
+### Desconstrutor
+
+```csharp
+public void Desconstruct(out string nome, out string sobrenome)
+{
+    Nome = nome;
+    Sobrenome = sobrenome;
+}
+// Chmando o meu Desconstrutor
+
+Pessoa p1 = new Pessoa(nome="Lucas", sobrenome="Santos");
+
+(string nome, string sobrenome) = p1;
+
+```
