@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SjuPK+PI+14=",
+  "dgSpecHash": "Kx03zG2i/4U=",
   "success": true,
   "projectFilePath": "/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/nuget_serializacao_atributos_csharp/nuget_serializacao_atributos_csharp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/codespace/.nuget/packages/newtonsoft.json/13.0.4/newtonsoft.json.13.0.4.nupkg.sha512"
+  ],
   "logs": []
 }
