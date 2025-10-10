@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using nuget_serializacao_atributo_csharp.Models;
+
+Pessoa p1 = new Pessoa();
+

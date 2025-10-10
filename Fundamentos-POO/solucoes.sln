@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manipulacaoDeValores", "man
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tupasOperadorTernarioDesconstrucaoDeObjeto", "tupasOperadorTernarioDesconstrucaoDeObjeto\tupasOperadorTernarioDesconstrucaoDeObjeto.csproj", "{938A6CD9-CD43-49E5-BF1F-CDE8B726343A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nuget_serializacao_atributos_csharp", "nuget_serializacao_atributos_csharp\nuget_serializacao_atributos_csharp.csproj", "{630FADA1-A495-45BD-B879-223617271267}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{938A6CD9-CD43-49E5-BF1F-CDE8B726343A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{938A6CD9-CD43-49E5-BF1F-CDE8B726343A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{938A6CD9-CD43-49E5-BF1F-CDE8B726343A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{630FADA1-A495-45BD-B879-223617271267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{630FADA1-A495-45BD-B879-223617271267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{630FADA1-A495-45BD-B879-223617271267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{630FADA1-A495-45BD-B879-223617271267}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

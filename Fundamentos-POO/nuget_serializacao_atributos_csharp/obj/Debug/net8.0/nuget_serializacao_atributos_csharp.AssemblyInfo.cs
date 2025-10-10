@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("explorandoALinguagemCsharp")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("nuget_serializacao_atributos_csharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a305e57edac7c7f9e07d48954c7afbe02a84eb84")]
-[assembly: System.Reflection.AssemblyProductAttribute("explorandoALinguagemCsharp")]
-[assembly: System.Reflection.AssemblyTitleAttribute("explorandoALinguagemCsharp")]
+[assembly: System.Reflection.AssemblyProductAttribute("nuget_serializacao_atributos_csharp")]
+[assembly: System.Reflection.AssemblyTitleAttribute("nuget_serializacao_atributos_csharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.

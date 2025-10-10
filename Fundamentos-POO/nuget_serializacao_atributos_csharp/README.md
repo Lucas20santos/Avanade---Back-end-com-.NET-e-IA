@@ -26,3 +26,5 @@ O Nuget é o gerenciador de pacotes do dotnet
 
     </Project>
 ```
+
+## Serializando um objeto no dotnet
