@@ -1,13 +1,12 @@
 namespace reserva_hospedagem.Models
 {
-    class Reserva
+    class Reserva 
     {
         private List<Pessoa> hospedes = new List<Pessoa>();
         private Suite suite;
         private int DiasDeReservas;
-        public Reserva(Suite suite, int diasdereserva)
+        public Reserva(int diasdereserva)
         {
-            this.suite = suite;
             this.DiasDeReservas = diasdereserva;
         }
         public void CadastrarHospedes(Pessoa pessoa)

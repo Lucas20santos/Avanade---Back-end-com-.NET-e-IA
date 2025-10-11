@@ -1,17 +1,17 @@
 namespace reserva_hospedagem.Models
 {
-    class Pessoa
+    class Pessoa 
     {
         private string Nome;
         private string Sobrenome;
-        public string GetNome()
-        {
-            return this.Nome;
-        }
         public Pessoa(string nome, string sobrenome)
         {
             this.Nome = nome;
             this.Sobrenome = sobrenome;
+        }
+        public string GetNome()
+        {
+            return this.Nome;
         }
         public void SetNome(string nome)
         {

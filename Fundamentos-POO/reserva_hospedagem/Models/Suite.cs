@@ -1,8 +1,8 @@
 namespace reserva_hospedagem.Models
 {
-    class Suite
+    class Suite 
     {
-        private string TipoDeSuite;
+                private string TipoDeSuite;
         private int Capacidade;
         private decimal ValorDiario;
         public Suite(string tiposuite, int capacidade, decimal valor_diario)
