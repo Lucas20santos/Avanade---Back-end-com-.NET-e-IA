@@ -2,8 +2,32 @@ namespace reserva_hospedagem.Models
 {
     class Suite
     {
-        private string? TipoDeSuite { get; set; }
-        private int Capacidade { get; set; }
-        private decimal ValorDiario { get; set; }
+        private string TipoDeSuite;
+        private int Capacidade;
+        private decimal ValorDiario;
+        public string GetTipoSuite()
+        {
+            return this.TipoDeSuite;
+        }
+        public void SetTipoSuite(string suite)
+        {
+            this.TipoDeSuite = suite;
+        }
+        public int GetCapacidade()
+        {
+            return this.Capacidade;
+        }
+        public void SetCapacidade(int capacidade)
+        {
+            this.Capacidade = capacidade;
+        }
+        public decimal GetValorDiarioDaReserva()
+        {
+            return this.ValorDiario;
+        }
+        public void SetValorDiarioDaReserva(decimal valor)
+        {
+            this.ValorDiario = valor;
+        }
     }
 }
