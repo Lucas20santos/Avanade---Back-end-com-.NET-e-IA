@@ -5,6 +5,12 @@ namespace reserva_hospedagem.Models
         private string TipoDeSuite;
         private int Capacidade;
         private decimal ValorDiario;
+        public Suite(string tiposuite, int capacidade, decimal valor_diario)
+        {
+            this.TipoDeSuite = tiposuite;
+            this.Capacidade = capacidade;
+            this.ValorDiario = valor_diario;
+        }
         public string GetTipoSuite()
         {
             return this.TipoDeSuite;

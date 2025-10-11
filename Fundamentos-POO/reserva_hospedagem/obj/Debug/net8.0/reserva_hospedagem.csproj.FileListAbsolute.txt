@@ -1,0 +1,15 @@
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/bin/Debug/net8.0/reserva_hospedagem
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/bin/Debug/net8.0/reserva_hospedagem.deps.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/bin/Debug/net8.0/reserva_hospedagem.runtimeconfig.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/bin/Debug/net8.0/reserva_hospedagem.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/bin/Debug/net8.0/reserva_hospedagem.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/obj/Debug/net8.0/reserva_hospedagem.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/obj/Debug/net8.0/reserva_hospedagem.AssemblyInfoInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/obj/Debug/net8.0/reserva_hospedagem.AssemblyInfo.cs
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/obj/Debug/net8.0/reserva_hospedagem.csproj.CoreCompileInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/obj/Debug/net8.0/reserva_hospedagem.sourcelink.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/obj/Debug/net8.0/reserva_hospedagem.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/obj/Debug/net8.0/refint/reserva_hospedagem.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/obj/Debug/net8.0/reserva_hospedagem.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/obj/Debug/net8.0/reserva_hospedagem.genruntimeconfig.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-POO/reserva_hospedagem/obj/Debug/net8.0/ref/reserva_hospedagem.dll

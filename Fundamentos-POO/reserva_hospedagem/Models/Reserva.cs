@@ -3,9 +3,13 @@ namespace reserva_hospedagem.Models
     class Reserva
     {
         private List<Pessoa> hospedes = new List<Pessoa>();
-        private Suite suite = new Suite();
-        private int DiasDeReservas { get; set; }
-        
+        private Suite suite;
+        private int DiasDeReservas;
+        public Reserva(Suite suite, int diasdereserva)
+        {
+            this.suite = suite;
+            this.DiasDeReservas = diasdereserva;
+        }
         public void CadastrarHospedes(Pessoa pessoa)
         {
             this.hospedes.Add(pessoa);
@@ -20,7 +24,7 @@ namespace reserva_hospedagem.Models
         }        
         public decimal CalcularValorHospedagem(Suite suite)
         {
-            return this.DiasDeReservas * suite.PegarValorDiarioDaReserva();
+            return this.DiasDeReservas * suite.GetValorDiarioDaReserva();
         }
     }
 }
