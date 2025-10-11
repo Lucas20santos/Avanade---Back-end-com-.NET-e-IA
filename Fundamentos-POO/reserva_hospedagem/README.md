@@ -1,7 +1,16 @@
 # 🏨 Projeto Reserva de Hospedagem
 
+![Banner do Projeto](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2F2Z3F6b2N6b3F6d3J5d3F2d3F6d3F6d3F6d3F6d3F6d3F6/giphy.gif)
+
 Bem-vindo ao **Projeto Reserva de Hospedagem**!  
 Este sistema simula reservas em hotéis, permitindo o cadastro de hóspedes, suítes e o cálculo do valor total da estadia de forma simples e intuitiva.
+
+---
+
+## 👤 Sobre o Autor
+
+Desenvolvido por [Seu Nome](https://www.linkedin.com/in/seu-perfil/)  
+[![GitHub](https://img.shields.io/badge/GitHub-Perfil-181717?style=flat&logo=github&logoColor=white)](https://github.com/seu-usuario)
 
 ---
 
@@ -71,4 +80,22 @@ Console.WriteLine(r1.CalcularValorHospedagem(s1));
    dotnet run
    ```
 
-Se quiser, personalize ainda mais com GIFs, imagens ou links para seu perfil!
+---
+
+## 💡 Melhorias Sugeridas
+
+- 🔒 **Validação de Dados**: Adicionar validações para evitar cadastro de hóspedes ou suítes com informações incompletas ou inválidas.
+- 🖥️ **Interface Gráfica**: Criar uma interface web ou desktop para facilitar o uso do sistema.
+- 🗃️ **Persistência de Dados**: Implementar armazenamento em banco de dados (ex: SQLite, SQL Server) para manter registros entre execuções.
+- 📈 **Relatórios**: Gerar relatórios de reservas, ocupação e faturamento.
+- 🌐 **API REST**: Disponibilizar as funcionalidades via API para integração com outros sistemas.
+- 🧪 **Testes Automatizados**: Adicionar testes unitários e de integração para garantir a qualidade do código.
+- 🌍 **Internacionalização**: Suporte a múltiplos idiomas.
+- 📝 **Documentação Técnica**: Detalhar endpoints, exemplos de uso e arquitetura do projeto.
+- 👥 **Cadastro de Usuários/Administração**: Permitir diferentes níveis de acesso e autenticação.
+- 📅 **Gestão de Disponibilidade**: Implementar controle de disponibilidade de suítes por período.
+- 💸 **Política de Descontos**: Adicionar regras de desconto para reservas longas ou promoções.
+
+---
+
+> _Gostou do projeto? Me adicione no [LinkedIn](https://www.linkedin.com/in/lucas-de-santos-souza/) e confira outros trabalhos no [GitHub](https://github.com/Lucas20santos)!_
