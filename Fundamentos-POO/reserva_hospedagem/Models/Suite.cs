@@ -1,39 +1,21 @@
 namespace reserva_hospedagem.Models
 {
-    class Suite 
+    class Suite
     {
-                private string TipoDeSuite;
-        private int Capacidade;
-        private decimal ValorDiario;
-        public Suite(string tiposuite, int capacidade, decimal valor_diario)
+        private TipoSuite _tipoSuite;
+        private int _capacidade;
+        private decimal _valorDiario;
+        public Suite() { }
+        public Suite(TipoSuite tipoSuite, int capacidade, decimal valor_diario)
         {
-            this.TipoDeSuite = tiposuite;
-            this.Capacidade = capacidade;
-            this.ValorDiario = valor_diario;
+            this._tipoSuite = tipoSuite;
+            this._capacidade = capacidade;
+            this._valorDiario = valor_diario;
         }
-        public string GetTipoSuite()
+        public TipoSuite TipoSuite 
         {
-            return this.TipoDeSuite;
-        }
-        public void SetTipoSuite(string suite)
-        {
-            this.TipoDeSuite = suite;
-        }
-        public int GetCapacidade()
-        {
-            return this.Capacidade;
-        }
-        public void SetCapacidade(int capacidade)
-        {
-            this.Capacidade = capacidade;
-        }
-        public decimal GetValorDiarioDaReserva()
-        {
-            return this.ValorDiario;
-        }
-        public void SetValorDiarioDaReserva(decimal valor)
-        {
-            this.ValorDiario = valor;
+            get => _tipoSuite;
+            set => _tipoSuite = value;
         }
     }
 }

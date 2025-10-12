@@ -1,12 +1,12 @@
 ﻿using reserva_hospedagem.Models;
 
 Pessoa p1 = new Pessoa(nome:"Lucas", sobrenome:"De Souza Santos");
-Suite s1 = new Suite(tiposuite: "Solteiro", capacidade: 1, valor_diario: 50);
+Suite s1 = new Suite(tipoSuite: TipoSuite.Solteiro, capacidade: 1, valor_diario: 50);
 
 Pessoa p2 = new Pessoa(nome: "Luiz", sobrenome: "Lima");
 Pessoa p3 = new Pessoa(nome: "Marta", sobrenome: "Souza");
 
-Suite s2 = new Suite(tiposuite: "Casal", capacidade: 2, valor_diario: 100);
+Suite s2 = new Suite(tipoSuite: TipoSuite.Casal, capacidade: 2, valor_diario: 100);
 
 Reserva r1 = new Reserva(diasdereserva: 7);
 r1.CadastrarHospedes(p1);
