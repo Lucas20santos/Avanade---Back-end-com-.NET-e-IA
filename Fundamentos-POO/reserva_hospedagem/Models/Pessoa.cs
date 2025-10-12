@@ -2,28 +2,37 @@ namespace reserva_hospedagem.Models
 {
     class Pessoa 
     {
-        private string Nome;
-        private string Sobrenome;
+        private string _nome;
+        private string _sobrenome;
+        private int _idade;
+        public Pessoa() { }
         public Pessoa(string nome, string sobrenome)
         {
-            this.Nome = nome;
-            this.Sobrenome = sobrenome;
+            this._nome = nome;
+            this._sobrenome = sobrenome;
         }
-        public string GetNome()
+        public string Nome
         {
-            return this.Nome;
+            get => _nome;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value) || value.Length > 2)
+                {
+                    throw new ArgumentException("Nome deve ter pelos menos 2 caracteres ou não pode ser vazio");
+                }
+                _nome = value;
+            }
         }
-        public void SetNome(string nome)
+        public string Sobrenome
         {
-            this.Nome = nome;
-        }
-        public string GetSobrenome()
-        {
-            return this.Sobrenome;
-        }
-        public void SetSobrenome(string sobrenome)
-        {
-            this.Sobrenome = sobrenome;
+            get => _sobrenome;
+            set
+            {
+                if(string.IsNullOrWhiteSpace(value) || value.Length > 2)
+                {
+                    throw new ArgumentException("Nome deve ter pelos menos 2 caracteres ou não pode ser vazio");
+                }
+            }
         }
     }
 }
