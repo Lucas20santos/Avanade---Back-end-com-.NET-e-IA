@@ -22,10 +22,7 @@ namespace reserva_hospedagem.Models
             get => _nome;
             set
             {
-                if (string.IsNullOrWhiteSpace(value) || value.Length > 2)
-                {
-                    throw new ArgumentException("Nome deve ter pelos menos 2 caracteres ou não pode ser vazio");
-                }
+                if (string.IsNullOrWhiteSpace(value) || value.Length < 2) throw new ArgumentException("Nome deve ter pelos menos 2 caracteres ou não pode ser vazio");
                 _nome = value;
             }
         }
@@ -34,10 +31,8 @@ namespace reserva_hospedagem.Models
             get => _sobrenome;
             set
             {
-                if(string.IsNullOrWhiteSpace(value) || value.Length > 2)
-                {
-                    throw new ArgumentException("Nome deve ter pelos menos 2 caracteres ou não pode ser vazio");
-                }
+                if(string.IsNullOrWhiteSpace(value) || value.Length < 2) throw new ArgumentException("Nome deve ter pelos menos 2 caracteres ou não pode ser vazio");
+                _sobrenome = value;
             }
         }
         public int Idade
@@ -45,10 +40,8 @@ namespace reserva_hospedagem.Models
             get => _idade;
             set
             {
-                if(value < 18)
-                {
-                    throw new ArgumentException("Hospede cadastrado precisa ser maior de Idade.");
-                }
+                if(value < 18) throw new ArgumentException("Hospede cadastrado precisa ser maior de Idade.");
+                _idade = value;
             }
         }
     }
