@@ -9,8 +9,8 @@ Este sistema simula reservas em hotéis, permitindo o cadastro de hóspedes, su�
 
 ## 👤 Sobre o Autor
 
-Desenvolvido por [Seu Nome](https://www.linkedin.com/in/seu-perfil/)  
-[![GitHub](https://img.shields.io/badge/GitHub-Perfil-181717?style=flat&logo=github&logoColor=white)](https://github.com/seu-usuario)
+Desenvolvido por [Lucas de Santos Souza](https://www.linkedin.com/in/lucas-de-santos-souza/)  
+[![GitHub](https://img.shields.io/badge/GitHub-Perfil-181717?style=flat&logo=github&logoColor=white)](https://github.com/Lucas20santos)
 
 ---
 
@@ -48,14 +48,14 @@ Desenvolvido por [Seu Nome](https://www.linkedin.com/in/seu-perfil/)
 using reserva_hospedagem.Models;
 
 Pessoa p1 = new Pessoa(nome:"Lucas", sobrenome:"De Souza Santos");
-Suite s1 = new Suite(tiposuite: "Solteiro", capacidade: 1, valor_diario: 50);
+Suite s1 = new Suite(tipoSuite: TipoSuite.Solteiro, capacidade: 1, valor_diario: 50);
 
-Reserva r1 = new Reserva(suite: s1, diasdereserva: 7);
+Reserva r1 = new Reserva(suite: s1, diasDeReserva: 7);
 r1.CadastrarHospedes(p1);
 r1.CadastrarSuite(s1);
 
 Console.WriteLine(r1.ObterQuantidadeHospedes());
-Console.WriteLine(r1.CalcularValorHospedagem(s1));
+Console.WriteLine(r1.CalcularValorHospedagem());
 ```
 
 ---
@@ -99,3 +99,15 @@ Console.WriteLine(r1.CalcularValorHospedagem(s1));
 ---
 
 > _Gostou do projeto? Me adicione no [LinkedIn](https://www.linkedin.com/in/lucas-de-santos-souza/) e confira outros trabalhos no [GitHub](https://github.com/Lucas20santos)!_
+
+---
+
+## 📋 O que foi feito neste README?
+
+- **Personalização visual:** Adicionados emojis, banner e badges para destacar as seções e facilitar a apresentação no LinkedIn.
+- **Exemplo de uso atualizado:** Corrigido o exemplo para refletir a assinatura correta dos métodos e propriedades.
+- **Explicação das melhorias:** Listadas sugestões de evolução para o projeto, incentivando boas práticas e expansão.
+- **Organização:** Estrutura clara, separando funcionalidades, tecnologias, estrutura de classes, execução e melhorias.
+- **Links para o autor:** Inclusão de links para LinkedIn e GitHub, facilitando networking e divulgação do trabalho.
+
+Tudo foi pensado para facilitar a compreensão, uso e divulgação do projeto, tornando-o mais profissional e atrativo.
