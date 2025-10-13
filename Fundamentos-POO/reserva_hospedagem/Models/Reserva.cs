@@ -5,39 +5,50 @@ namespace reserva_hospedagem.Models
         private List<Pessoa> _hospedes = new List<Pessoa>();
         private Suite _suite;
         private int _diasDeReservas;
+
         public IReadOnlyList<Pessoa> Hospedes => _hospedes.AsReadOnly();
         public Suite Suite => _suite;
         public int DiasDeReserva => _diasDeReservas;
+
         public Reserva() { }
         public Reserva(Suite suite, int diasDeReserva)
         {
             if (diasDeReserva < 1)
-            {
                 throw new ArgumentException("Dias de reserva deve ser maior que zero.");
-            }
             _suite = suite ?? throw new ArgumentException(nameof(suite));
             _diasDeReservas = diasDeReserva;
         }
+
         public void CadastrarHospedes(Pessoa pessoa)
         {
-            if (_suite != null && _hospedes.Count >= _suite.Capacidade) throw new ArgumentException("Capacidade máxima da suite atiginda. Escolha outro tipo de suite");
+            if (pessoa == null)
+                throw new ArgumentNullException(nameof(pessoa));
+            if (_suite != null && _hospedes.Count >= _suite.Capacidade)
+                throw new ArgumentException("Capacidade máxima da suite atingida. Escolha outro tipo de suite");
             _hospedes.Add(pessoa);
         }
+
         public void CadastrarSuite(Suite suite)
         {
             this._suite = suite ?? throw new ArgumentNullException(nameof(suite));
         }
+
         public int ObterQuantidadeHospedes() => _hospedes.Count;
+
         public decimal CalcularValorHospedagem()
         {
-            decimal valor;
-            if (_suite == null) { throw new InvalidOperationException("Suite não cadastrada."); }
-            else
-            {
-                valor = _hospedes.Count >= 10 ? _diasDeReservas * _suite.ValorDiario : (decimal)0.9 * _diasDeReservas * _suite.ValorDiario;
-            }
-            return valor;
+            if (_suite == null)
+                throw new InvalidOperationException("Suite não cadastrada.");
+            if (_diasDeReservas < 1)
+                throw new InvalidOperationException("Dias de reserva deve ser maior que zero.");
+            if (_hospedes.Count == 0)
+                throw new InvalidOperationException("Nenhum hóspede cadastrado.");
+
+            return _hospedes.Count >= 10
+                ? _diasDeReservas * _suite.ValorDiario
+                : (decimal)0.9 * _diasDeReservas * _suite.ValorDiario;
         }
+
         public void apresentarHospedagem()
         {
             if (_suite == null)
