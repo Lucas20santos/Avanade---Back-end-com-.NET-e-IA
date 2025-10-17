@@ -1,10 +1,16 @@
-class Pessoa
+namespace interface_classe_abstratas.Models
+{
+    public abstract class Pessoa
     {
-        public string? nome;
-        public int idade;
+        public string Nome { get; protected set; }
+        public int Idade { get; protected set; }
 
-        public virtual void apresentar()
+        protected Pessoa(string nome, int idade)
         {
-            Console.WriteLine($"A pessoa, {nome} de {idade} anos.");
-        }        
+            Nome = nome;
+            Idade = idade;
+        }
+
+        public abstract void apresentar();
     }
+}

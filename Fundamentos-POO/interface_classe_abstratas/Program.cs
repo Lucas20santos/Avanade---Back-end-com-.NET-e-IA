@@ -2,16 +2,13 @@
 
 
 // Exemplo para herança
-Aluno a1 = new Aluno();
+Aluno a1 = new Aluno("Lucas", 12);
 
-a1.nome = "Lucas";
-a1.idade = 12;
 a1.nota = 10;
 a1.apresentar();
 
-Professor p1 = new Professor();
-p1.nome = "Marcos";
-p1.idade = 55;
+Professor p1 = new Professor("Marcos", 55);
+
 p1.salario = 1234.45;
 p1.apresentar();
 
