@@ -1,25 +1,130 @@
-# DIO - Trilha .NET - Programação orientada a objetos
+# 📱 Projeto Smartphone — DIO (.NET)  
 
-## Desafio de projeto
+![Banner Smartphone](https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif)
 
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de orientação a objetos, da trilha .NET da DIO.
+Breve projeto para modelar uma abstração de smartphone (classe abstrata) e implementar comportamentos específicos para Nokia e iPhone. Ideal para praticar herança, polimorfismo, eventos, async e persistência.
 
-## Contexto
+---
 
-Você é responsável por modelar um sistema que trabalha com celulares. Para isso, foi solicitado que você faça uma abstração de um celular e disponibilize maneiras de diferentes marcas e modelos terem seu próprio comportamento, possibilitando um maior reuso de código e usando a orientação a objetos.
+## 🔎 Contexto
 
-## Proposta
+- 🎯 Objetivo: mapear um Smartphone abstrato com propriedades e métodos comuns e implementar Nokia e iPhone com formas diferentes de instalar apps.
+- 🧭 Diagrama: ver imagem no repositório (image.png).
 
-Você precisa criar um sistema em .NET, do tipo console, mapeando uma classe abstrata e classes específicas para dois tipos de celulares: Nokia e iPhone. Você deve criar as suas classes de acordo com o diagrama abaixo:
+---
 
-![Diagrama de Classe](image.png)
+## ✅ Regras principais
 
-## Regras e validações
+- 🛑 A classe `Smartphone` deve ser `abstract`.
+- 📎 `Nokia` e `Iphone` devem herdar `Smartphone`.
+- 🔁 `InstalarAplicativo(string nome)` deve ser `abstract` em `Smartphone` e sobrescrito em cada subclass.
+- ⚠️ Validações: número/IMEI não nulos, memória positiva, checagem de espaço antes de instalar.
 
-1. A classe Smartphone deve ser abstrata, não permitindo instanciar e servindo apenas como modelo.
-1. A classe Nokia e Iphone devem ser classes filhas de Smartphone.
-1. O método InstalarAplicativo deve ser sobrescrito na classe Nokia e iPhone, pois ambos possuem diferentes maneiras de instalar um aplicativo.
+---
 
-## Solução
+## 🛠️ Solução / TODO
 
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+O código do exercício contém marcadores `// TODO` — complete-os seguindo as regras acima para obter um programa funcional.
+
+---
+
+## 🛠️ Desenvolvimento do Projeto
+
+Resumo e diretivas para evoluir o módulo `smartphone`.
+
+### 🎯 Objetivos do módulo
+
+- Abstrair smartphone (propriedades: Numero, Modelo, IMEI, Memoria).
+- Implementar comportamentos concretos (Nokia, iPhone).
+- Suportar extensões: AppStore, Storage, eventos e persistência.
+
+### 📐 Arquitetura sugerida (estrutura de pastas)
+
+- Models/
+  - Smartphone (abstract) — Numero, Modelo, IMEI, Memoria; Ligar(), ReceberLigacao(), InstalarAplicativo(string) (abstract).
+  - Nokia, Iphone — implementações específicas.
+  - App — Nome, Versao, Tamanho.
+- Services/
+  - AppStoreService — catálogo, download (simulado).
+  - StorageService — checagem de espaço e remoção.
+  - UpdateService — atualizações de sistema (simulados).
+- Persistence/
+  - JsonPersistence — salvar/carregar estado com System.Text.Json.
+- Events/
+  - Eventos com EventHandler (ReceberLigacao, InstalacaoConcluida).
+- Utils/
+  - Helpers, logging simples.
+
+### 🔒 Boas práticas
+
+- Valide parâmetros no construtor e nas propriedades (ArgumentNullException / ArgumentException).  
+- Use propriedades (PascalCase) e encapsulamento.  
+- Exponha coleções como `IReadOnlyList`.  
+- I/O assíncrono com `async/Task` para simular downloads.  
+- Cobrir lógica com testes unitários (xUnit).
+
+### 📈 Roadmap curto (tarefas incrementais)
+
+1. Implementar `App` e lista de apps instalados (persistência JSON).  
+2. Criar `AppStoreService` com `Task.Delay` para simular download.  
+3. Adicionar `StorageService` para checar memória antes da instalação.  
+4. Implementar eventos (`ReceberLigacao`, `InstalacaoConcluida`).  
+5. Exemplo em `Program.cs` demonstrando fluxo completo.  
+6. Adicionar testes (xUnit).
+
+---
+
+## ⚙️ Como executar (rápido)
+
+1. Abra terminal na pasta do módulo:
+
+```sh
+cd smartphone
+dotnet run
+```
+
+1. Após adicionar testes
+
+```sh
+dotnet test
+```
+
+---
+
+## 📌 Exemplos de uso (esperado)
+
+```csharp
+var nokia = new Nokia("5511999999999", "Nokia X", "IMEI123", 1024);
+await AppStoreService.DownloadAppAsync(nokia, "WhatsApp");
+nokia.ListarAplicativos();
+```
+
+---
+
+## ✨ Funcionalidades recomendadas (ideias rápidas)
+
+- 🛒 Loja de apps com compatibilidade por modelo/OS.  
+- 💾 Gerenciamento de armazenamento por app.  
+- 🔁 Atualizações OTA simuladas.  
+- 🔐 Segurança (PIN) para ações sensíveis.  
+- 🔔 Eventos e notificações; logs persistentes.  
+- ♻️ Persistência JSON/SQLite para estado do aparelho.
+
+---
+
+## 🤝 Contribuição
+
+- Crie branch `feature/<nome>` para cada feature.  
+- Abra PR com descrição e exemplos de uso.  
+- Documente novas features no README da pasta.
+
+---
+
+## 📬 Contato / Referência
+
+- Use o README raiz do workspace para navegar entre módulos.  
+- Se quiser, atualizo o README com badges, GIFs e exemplos prontos de `AppStoreService` e persistência.
+
+---
+
+_Bom desenvolvimento!_
