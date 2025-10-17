@@ -31,10 +31,10 @@ Antes de tudo, precisamos organizar o projeto seguindo a arquitetura sugerida pa
 1. Adicione os projetos à Solution:
 
 ```bash
-dotnet sln add SmartphoneCore/SmartphoneCore.csproj
-dotnet sln add SmartphoneApp/SmartphoneApp.csproj
-dotnet sln add SmartphoneCore.Tests/SmartphoneCore.Tests.csproj
-    ```
+    dotnet sln add SmartphoneCore/SmartphoneCore.csproj
+    dotnet sln add SmartphoneApp/SmartphoneApp.csproj
+    dotnet sln add SmartphoneCore.Tests/SmartphoneCore.Tests.csproj
+```
 
 1. Adicione as referências necessárias (o App e os Testes precisam "enxergar" o Core):
 
