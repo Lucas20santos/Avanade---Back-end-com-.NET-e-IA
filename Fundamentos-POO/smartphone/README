@@ -127,4 +127,84 @@ nokia.ListarAplicativos();
 
 ---
 
+## 🧭 Guia passo a passo — Como iniciar (implementação incremental)
+
+Siga esta ordem para implementar o módulo de forma segura, testável e incremental.
+
+1. Estrutura inicial (crie projetos/sln antes)
+
+- smartphone/
+  - SmartphoneCore/ (classlib)
+    - Models/
+    - Services/
+    - Persistence/
+    - Events/
+    - Utils/
+  - SmartphoneApp/ (console demo)
+  - SmartphoneCore.Tests/ (xUnit)
+
+1. MVP (Modelos essenciais) — prioridade alta
+
+- Criar App.cs (Nome, Versao, TamanhoEmMb).
+- Criar Smartphone.cs (abstract) com validações: Numero, Modelo, IMEI, Memoria; métodos Ligar(), ReceberLigacao(); InstalarAplicativoAsync(App, IStorageService) abstrato.
+Motivo: define domínio e contrato.
+
+1. Implementações concretas (testar polimorfismo)
+
+- Criar Nokia.cs e Iphone.cs herdando Smartphone e implementando InstalarAplicativoAsync.
+Motivo: validar diferenças de comportamento.
+
+1. Storage (controle de espaço)
+
+- Definir IStorageService (ChecarEspaco, Alocar, Liberar).
+- Implementar StorageService simples (memória usada/disponível).
+Motivo: requisito para instalar apps.
+
+1. AppStore (simulação async)
+
+- Definir IAppStoreService e AppStoreService (GetAppInfo, DownloadAppAsync com Task.Delay).
+Motivo: integra Models + Storage e testa async.
+
+1. Persistence
+
+- Definir IStatePersistence e JsonPersistence (salvar/carregar estado do aparelho e apps).
+Motivo: manter estado entre execuções e facilitar testes manuais.
+
+1. Events / Delegates
+
+- Criar EventArgs (InstalacaoConcluidaEventArgs, LigacaoEventArgs).
+- Disparar eventos em pontos relevantes (após instalação, ligação).
+Motivo: design reativo e separação de responsabilidades.
+
+1. Utils / Logging
+
+- Criar ValidationHelpers e LoggerSimple (Console).
+Motivo: reutilização e diagnósticos.
+
+1. Demo e testes
+
+- Implementar cenários em SmartphoneApp (instalar com sucesso, sem espaço, listar apps, persistir).
+- Criar testes xUnit cobrindo regras críticas (validações, storage, download).
+Motivo: garantir qualidade e regressão.
+
+1. Incrementos futuros (após MVP)
+
+- Compatibilidade por modelo/OS, OTA updates, UI/menu, SQLite, CI/CD.
+
+### Checklist rápido (arquivos mínimos a criar)
+
+- Models/App.cs
+- Models/Smartphone.cs
+- Models/Nokia.cs
+- Models/Iphone.cs
+- Services/IStorageService.cs, Services/StorageService.cs
+- Services/IAppStoreService.cs, Services/AppStoreService.cs
+- Persistence/IStatePersistence.cs, Persistence/JsonPersistence.cs
+- Events/EventArgs.cs
+- Utils/ValidationHelpers.cs, Utils/LoggerSimple.cs
+- SmartphoneApp/Program.cs (cenários)
+- SmartphoneCore.Tests/* (tests)
+
+---
+
 _Bom desenvolvimento!_
