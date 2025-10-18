@@ -49,6 +49,6 @@ namespace SmartphoneCore.Models
                 }
             }
         }
-        public abstract Task InstalarAplicatiovsAsync(App app);
+        public abstract Task InstalarAplicatiovsAsync(App app, IStorageService storageService);
     }
 }
