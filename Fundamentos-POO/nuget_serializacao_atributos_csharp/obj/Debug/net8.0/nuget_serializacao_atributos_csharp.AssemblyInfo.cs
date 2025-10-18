@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("nuget_serializacao_atributos_csharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14b63ddca541c1f2facbdac9e3c7a2df846f966a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+61394a125783368e3b5a69499d53b7303a023dd8")]
 [assembly: System.Reflection.AssemblyProductAttribute("nuget_serializacao_atributos_csharp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("nuget_serializacao_atributos_csharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

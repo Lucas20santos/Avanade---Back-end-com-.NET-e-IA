@@ -4,7 +4,9 @@ namespace SmartphoneCore.Models
     {
         public string Numero { get; protected set; }
         public string Modelo { get; protected set; }
-        public string IMEI { get; protected set; }
+        public
+        string IMEI
+        { get; protected set; }
         public int Memoria { get; protected set; }
         private readonly List<App> _aplicativosInstalados;
         public IReadOnlyList<App> AplicativosInstalados => _aplicativosInstalados;
