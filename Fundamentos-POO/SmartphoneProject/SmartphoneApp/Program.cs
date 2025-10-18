@@ -17,7 +17,13 @@ public class Program
         Console.WriteLine("\n--- Cenário 1: Nokia (Instalação de Sucesso) ---");
         nokia.Ligar();
         // O AppStoreService simulará um app de 30MB
-        await appStoreService.DownloadAppAsync(nokia, "WhatsApp", storageService); 
+        await appStoreService.DownloadAppAsync(nokia, "WhatsApp", storageService);
         nokia.ListarAplicativos();
+
+        Console.WriteLine("\n--- Cenário 2: iPhone (Memória Insuficiente) ---");
+        iphone.ReceberLigacao("119999-0000");
+        // O AppStoreService simulará um app de 150MB, deve falhar no 64MB
+        await appStoreService.DownloadAppAsync(iphone, "Jogo Pesado", storageService); 
+        iphone.ListarAplicativos();
     }
 }
