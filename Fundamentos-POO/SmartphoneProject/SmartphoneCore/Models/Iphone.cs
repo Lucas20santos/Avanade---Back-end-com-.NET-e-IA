@@ -1,3 +1,5 @@
+using SmartphoneCore.Models;
+
 namespace SmartphoneCore.Models
 {
     public class Iphone : Smartphone
@@ -5,7 +7,10 @@ namespace SmartphoneCore.Models
         public Iphone(string numero, string modelo, string imei, int memoria) : base(numero, modelo, imei, memoria) { }
         public override Task InstalarAplicativoAsync(App app, IStorageService storageService)
         {
-            Console.WriteLine($"Instalando o aplicativo {app.Nome} no Iphone.");
+            Console.WriteLine($"\n[Iphone Store] Iniciando processo de download de {app.Nome}...");
+
+            base.InstalarApp(app, storageService);
+
             return Task.CompletedTask;
         }
     }

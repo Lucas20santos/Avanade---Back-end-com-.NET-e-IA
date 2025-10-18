@@ -1,3 +1,5 @@
+using SmartphoneCore.Models;
+
 namespace SmartphoneCore.Models
 {
     public abstract class Smartphone
@@ -17,9 +19,10 @@ namespace SmartphoneCore.Models
 
             if (string.IsNullOrWhiteSpace(numero)) throw new ArgumentException(textException);
             if (string.IsNullOrWhiteSpace(modelo)) throw new ArgumentException(textException);
-            if (stringIsNullOrWhiteSpace(imei)) throw new ArgumentException(textException);
+            if (string.IsNullOrWhiteSpace(imei)) throw new ArgumentException(textException);
             if (memoria <= 0) throw new ArgumentOutOfRangeException(textExceptionNumber);
 
+            _aplicativosInstalados = new List<App>();
             Numero = numero;
             Modelo = modelo;
             IMEI = imei;
@@ -35,20 +38,30 @@ namespace SmartphoneCore.Models
         }
         public void ListarAplicativos()
         {
-            foreach (var item in _aplicativosInstalados)
+            if (_aplicativosInstalados.Count == 0)
             {
-                Console.WriteLine("App Instalados");
-                if (_aplicativosInstalados.Count == 0)
-                {
-                    Console.WriteLine("Nenhum app instalado");
-                    return;
-                }
-                foreach (var app in _aplicativosInstalados)
-                {
-                    Console.WriteLine($"{app.Nome} - {app.Versao} - {app.TamanhoEmMb}");
-                }
+                Console.WriteLine("Nenhum app instalado");
+                return;
+            }
+            foreach (var app in _aplicativosInstalados)
+            {
+                Console.WriteLine($"{app.Nome} - {app.Versao} - {app.TamanhoEmMb}");
             }
         }
-        public abstract Task InstalarAplicatiovsAsync(App app, IStorageService storageService);
+        protected virtual bool InstalarApp(App app, IStorageService storageService)
+        {
+            if (storageService.ChecarEspaco(this, app.TamanhoEmMb))
+            {
+                _aplicativosInstalados.Add(app);
+                Console.WriteLine($"✅ {Modelo}: {app.Nome} instalado com sucesso.");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"🛑 {Modelo}: Falha ao instalar {app.Nome}. Memória insuficiente.");
+                return false;
+            }
+        }
+        public abstract Task InstalarAplicativoAsync(App app, IStorageService storageService);
     }
 }

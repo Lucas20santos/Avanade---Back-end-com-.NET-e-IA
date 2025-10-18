@@ -8,6 +8,7 @@ namespace SmartphoneCore.Services
         {
             double espacoOcupado = smartphone.AplicativosInstalados.Sum(app => app.TamanhoEmMb);
             double espacoNecessarioTotal = espacoOcupado + tamanhoEmMb;
+            
             return espacoNecessarioTotal <= smartphone.Memoria;
         }
     }
