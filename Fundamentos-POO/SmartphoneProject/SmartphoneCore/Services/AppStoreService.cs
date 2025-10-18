@@ -1,4 +1,5 @@
 using SmartphoneCore.Models;
+using SmartphoneCore.Services;
 
 namespace SmartphoneCore.Services
 {
@@ -13,7 +14,7 @@ namespace SmartphoneCore.Services
             var appParaInstalar = new App(
                 nome: nomeApp,
                 versao: "1.0.0",
-                tamanhoEmMb:
+                tamanho:
                     (nomeApp == "Jogo Pesado") ? 150 : 30
             );
 
