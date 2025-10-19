@@ -1,0 +1,15 @@
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/bin/Debug/net8.0/FundamentosApi
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/bin/Debug/net8.0/FundamentosApi.deps.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/bin/Debug/net8.0/FundamentosApi.runtimeconfig.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/bin/Debug/net8.0/FundamentosApi.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/bin/Debug/net8.0/FundamentosApi.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/obj/Debug/net8.0/FundamentosApi.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/obj/Debug/net8.0/FundamentosApi.AssemblyInfoInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/obj/Debug/net8.0/FundamentosApi.AssemblyInfo.cs
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/obj/Debug/net8.0/FundamentosApi.csproj.CoreCompileInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/obj/Debug/net8.0/FundamentosApi.sourcelink.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/obj/Debug/net8.0/FundamentosApi.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/obj/Debug/net8.0/refint/FundamentosApi.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/obj/Debug/net8.0/FundamentosApi.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/obj/Debug/net8.0/FundamentosApi.genruntimeconfig.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/FundamentosApi/obj/Debug/net8.0/ref/FundamentosApi.dll
