@@ -16,5 +16,12 @@ namespace FundamentosWebApi.Controller
             };
             return Ok(obj);
         }
+
+        [HttpGet("Apresentar/{id}")]
+        public IActionResult Apresentar(string id)
+        {
+            var Id = $"Seu Id: {id}."; 
+            return Ok(Id);
+        }
     }
 }
