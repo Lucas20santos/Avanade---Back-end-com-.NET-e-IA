@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("FundamentosApi")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("FundamentosWebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1502088caae2cc7eaec8aa44eaf820ac60c89a03")]
-[assembly: System.Reflection.AssemblyProductAttribute("FundamentosApi")]
-[assembly: System.Reflection.AssemblyTitleAttribute("FundamentosApi")]
+[assembly: System.Reflection.AssemblyProductAttribute("FundamentosWebApi")]
+[assembly: System.Reflection.AssemblyTitleAttribute("FundamentosWebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.

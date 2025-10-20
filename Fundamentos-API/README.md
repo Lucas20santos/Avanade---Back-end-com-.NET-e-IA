@@ -1,6 +1,6 @@
 # Funadmentos API
 
-## Comandos básicos para criação de projeto
+## Comandos básicos para criação de projeto console
 
 ### Crianção de uma solution
 
@@ -29,3 +29,9 @@ Assim você conseque que vários projetos consigam se enxergar
 ```
 
 Vocẽ está pedindo que o dotnet adicione as referencias do outro projeto "nome-de-outro-projeto" no seu projeto principal.
+
+## criando uma projeto webapi
+
+```cs
+    dotnet new webapi
+```
