@@ -4,3 +4,8 @@ GET {{FundamentosWebApi_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{FundamentosWebApi_HostAddress}}/Usuario/ObterDataHora
+Accept: application/json
+
+###
