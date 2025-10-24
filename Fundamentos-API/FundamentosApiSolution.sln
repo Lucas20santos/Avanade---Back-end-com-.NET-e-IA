@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundamentosApi", "Fundament
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundamentosWebApi", "FundamentosWebApi\FundamentosWebApi.csproj", "{7CF81A39-162C-40C8-9136-8520AA342435}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalsAPIs", "MinimalsAPIs\MinimalsAPIs.csproj", "{6844E982-E5DD-4B5D-B423-725F4E6927B6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
