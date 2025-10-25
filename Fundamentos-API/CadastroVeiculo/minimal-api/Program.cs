@@ -1,8 +1,11 @@
+using minimal_api.Dominio.DTOs;
 class Program
 {
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        builder.Services.AddDbContext<DbContexto>();
+
         var app = builder.Build();
 
         app.MapGet("/", () => "Hello World!");
@@ -19,14 +22,7 @@ class Program
                 return Results.Unauthorized();
             }
         });
-
-
+        
         app.Run();
     }
-}
-
-public class LoginDTO
-{
-    public string? Email { get; set; }
-    public string? Senha { get; set; }    
 }
