@@ -1,8 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "4j3DZL4Q2rc=",
+  "dgSpecHash": "ravqRR9az4k=",
   "success": true,
   "projectFilePath": "/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/CadastroVeiculo/minimal-api/minimal-api.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/codespace/.nuget/packages/microsoft.entityframeworkcore/8.0.21/microsoft.entityframeworkcore.8.0.21.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.21/microsoft.entityframeworkcore.abstractions.8.0.21.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.21/microsoft.entityframeworkcore.analyzers.8.0.21.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.extensions.caching.abstractions/8.0.0/microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.extensions.caching.memory/8.0.1/microsoft.extensions.caching.memory.8.0.1.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.1/microsoft.extensions.dependencyinjection.8.0.1.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.2/microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.extensions.logging/8.0.1/microsoft.extensions.logging.8.0.1.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.2/microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.extensions.options/8.0.2/microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
