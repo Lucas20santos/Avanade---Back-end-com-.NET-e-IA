@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HPtSIqaqmDo=",
+  "dgSpecHash": "I9QHxf3mc/k=",
   "success": true,
   "projectFilePath": "/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/CadastroVeiculo/minimal-api/minimal-api.csproj",
   "expectedPackageFiles": [
@@ -29,7 +29,7 @@
     "/home/codespace/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "/home/codespace/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/home/codespace/.nuget/packages/mysqlconnector/2.3.5/mysqlconnector.2.3.5.nupkg.sha512",
-    "/home/codespace/.nuget/packages/pomelo.entityframeworkcore.mysql/8.0.3/pomelo.entityframeworkcore.mysql.8.0.3.nupkg.sha512",
+    "/home/codespace/.nuget/packages/pomelo.entityframeworkcore.mysql/8.0.2/pomelo.entityframeworkcore.mysql.8.0.2.nupkg.sha512",
     "/home/codespace/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",
     "/home/codespace/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/home/codespace/.nuget/packages/system.composition/6.0.0/system.composition.6.0.0.nupkg.sha512",
