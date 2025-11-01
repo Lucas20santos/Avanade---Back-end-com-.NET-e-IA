@@ -49,3 +49,23 @@
 |--hostname sql1 |Usado para definir explicitamente o nome do host do contêiner. Se você não especificar o nome do host, o padrão será a ID do contêiner, que é um GUID do sistema gerado aleatoriamente.|
 |-d| Execute o contêiner em segundo plano (daemon).|
 |mcr.microsoft.com/mssql/server:2025-latest| A imagem de contêiner do SQL Server Linux.|
+
+## Estrutura do docker compose
+
+### [Dominando o Docker Compose: Guia completo para gerenciamento de multi-contêineres](https://blog.4linux.com.br/docker-compose-explicado/)
+
+- Usado para execultar vários container de uma só vez e ainda incluir os parametros necessários, criação de rede e volumes, se necessario;
+- Usado para facilitar o provisionamento e gerenciamentos de multi-contâineres principalmente em ambiente de desenvolvimento, testes automaticos e cenário de execultação de unico host;
+- O Docker compose é instalado separadamento do docker engine.
+
+### Comandos do docker compose
+
+- docker-compose up: cria e inicia os contêineres;
+- docker-compose build: realiza apenas a etapa de build das imagens que serão utilizadas;
+- docker-compose logs: visualiza os logs dos contêineres;
+- docker-compose restart: reinicia os contêineres;
+- docker-compose ps: lista os contêineres;
+- docker-compose scale: permite aumentar o número de réplicas de um contêiner;
+- docker-compose start: inicia os contêineres;
+- docker-compose stop: paralisa os contêineres;
+- docker-compose down: paralisa e remove todos os contêineres e seus componentes como rede, imagem e volume.
