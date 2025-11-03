@@ -69,3 +69,31 @@
 - docker-compose start: inicia os contêineres;
 - docker-compose stop: paralisa os contêineres;
 - docker-compose down: paralisa e remove todos os contêineres e seus componentes como rede, imagem e volume.
+
+### Script para execução do docker compose de nome docker-compose.yml
+
+```yml
+services:
+  # ----------------------------------------------------
+  # 1. Serviço do Banco de Dados (db)
+  # ----------------------------------------------------
+  db:
+    image: mongo
+    container_name: db
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=dio
+      - MONGO_INITDB_ROOT_PASSWORD=dio
+    ports: 
+      - "27017:27017"
+    volumes:
+      # Usar Volumes Nomeados é a melhor prática para persistência de dados
+      - mongo_data:/data/db 
+
+# ----------------------------------------------------
+# 2. Volumes Nomeados (para persistência de dados)
+# ----------------------------------------------------
+volumes:
+  mongo_data:
+    # Opcional: define um driver de volume
+```
