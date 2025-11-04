@@ -1,0 +1,11 @@
+
+namespace FundamentosWebApi.Models
+{
+    public class Contato
+    {
+        public int Id { get; set; }
+        public string? None { get; set; }
+        public string? Telefone { get; set; }
+        public bool Ativo { get; set; }        
+    }
+}
