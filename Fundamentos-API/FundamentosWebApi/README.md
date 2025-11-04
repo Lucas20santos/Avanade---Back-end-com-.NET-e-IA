@@ -40,6 +40,8 @@ Vocẽ está pedindo que o dotnet adicione as referencias do outro projeto "nome
     // Os pacotes abaixos precisam ser instalados em cada projeto que é criado o de cima não é uma vez por toda.
     dotnet add package Microsoft.EntityFrameworkCore.Design
     dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+    // Antes de rodar esse comando leia toda a explicação abaixo
+    dotnet-ef migrations add CriacaoTabelaContato
 ```
 
 ## String de conexão com o banco de dados sql server
