@@ -42,6 +42,12 @@ Vocẽ está pedindo que o dotnet adicione as referencias do outro projeto "nome
     dotnet add package Microsoft.EntityFrameworkCore.SqlServer
     // Antes de rodar esse comando leia toda a explicação abaixo
     dotnet-ef migrations add CriacaoTabelaContato
+    // Agora vamos aplicar nossa Migrations com o seguinte comando
+    dotnet-ef database update
+    // Parando o container do sql server no docker
+    docker stop mssql_agenda
+    // Quando precisar rodar novamente eu rodo
+    docker start mssql_agenda
 ```
 
 ## String de conexão com o banco de dados sql server

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FundamentosWebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33057b62fa81dc86d89ad757638a4fce3e3a0f24")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9605bac2ef9526437f9774b5af2eacc907875d1c")]
 [assembly: System.Reflection.AssemblyProductAttribute("FundamentosWebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FundamentosWebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
