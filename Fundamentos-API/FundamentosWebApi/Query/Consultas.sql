@@ -1,2 +1,1 @@
-
-SELECT * FROM Contatos;
+DESCRIBE contatos;

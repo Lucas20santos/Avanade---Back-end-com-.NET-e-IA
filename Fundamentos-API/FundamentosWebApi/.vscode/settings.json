@@ -6,24 +6,6 @@
                 "appName": "SQLTools",
                 "useUTC": true,
                 "encrypt": true,
-                "trustServerCertificate": false
-            },
-            "ssh": "Disabled",
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 1433,
-            "askForPassword": true,
-            "driver": "MSSQL",
-            "name": "Agenda",
-            "username": "SA",
-            "database": "Agenda"
-        },
-        {
-            "connectionTimeout": 15,
-            "mssqlOptions": {
-                "appName": "SQLTools",
-                "useUTC": true,
-                "encrypt": true,
                 "trustServerCertificate": true
             },
             "ssh": "Disabled",
@@ -31,7 +13,7 @@
             "server": "localhost",
             "port": 1433,
             "driver": "MSSQL",
-            "name": "Agenda1",
+            "name": "Agenda2",
             "database": "Agenda",
             "username": "SA"
         }
