@@ -32,7 +32,7 @@ namespace FundamentosWebApi.Migrations
                     b.Property<bool>("Ativo")
                         .HasColumnType("bit");
 
-                    b.Property<string>("None")
+                    b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefone")

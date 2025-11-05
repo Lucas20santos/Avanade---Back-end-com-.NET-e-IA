@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FundamentosWebApi.Migrations
 {
     [DbContext(typeof(AgendaContext))]
-    [Migration("20251104002927_CriacaoTabelaContato")]
-    partial class CriacaoTabelaContato
+    [Migration("20251105004731_CriacaoInicialCorreta")]
+    partial class CriacaoInicialCorreta
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,7 +35,7 @@ namespace FundamentosWebApi.Migrations
                     b.Property<bool>("Ativo")
                         .HasColumnType("bit");
 
-                    b.Property<string>("None")
+                    b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefone")

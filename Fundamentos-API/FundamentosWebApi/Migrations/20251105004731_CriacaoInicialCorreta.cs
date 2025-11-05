@@ -5,7 +5,7 @@
 namespace FundamentosWebApi.Migrations
 {
     /// <inheritdoc />
-    public partial class CriacaoTabelaContato : Migration
+    public partial class CriacaoInicialCorreta : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +16,7 @@ namespace FundamentosWebApi.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    None = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Telefone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Ativo = table.Column<bool>(type: "bit", nullable: false)
                 },
