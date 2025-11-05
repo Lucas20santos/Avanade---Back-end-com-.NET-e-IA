@@ -33,6 +33,15 @@ namespace FundamentosWebApi.Controller
 
             return Ok(contato);
         }
+
+        [HttpGet("obterPorNome")]
+        public IActionResult ObterContatos(string nome)
+        {
+            var contatos = _context.Contatos.Where(x => x.Nome.Contains(nome)).ToList();
+
+            return Ok(contatos);
+        }
+
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Contato contato)
         {
@@ -47,7 +56,22 @@ namespace FundamentosWebApi.Controller
             _context.Contatos.Update(contatoBanco);
             _context.SaveChanges();
 
+            Console.WriteLine(contatoBanco);
+
             return Ok(contatoBanco);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id)
+        {
+            var contatoBanco = _context.Contatos.Find(id);
+
+            if (contatoBanco == null) return NotFound();
+
+            _context.Contatos.Remove(contatoBanco);
+
+            return NoContent();
+
         }
         
     }
