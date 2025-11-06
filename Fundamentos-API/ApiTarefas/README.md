@@ -153,3 +153,13 @@ Projeto exemplo de API MVC para gerenciar tarefas (CRUD) usado na trilha .NET. C
 
    app.Run();
 ```
+
+## Terceiro Passo - Criando as migrations
+
+### comando dotnet ef
+
+```bash
+   dotnet build # vode primeiro e veja se tem algum problema, caso não tenha, agora rode o sequinte comando:
+   dotnet ef migrations add CriacaoInicialTarefas
+   dotnet ef database update
+```
