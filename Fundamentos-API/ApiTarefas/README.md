@@ -163,3 +163,67 @@ Projeto exemplo de API MVC para gerenciar tarefas (CRUD) usado na trilha .NET. C
    dotnet ef migrations add CriacaoInicialTarefas
    dotnet ef database update
 ```
+
+## Quarto Passo - Atualizando o index.cshtml
+
+```cs
+   @model IEnumerable<ApiTarefaMVC.Models.Tarefas>
+
+   @{
+      ViewData["Title"] = "Lista de Tarefas";
+   }
+
+   <h1>Lista de Tarefas</h1>
+
+   <p>
+      <!-- Link para a Action Create (próximo passo) -->
+      <a asp-action="Criar" class="btn btn-primary">Nova Tarefa</a>
+   </p>
+
+   <table class="table">
+      <thead>
+         <tr>
+               <th>
+                  @Html.DisplayNameFor(model => model.Titulo)
+               </th>
+               <th>
+                  @Html.DisplayNameFor(model => model.Descricao)
+               </th>
+               <th>
+                  @Html.DisplayNameFor(model => model.Data)
+               </th>
+               <th>
+                  @Html.DisplayNameFor(model => model.Status)
+               </th>
+               <th>Ações</th>
+         </tr>
+      </thead>
+      <tbody>
+         <!-- Loop para exibir cada tarefa -->
+         @foreach (var item in Model)
+         {
+               <tr>
+                  <td>
+                     @Html.DisplayFor(modelItem => item.Titulo)
+                  </td>
+                  <td>
+                     @Html.DisplayFor(modelItem => item.Descricao)
+                  </td>
+                  <td>
+                     <!-- Formata a data para um formato mais legível -->
+                     @Html.DisplayFor(modelItem => item.Data)
+                  </td>
+                  <td>
+                     @Html.DisplayFor(modelItem => item.Status)
+                  </td>
+                  <td>
+                     <!-- Links para futuras Actions -->
+                     <a asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a> |
+                     <a asp-action="Editar" asp-route-id="@item.Id">Editar</a> |
+                     <a asp-action="Deletar" asp-route-id="@item.Id">Deletar</a>
+                  </td>
+               </tr>
+         }
+      </tbody>
+   </table>
+```
