@@ -6,7 +6,7 @@ using ApiTarefaMVC.Models;
 
 namespace ApiTarefaMVC.Models
 {
-    public class Tarefas
+    public class Tarefa
     {
         public int Id { get; set; }
         public string Titulo { get; set; }
