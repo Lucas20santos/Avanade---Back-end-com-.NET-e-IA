@@ -27,9 +27,18 @@ namespace ApiTarefaMVC.Controllers
         [HttpPost]
         public IActionResult Criar(Tarefa tarefa)
         {
-            _context.Add(tarefa);
-            _context.SaveChanges();
-            return Created();
+            // Verificação de validação (sempre bom ter!)
+            if (ModelState.IsValid)
+            {
+                _context.Tarefas.Add(tarefa);
+                _context.SaveChanges();
+                
+                // CORREÇÃO: Redireciona o usuário para o método Index
+                return RedirectToAction(nameof(Index)); 
+            }
+            
+            // Se não for válido, retorna a View com o objeto para mostrar erros
+            return View(tarefa);
         }
     }
 }
