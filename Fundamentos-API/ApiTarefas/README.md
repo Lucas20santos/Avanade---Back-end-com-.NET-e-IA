@@ -59,13 +59,15 @@ Projeto exemplo de API MVC para gerenciar tarefas (CRUD) usado na trilha .NET. C
 
 ## Primeiros Passos
 
-1. Restaurar e rodar o projeto ApiTarefaMVC:
+1. Criar o projeto:
+   - dotnet new mvc -n nome
+2. Restaurar e rodar o projeto ApiTarefaMVC:
    - dotnet restore
    - dotnet run --project ApiTarefaMVC
-2. Opcional: rodar SQL Server em container:
+3. Opcional: rodar SQL Server em container:
    - docker pull mcr.microsoft.com/mssql/server:2025-latest
    - docker run -d --name mssql_agenda -p 1433:1433 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=SuaSenhaForte123!' mcr.microsoft.com/mssql/server:2025-latest
-3. Instalação das ferramentas necessárias para usar com o Entity Framework:
+4. Instalação das ferramentas necessárias para usar com o Entity Framework:
    - Microsoft.EntityFrameworkCore.SqlServer: Permite que o EF Core se comunique com o SQL Server (seu container Docker).
    - Microsoft.EntityFrameworkCore.Design: É necessário para rodar comandos como dotnet ef migrations no terminal.
 
