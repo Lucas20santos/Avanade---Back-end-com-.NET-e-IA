@@ -68,8 +68,10 @@ Projeto exemplo de API MVC para gerenciar tarefas (CRUD) usado na trilha .NET. C
    - docker pull mcr.microsoft.com/mssql/server:2025-latest
    - docker run -d --name mssql_agenda -p 1433:1433 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=SuaSenhaForte123!' mcr.microsoft.com/mssql/server:2025-latest
 4. Instalação das ferramentas necessárias para usar com o Entity Framework:
-   - Microsoft.EntityFrameworkCore.SqlServer: Permite que o EF Core se comunique com o SQL Server (seu container Docker).
-   - Microsoft.EntityFrameworkCore.Design: É necessário para rodar comandos como dotnet ef migrations no terminal.
+   - dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+     - Microsoft.EntityFrameworkCore.SqlServer: Permite que o EF Core se comunique com o SQL Server (seu container Docker).
+   - dotnet add package Microsoft.EntityFrameworkCore.Design
+     - Microsoft.EntityFrameworkCore.Design: É necessário para rodar comandos como dotnet ef migrations no terminal.
 
 ---
 
