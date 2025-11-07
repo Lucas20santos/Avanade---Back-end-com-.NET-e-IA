@@ -86,7 +86,7 @@ Vocẽ está pedindo que o dotnet adicione as referencias do outro projeto "nome
 
 ```bash
   docker run -d \
-    --name mssql_agenda \
+    --name mssql_tarefas \
     -p 1433:1433 \
     -e 'ACCEPT_EULA=Y' \
     -e 'SA_PASSWORD=SuaSenhaForte123!' \

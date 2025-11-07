@@ -63,9 +63,16 @@ Projeto exemplo de API MVC para gerenciar tarefas (CRUD) usado na trilha .NET. C
    - dotnet new webapi -n MinhasTarefas
 2. Restaurar e rodar o projeto MinhasTarefas:
    - dotnet run
-3. Opcional: rodar SQL Server em container:
-   - docker pull mcr.microsoft.com/mssql/server:2025-latest
-   - docker run -d --name mssql_agenda -p 1433:1433 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=SuaSenhaForte123!' mcr.microsoft.com/mssql/server:2025-latest
+3. Rodando o container sqlServer:
+   - Dando stop caso ele esteja rodando:
+     - docker stop Id ou nome do container
+   - Excluindo containe antigo:
+     - docker rm Id ou nome do container
+   - Baixando a imagem do sqlServer caso não tenha:
+     - docker pull mcr.microsoft.com/mssql/server:2025-latest
+   - Criação do container e um usuario:
+     - docker run -d --name mssql_tarefas -p 1433:1433 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=SuaSenhaForte123!' mcr.microsoft.com/mssql/server:2025-latest
+   - docker start mssql
 4. Instalação das ferramentas necessárias para usar com o Entity Framework:
    - dotnet add package Microsoft.EntityFrameworkCore.SqlServer
      - Microsoft.EntityFrameworkCore.SqlServer: Permite que o EF Core se comunique com o SQL Server (seu container Docker).
