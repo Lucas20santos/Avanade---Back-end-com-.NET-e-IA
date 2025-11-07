@@ -59,8 +59,8 @@ Projeto exemplo de API MVC para gerenciar tarefas (CRUD) usado na trilha .NET. C
 
 ## Primeiros Passos
 
-1. Criar o projeto:
-   - dotnet new mvc -n nome
+1. Criando um projeto webapi no dotnet:
+   - dotnet new webapi -n MinhasTarefas
 2. Restaurar e rodar o projeto ApiTarefaMVC:
    - dotnet restore
    - dotnet run --project ApiTarefaMVC
