@@ -14,10 +14,9 @@ Abaixo está uma árvore representativa da pasta ApiTarefa. Ajuste conforme arqu
 
 ```md
 ApiTarefas/
-├─ ApiTarefaMVC/
-│  ├─ ApiTarefaMVC.csproj
+├─ MinhasTarefas/
+│  ├─ MinhasTarefas.csproj
 │  ├─ Program.cs
-│  ├─ Startup.cs                (se aplicável)
 │  ├─ appsettings.json
 │  ├─ appsettings.Development.json
 |  ├─ bin/
@@ -29,13 +28,10 @@ ApiTarefas/
 │  │  └─ TarefaController.cs
 │  ├─ Models/
 │  │  └─ Tarefa.cs
-│  ├─ Data/
-│  │  └─ TarefaContext.cs
 │  ├─ Migrations/
 │  │  └─ [arquivos de migration...]
 │  ├─ Properties/
-│  │  └─ launchSettings.json
-│  └─ Views/                    (apenas se MVC completo)
+|
 ├─ DescricaoDoProjeto.md
 ├─ README.md
 ├─ .gitignore
@@ -46,22 +42,15 @@ ApiTarefas/
 
 ---
 
-## Arquivos auxiliares (fora do ApiTarefaMVC)
-
-- DescricaoDoProjeto.md — especificação do desafio e endpoints esperados.
-- README.md — este arquivo (sumário inicial).
-- .vscode/ — configurações do VS Code (preview, settings de workspace).
-- .gitignore — regras de versionamento.
-
 ## Visão rápida
 
-Projeto exemplo de API MVC para gerenciar tarefas (CRUD) usado na trilha .NET. Contém endpoints para criar, ler, atualizar e deletar tarefas e exemplos para rodar com Docker / SQL Server.
+Projeto exemplo de uma Web Api para gerenciar tarefas (CRUD) usado na trilha .NET. Contém endpoints para criar, ler, atualizar e deletar tarefas e exemplos para rodar com Docker / SQL Server.
 
 ## Primeiros Passos
 
 1. Criando um projeto webapi no dotnet:
    - dotnet new webapi -n MinhasTarefas
-2. Restaurar e rodar o projeto MinhasTarefas:
+2. Rodar o projeto MinhasTarefas:
    - dotnet run
 3. Rodando o container sqlServer:
    - Dando stop caso ele esteja rodando:
