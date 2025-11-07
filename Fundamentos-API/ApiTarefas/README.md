@@ -61,9 +61,8 @@ Projeto exemplo de API MVC para gerenciar tarefas (CRUD) usado na trilha .NET. C
 
 1. Criando um projeto webapi no dotnet:
    - dotnet new webapi -n MinhasTarefas
-2. Restaurar e rodar o projeto ApiTarefaMVC:
-   - dotnet restore
-   - dotnet run --project ApiTarefaMVC
+2. Restaurar e rodar o projeto MinhasTarefas:
+   - dotnet run
 3. Opcional: rodar SQL Server em container:
    - docker pull mcr.microsoft.com/mssql/server:2025-latest
    - docker run -d --name mssql_agenda -p 1433:1433 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=SuaSenhaForte123!' mcr.microsoft.com/mssql/server:2025-latest
