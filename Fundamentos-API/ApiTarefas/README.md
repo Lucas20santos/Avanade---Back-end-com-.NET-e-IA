@@ -207,3 +207,28 @@ namespace MinhasTarefas.Models
    dotnet ef migrations add InitialCreate
    dotnet ef database update
 ```
+
+## Sexto Passo - Testando a criação do banco de dados com a extensão Sqltools
+
+- Abra a extensão:
+- Click em criar uma nova conecao
+![Imagens](./images/image-2.png)
+- Complete os campos de conexão:
+  - Connection name: Qualquer nome
+  - Username: SA ou sa
+  - click na caixa do trustServerCertificate
+
+![Imagens](./images/image-3.png)
+
+![Imagens](./images/image-4.png)
+
+- E click em Save Connection
+- E click em Connecti Now
+
+![Imagens](./images/image-5.png)
+
+- Permita se essa mensagem aparecer para você
+
+![Imagens](./images/image-6.png)
+
+- E na proxima caixinha que aparecer coloque sua senha
