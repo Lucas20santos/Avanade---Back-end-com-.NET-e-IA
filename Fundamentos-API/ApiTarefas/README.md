@@ -73,18 +73,23 @@ Projeto exemplo de uma Web Api para gerenciar tarefas (CRUD) usado na trilha .NE
 ## Segundo Passos
 
 - Criação da classe Tarefa.cs dentro da pasta modelo
-  - Atributos:
-     1. Id:
-        - Inteiro
-     2. Titulo:
-        - string
-     3. Descricao:
-        - string
-     4. Data:
-        - DateTime
-     5. Status da Tarefa
-        - Enum é uma classe base para definir enumeradores no csharp
-        - Criando dentro da classe Models
+
+```cs
+namespace MinhasTarefas.Models
+{
+    public class Tarefa
+    {
+        public int Id { get; set; }
+        public string Titulo { get; set; }
+        public string Descicao { get; set; }
+        public DateTime Date { get; set; }
+        public StatusTarefa Status { get; set; }
+    }
+}
+
+```
+
+- Classe Enum para enumerar o status da tarefa
 
 ```cs
    namespace ApiTarefaMVC.Models 
@@ -98,33 +103,28 @@ Projeto exemplo de uma Web Api para gerenciar tarefas (CRUD) usado na trilha .NE
    }
 ```
 
-- Próximo Passo (MVC e EF Core):
-  - Criar pasta Context: precisamos de uma classe que herde o DbContext para que o EF Core saiba mapear sua entidade Tarefa para o banco de dados.
-  - Configurando a Conexão: Definir o ConectionString no arquivo appsettings.Development.json caso o projeto não seja para produção e sim só desenvolvimento ou caso contrário mude o appsettings.json
+## Terceiro Passo
+
+- O DbContext é a ponte entre sua aplicação .NET e o banco de dados, usando o Entity Framework Core (EF Core).
 
 ```cs
-   using System;
-   using System.Collections.Generic;
-   using System.Linq;
-   using System.Threading.Tasks;
-   using ApiTarefaMVC.Models;
-
-   // Insira a clausura do Microsoft.EntityFrameworkCore para poder usar o DbContext
    using Microsoft.EntityFrameworkCore;
+   using MinhasTarefas.Models;
 
-   namespace ApiTarefaMVC.Context
+   namespace MinhasTarefas.Context
    {
-      // A classe deve herdade de DbContext
-      public class OrganizadorContext : DbContext
+      public class TarefasContext : DbContext
       {
-         // Contrutor obrigatório para a injeção de dependência
-         public OrganizadorContext(DbContextOptions<OrganizadorContext> options) : base(options) { }
-         //DbSet: Representa a tabela no banco de dados
-         // A tabela será chamada 'Tarefas' (plural do nome da classe)
-         public DbSet<Tarefa> Tarefas { get; set; }
+         // Contrutor que recebe as opções do DbContext
+         public TarefasContext(DbContextOptions<TarefasContext> options) : base(options) { }
+
+         public DbSet<Tarefa> Tarefas { get; set; } = null!;      
       }
    }
+
 ```
+
+- Configurando a Conexão: Definir o ConectionString no arquivo appsettings.Development.json caso o projeto não seja para produção e sim só desenvolvimento ou caso contrário mude o appsettings.json
 
 - Configurar a Injeção de Dependência no Program.cs
    1. Precisamos dizer ao ASP.NET Core que use essa string de Conexão para configurar o DbContext
