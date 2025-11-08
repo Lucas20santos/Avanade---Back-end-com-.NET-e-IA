@@ -152,7 +152,23 @@ namespace MinhasTarefas.Models
    app.Run();
 ```
 
-## Terceiro Passo - Criando as migrations
+## Terceiro Passo - Configurando o arquivo appsettings.Development.json
+
+```json
+   {
+      "Logging": {
+         "LogLevel": {
+            "Default": "Information",
+            "Microsoft.AspNetCore": "Warning"
+         }
+      },
+      "ConnectionStrings": {
+         "ConexaoPadrao": "Server=localhost,1433; Initial Catalog=Tarefa; User Id=sa; Password=SuaSenhaForte123!; TrustServerCertificate=True; MultipleActiveResultSets=True"
+      }
+   }
+```
+
+## Quarto Passo - Criando as migrations
 
 ### comando dotnet ef
 
