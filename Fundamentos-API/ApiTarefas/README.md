@@ -131,25 +131,55 @@ namespace MinhasTarefas.Models
 
 ```cs
    using Microsoft.EntityFrameworkCore;
-   using ApiTarefaMVC.Context; // 1. Importar o contexto
+   using MinhasTarefas.Context;
+   using MinhasTarefas.Models;
 
    var builder = WebApplication.CreateBuilder(args);
 
-   // Adicionar serviço DbContext (INÍCIO DA CONFIGURAÇÃO)
    builder.Services.AddDbContext<OrganizadorContext>(options =>
       options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao"))
    );
-   // Adicionar serviço DbContext (FIM DA CONFIGURAÇÃO)
 
-   // Add services to the container.
-   builder.Services.AddControllersWithViews();
+   builder.Services.AddControllers();
+   builder.Services.AddEndpointsApiExplorer();
+   builder.Services.AddSwaggerGen();
 
    var app = builder.Build();
 
-   // Configure the HTTP request pipeline.
-   // ... (restante do código)
+   if (app.Environment.IsDevelopment())
+   {
+      app.UseSwagger();
+      app.UseSwaggerUI();
+   }
+
+   app.UseHttpsRedirection();
+
+   var summaries = new[]
+   {
+      "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+   };
+
+   app.MapGet("/weatherforecast", () =>
+   {
+      var forecast =  Enumerable.Range(1, 5).Select(index =>
+         new WeatherForecast
+         (
+               DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+               Random.Shared.Next(-20, 55),
+               summaries[Random.Shared.Next(summaries.Length)]
+         ))
+         .ToArray();
+      return forecast;
+   })
+   .WithName("GetWeatherForecast")
+   .WithOpenApi();
 
    app.Run();
+
+   record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+   {
+      public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+   }
 ```
 
 ## Quarto Passo - Configurando o arquivo appsettings.Development.json
@@ -174,6 +204,6 @@ namespace MinhasTarefas.Models
 
 ```bash
    dotnet build # vode primeiro e veja se tem algum problema, caso não tenha, agora rode o sequinte comando:
-   dotnet ef migrations add CriacaoInicialTarefas
+   dotnet ef migrations add InitialCreate
    dotnet ef database update
 ```
