@@ -152,7 +152,7 @@ namespace MinhasTarefas.Models
    app.Run();
 ```
 
-## Terceiro Passo - Configurando o arquivo appsettings.Development.json
+## Quarto Passo - Configurando o arquivo appsettings.Development.json
 
 ```json
    {
@@ -168,7 +168,7 @@ namespace MinhasTarefas.Models
    }
 ```
 
-## Quarto Passo - Criando as migrations
+## Quinto Passo - Criando as migrations
 
 ### comando dotnet ef
 
