@@ -125,7 +125,6 @@ namespace MinhasTarefas.Models
 ```
 
 - Configurando a Conexão: Definir o ConectionString no arquivo appsettings.Development.json caso o projeto não seja para produção e sim só desenvolvimento ou caso contrário mude o appsettings.json
-
 - Configurar a Injeção de Dependência no Program.cs
    1. Precisamos dizer ao ASP.NET Core que use essa string de Conexão para configurar o DbContext
    2. No arquivo Program.cs
@@ -161,68 +160,4 @@ namespace MinhasTarefas.Models
    dotnet build # vode primeiro e veja se tem algum problema, caso não tenha, agora rode o sequinte comando:
    dotnet ef migrations add CriacaoInicialTarefas
    dotnet ef database update
-```
-
-## Quarto Passo - Atualizando o index.cshtml
-
-```cs
-   @model IEnumerable<ApiTarefaMVC.Models.Tarefas>
-
-   @{
-      ViewData["Title"] = "Lista de Tarefas";
-   }
-
-   <h1>Lista de Tarefas</h1>
-
-   <p>
-      <!-- Link para a Action Create (próximo passo) -->
-      <a asp-action="Criar" class="btn btn-primary">Nova Tarefa</a>
-   </p>
-
-   <table class="table">
-      <thead>
-         <tr>
-               <th>
-                  @Html.DisplayNameFor(model => model.Titulo)
-               </th>
-               <th>
-                  @Html.DisplayNameFor(model => model.Descricao)
-               </th>
-               <th>
-                  @Html.DisplayNameFor(model => model.Data)
-               </th>
-               <th>
-                  @Html.DisplayNameFor(model => model.Status)
-               </th>
-               <th>Ações</th>
-         </tr>
-      </thead>
-      <tbody>
-         <!-- Loop para exibir cada tarefa -->
-         @foreach (var item in Model)
-         {
-               <tr>
-                  <td>
-                     @Html.DisplayFor(modelItem => item.Titulo)
-                  </td>
-                  <td>
-                     @Html.DisplayFor(modelItem => item.Descricao)
-                  </td>
-                  <td>
-                     <!-- Formata a data para um formato mais legível -->
-                     @Html.DisplayFor(modelItem => item.Data)
-                  </td>
-                  <td>
-                     @Html.DisplayFor(modelItem => item.Status)
-                  </td>
-                  <td>
-                     <!-- Links para futuras Actions -->
-                     <a asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a> |
-                     <a asp-action="Editar" asp-route-id="@item.Id">Editar</a> |
-                     <a asp-action="Deletar" asp-route-id="@item.Id">Deletar</a>
-                  </td>
-               </tr>
-         }
-      </tbody>
-   </table>
 ```

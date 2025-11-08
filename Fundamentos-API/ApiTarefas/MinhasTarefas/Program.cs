@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using MinhasTarefas.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+// Configuração o DbContext e da String de conexão
+builder.Services.AddDbContext<TarefasContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao"))
+);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

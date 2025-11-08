@@ -8,6 +8,6 @@ namespace MinhasTarefas.Context
         // Contrutor que recebe as opções do DbContext
         public TarefasContext(DbContextOptions<TarefasContext> options) : base(options) { }
 
-        public DbSet<Tarefa> Tarefas { get; set; } = null!;      
+        public DbSet<Tarefa> Tarefas { get; set; } = null!;
     }
 }
