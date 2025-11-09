@@ -13,7 +13,7 @@ Para este desafio, você precisará usar seus conhecimentos adquiridos no módul
 - A sua aplicação deverá ser do tipo Web API ou MVC, fique a vontade para implementar a solução que achar mais adequado.
 - A sua classe principal, a classe de tarefa, deve ser a seguinte:
 
-![Diagrama da Classe](image.png)
+![Diagrama da Classe](./images/image.png)
 
 Não se esqueça de gerar a sua migration para atualização no banco de dados.
 
@@ -23,7 +23,7 @@ Não se esqueça de gerar a sua migration para atualização no banco de dados.
 
 ### Swagger
 
-![Swagger](image-1.png)
+![Swagger](./images/image-1.png)
 
 ### Endpoints
 
