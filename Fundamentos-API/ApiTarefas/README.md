@@ -1,234 +1,86 @@
-# Api de tarefa
+# 📚 Web API: Organizador de Tarefas (.NET 8 + SQL Server)
 
-## Sumário
+Este projeto implementa uma Web API completa para gerenciamento de tarefas (CRUD) utilizando **ASP.NET Core** e **Entity Framework Core** com **SQL Server**.
 
-- Estrutura do projeto (árvore)
-- Visão rápida
-- Primeiro Passos
-- Estrutura do projeto (árvore)
-- Arquivos auxiliares fora do projeto ApiTarefaMVC
+## ⚙️ Configuração Principal do Projeto
 
-## Estrutura do projeto (árvore)
+| Item | Detalhe | Finalidade |
+| :--- | :--- | :--- |
+| **Framework** | .NET 8 | Versão LTS mais recente do .NET. |
+| **Banco de Dados** | SQL Server | Usado para persistência dos dados. |
+| **Contexto (DB)** | `OrganizadorContext` | Ponte entre a aplicação e o banco de dados (via EF Core). |
+| **Modelo Principal** | `Tarefa` | Estrutura de dados para cada item de tarefa. |
+| **Modelo Auxiliar** | `StatusTarefa` (`Enum`) | Define o estado da tarefa (Pendente, Em\_Andamento, Concluida). |
 
-Abaixo está uma árvore representativa da pasta ApiTarefa. Ajuste conforme arquivos reais do seu workspace.
+### Estrutura de Roteamento
 
-```md
-ApiTarefas/
-├─ MinhasTarefas/
-│  ├─ MinhasTarefas.csproj
-│  ├─ Program.cs
-│  ├─ appsettings.json
-│  ├─ appsettings.Development.json
-|  ├─ bin/
-|  |  └─ Debug/
-|  |     └─ net8.0/
-|  ├─ Context/
-|  |  └─ TarefaContext.cs
-│  ├─ Controllers/
-│  │  └─ TarefaController.cs
-│  ├─ Models/
-│  │  └─ Tarefa.cs
-│  ├─ Migrations/
-│  │  └─ [arquivos de migration...]
-│  ├─ Properties/
-|
-├─ DescricaoDoProjeto.md
-├─ README.md
-├─ .gitignore
-├─ .vscode/
-│  └─ settings.json
-└─ docker-compose.yml (opcional)
-```
+- **Namespace do Controller:** `MinhasTarefas.Controllers` (Corrigido para o plural).
+- **Rota Base:** `[Route("[controller]")]`
+- **URL Base:** `http://localhost:<porta>/Tarefa`
 
 ---
 
-## Visão rápida
+## 💻 `TarefaController.cs` - Resumo dos Endpoints HTTP
 
-Projeto exemplo de uma Web Api para gerenciar tarefas (CRUD) usado na trilha .NET. Contém endpoints para criar, ler, atualizar e deletar tarefas e exemplos para rodar com Docker / SQL Server.
+O *Controller* `TarefaController` implementa todas as operações CRUD (Create, Read, Update, Delete) e métodos de busca avançada.
 
-## Primeiros Passos
+### Operações CRUD Básicas
 
-1. Criando um projeto webapi no dotnet:
-   - dotnet new webapi -n MinhasTarefas
-2. Rodar o projeto MinhasTarefas:
-   - dotnet run
-3. Rodando o container sqlServer:
-   - Dando stop caso ele esteja rodando:
-     - docker stop Id ou nome do container
-   - Excluindo containe antigo:
-     - docker rm Id ou nome do container
-   - Baixando a imagem do sqlServer caso não tenha:
-     - docker pull mcr.microsoft.com/mssql/server:2025-latest
-   - Criação do container e um usuario:
-     - docker run -d --name mssql_tarefas -p 1433:1433 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=SuaSenhaForte123!' mcr.microsoft.com/mssql/server:2025-latest
-   - docker start mssql
-4. Instalação das ferramentas necessárias para usar com o Entity Framework:
-   - dotnet add package Microsoft.EntityFrameworkCore.SqlServer
-     - Microsoft.EntityFrameworkCore.SqlServer: Permite que o EF Core se comunique com o SQL Server (seu container Docker).
-   - dotnet add package Microsoft.EntityFrameworkCore.Design
-     - Microsoft.EntityFrameworkCore.Design: É necessário para rodar comandos como dotnet ef migrations no terminal.
+| Método | Endpoint | Verbo HTTP | Ações e Retorno |
+| :--- | :--- | :--- | :--- |
+| `Create(Tarefa tarefa)` | `/Tarefa` | **POST** | Cria uma nova tarefa. Retorna **200 OK** com o objeto criado. |
+| `Atualizar(int id, Tarefa tarefa)` | `/Tarefa/{id}` | **PUT** | Atualiza todos os campos de uma tarefa específica. Retorna **200 OK** com o objeto atualizado. |
+| `Deletar(int id)` | `/Tarefa/{id}` | **DELETE** | Remove a tarefa do banco de dados. Retorna **204 No Content** (Sucesso sem corpo de resposta). |
+
+### Operações de Leitura (GET)
+
+| Método | Endpoint | Verbo HTTP | Parâmetros | Finalidade |
+| :--- | :--- | :--- | :--- | :--- |
+| `ObterTarefa()` | `/Tarefa/ObterTodos` | **GET** | *Nenhum* | Retorna a **lista completa** de todas as tarefas. |
+| `ObterId(int id)` | `/Tarefa/{id}` | **GET** | `id` (no Path) | Busca e retorna uma tarefa pelo **ID** único. |
+| `ObterTarefa(string titulo)` | `/Tarefa/ObterPorTitulo?titulo={valor}` | **GET** | `titulo` (Query) | Retorna tarefas que **contêm** o termo no Título (busca flexível/case-insensitive). |
+| `GetPorTarefa(StatusTarefa status)` | `/Tarefa/ObterPorStatus/{status}` | **GET** | `status` (no Path) | Retorna tarefas que possuem o **Status** específico (`0`, `1`, `2` ou o nome do Enum). |
+| `GetPorPeriodo(...)` | `/Tarefa/ObterPorPeriodo?dataInicio={d1}&dataFim={d2}` | **GET** | `dataInicio`, `dataFim` (Query) | Retorna tarefas agendadas entre o **período** de data e hora especificado. |
+| `GetPorData(...)` | `/Tarefa/ObterPorData?data={d}` | **GET** | `data` (Query) | Retorna tarefas agendadas exatamente na **data** especificada (com ajuste de horário). |
 
 ---
 
-## Segundo Passos
+## 🔗 Configuração do `OrganizadorContext`
 
-- Criação da classe Tarefa.cs dentro da pasta modelo
+Para a conexão com o SQL Server, o projeto utiliza a injeção de dependência no `Program.cs` e a *Connection String* definida em `appsettings.Development.json`:
 
-```cs
-namespace MinhasTarefas.Models
-{
-    public class Tarefa
-    {
-        public int Id { get; set; }
-        public string Titulo { get; set; }
-        public string Descicao { get; set; }
-        public DateTime Date { get; set; }
-        public StatusTarefa Status { get; set; }
-    }
-}
+### `Program.cs`
 
+A injeção do `OrganizadorContext` é essencial:
+
+```csharp
+builder.Services.AddDbContext<OrganizadorContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao"))
+);
 ```
 
-- Classe Enum para enumerar o status da tarefa
+### `appsettings.Development.json`
 
-```cs
-   namespace ApiTarefaMVC.Models 
-   { 
-      public enum StatusTarefa 
-      { 
-         Pendente, 
-         EmAndamento, 
-         Concluida 
-      } 
-   }
-```
-
-## Terceiro Passo
-
-- O DbContext é a ponte entre sua aplicação .NET e o banco de dados, usando o Entity Framework Core (EF Core).
-
-```cs
-   using Microsoft.EntityFrameworkCore;
-   using MinhasTarefas.Models;
-
-   namespace MinhasTarefas.Context
-   {
-      public class TarefasContext : DbContext
-      {
-         // Contrutor que recebe as opções do DbContext
-         public TarefasContext(DbContextOptions<TarefasContext> options) : base(options) { }
-
-         public DbSet<Tarefa> Tarefas { get; set; } = null!;      
-      }
-   }
-
-```
-
-- Configurando a Conexão: Definir o ConectionString no arquivo appsettings.Development.json caso o projeto não seja para produção e sim só desenvolvimento ou caso contrário mude o appsettings.json
-- Configurar a Injeção de Dependência no Program.cs
-   1. Precisamos dizer ao ASP.NET Core que use essa string de Conexão para configurar o DbContext
-   2. No arquivo Program.cs
-
-```cs
-   using Microsoft.EntityFrameworkCore;
-   using MinhasTarefas.Context;
-   using MinhasTarefas.Models;
-
-   var builder = WebApplication.CreateBuilder(args);
-
-   builder.Services.AddDbContext<OrganizadorContext>(options =>
-      options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao"))
-   );
-
-   builder.Services.AddControllers();
-   builder.Services.AddEndpointsApiExplorer();
-   builder.Services.AddSwaggerGen();
-
-   var app = builder.Build();
-
-   if (app.Environment.IsDevelopment())
-   {
-      app.UseSwagger();
-      app.UseSwaggerUI();
-   }
-
-   app.UseHttpsRedirection();
-
-   var summaries = new[]
-   {
-      "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-   };
-
-   app.MapGet("/weatherforecast", () =>
-   {
-      var forecast =  Enumerable.Range(1, 5).Select(index =>
-         new WeatherForecast
-         (
-               DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-               Random.Shared.Next(-20, 55),
-               summaries[Random.Shared.Next(summaries.Length)]
-         ))
-         .ToArray();
-      return forecast;
-   })
-   .WithName("GetWeatherForecast")
-   .WithOpenApi();
-
-   app.Run();
-
-   record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-   {
-      public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-   }
-```
-
-## Quarto Passo - Configurando o arquivo appsettings.Development.json
+A string de conexão deve ser configurada aqui para o SQL Server. **Atenção:** Mantenha a senha segura e garanta que o serviço do SQL Server esteja acessível.
 
 ```json
-   {
-      "Logging": {
-         "LogLevel": {
-            "Default": "Information",
-            "Microsoft.AspNetCore": "Warning"
-         }
-      },
-      "ConnectionStrings": {
-         "ConexaoPadrao": "Server=localhost,1433; Initial Catalog=Tarefa; User Id=sa; Password=SuaSenhaForte123!; TrustServerCertificate=True; MultipleActiveResultSets=True"
-      }
-   }
+"ConnectionStrings": {
+    "ConexaoPadrao": "Server=localhost,1433; Initial Catalog=Tarefa; User Id=sa; Password=SuaSenhaForte123!; TrustServerCertificate=True; MultipleActiveResultSets=True"
+}
 ```
 
-## Quinto Passo - Criando as migrations
+### 🔑 Migrations
 
-### comando dotnet ef
+O banco de dados foi criado e mapeado usando o **Entity Framework Core Migrations**:
 
 ```bash
-   dotnet build # vode primeiro e veja se tem algum problema, caso não tenha, agora rode o sequinte comando:
-   dotnet ef migrations add InitialCreate
-   dotnet ef database update
+# 1. Cria o snapshot do modelo
+dotnet ef migrations add InitialCreate
+
+# 2. Aplica as mudanças no banco de dados (SQL Server)
+dotnet ef database update
 ```
 
-## Sexto Passo - Testando a criação do banco de dados com a extensão Sqltools
+---
 
-- Abra a extensão:
-- Click em criar uma nova conecao
-![Imagens](./images/image-2.png)
-- Complete os campos de conexão:
-  - Connection name: Qualquer nome
-  - Username: SA ou sa
-  - click na caixa do trustServerCertificate
-
-![Imagens](./images/image-3.png)
-
-![Imagens](./images/image-4.png)
-
-- E click em Save Connection
-- E click em Connecti Now
-
-![Imagens](./images/image-5.png)
-
-- Permita se essa mensagem aparecer para você
-
-![Imagens](./images/image-6.png)
-
-- E na proxima caixinha que aparecer coloque sua senha
+Para mais informações visite o [Saiba Mais](./SaibaMais.md). No **Saiba Mais** você encontrar informações completa sobre o projeto e todo passo a passo da construção do mesmo.
