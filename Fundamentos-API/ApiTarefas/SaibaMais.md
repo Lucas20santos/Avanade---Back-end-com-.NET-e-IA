@@ -23,7 +23,7 @@ ApiTarefas/
 |  |  └─ Debug/
 |  |     └─ net8.0/
 |  ├─ Context/
-|  |  └─ TarefaContext.cs
+|  |  └─ OrganizadorContext.cs
 │  ├─ Controllers/
 │  │  └─ TarefaController.cs
 │  ├─ Models/
@@ -31,6 +31,7 @@ ApiTarefas/
 │  ├─ Migrations/
 │  │  └─ [arquivos de migration...]
 │  ├─ Properties/
+│  │  └─ launchSettings.json
 |
 ├─ DescricaoDoProjeto.md
 ├─ README.md
@@ -153,6 +154,8 @@ namespace MinhasTarefas.Models
    }
 
    app.UseHttpsRedirection();
+   // A linha abaixo é muito importante para mapear os seus controller, então não esqueça de inserir ela.
+   app.MapControllers();
 
    var summaries = new[]
    {
@@ -232,3 +235,68 @@ namespace MinhasTarefas.Models
 ![Imagens](./images/image-6.png)
 
 - E na proxima caixinha que aparecer coloque sua senha
+
+## Setimo Passo - Use o Swagger para consultar as rotas
+
+![Swagger](./images/image-7.png)
+
+## Estrutura do Código
+
+A seguir uma descrição das pastas principais deste projeto e do papel do código dentro de cada uma delas. Ela explica conceitualmente o que cada pasta serve e o que o código nela contido faz para o funcionamento da aplicação.
+
+### 📁 [Context](./Context/)
+
+- O que é: contém a implementação do DbContext (ex: ApplicationDbContext) usado pelo Entity Framework Core.
+- Função conceitual: representa a sessão com o banco de dados; mapeia entidades (Models) para tabelas e fornece DbSet\<T> para operações CRUD.
+- Código típico e o que faz:
+  - propriedade DbSet\<Tarefa> Contatos — expõe a coleção de contatos para consultas e alterações.
+  - construtor que recebe DbContextOptions e chama base(options) — permite a configuração via DI (AddDbContext).
+  - método OnModelCreating(ModelBuilder modelBuilder) — configura regras de mapeamento (nomes de tabela, tipos, índices, relações, constraints).
+  - registro no Program.cs/Startup: builder.Services.AddDbContext\<ApplicationDbContext>(options => options.UseSqlServer(...)) — integra o contexto ao pipeline da aplicação.
+- Resultado para o programa: fornece a API de acesso ao banco, traduz LINQ em SQL e controla o rastreamento de entidades e persistência (SaveChanges / SaveChangesAsync).
+
+### 🗂️ [Controllers](./Controllers/)
+
+- O que é: contém controladores Web API (ex: ContatoController) que expõem endpoints HTTP (GET, POST, PUT, DELETE).
+- Função conceitual: recebem requisições HTTP, validam dados, coordenam operações de domínio (aqui, via DbContext) e retornam respostas HTTP (200, 201, 404, 400...).
+- Código típico e o que faz:
+  - anotações [ApiController] e [Route("api/[controller]")] — ativam comportamento de API e definem rota base.
+  - ações:
+    - GET /api/Tarefas — busca todos os registros; normalmente retorna Ok(lista).
+    - GET /api/Tarefas/{id} — busca por id; se não encontrado, retorna NotFound.
+    - POST /api/contatos — cria novo registro; valida ModelState, adiciona ao DbContext e chama SaveChanges, retorna CreatedAtAction.
+    - PUT /api/Tarefas/{id} — atualiza registro; verifica existência, aplica alterações e SaveChanges.
+    - DELETE /api/Tarefas/{id} — remove registro e SaveChanges.
+  - injeção do ApplicationDbContext via construtor — o controller usa o contexto para acessar o banco.
+- Resultado para o programa: transforma chamadas HTTP em operações no banco e define contrato REST da API.
+
+### 🧾 [Migrations](./Migrations/)
+
+- O que é: pasta gerada pelo Entity Framework Core que contém classes de migração e o arquivo de snapshot do modelo.
+- Função conceitual: versiona alterações do esquema do banco; cada migração tem métodos Up (aplica mudanças) e Down (reverte).
+- Código típico e o que faz:
+  - classe de migração (ex: 20250xxxxx_CriacaoTabelaContato) com Up criando tabela Contatos (colunas, tipos, constraints) e Down removendo-a.
+  - ModelSnapshot — representa o estado atual do modelo para que o EF saiba quais mudanças criar nas próximas migrações.
+- Resultado para o programa: possibilita criar/atualizar o banco de dados a partir do modelo de código (dotnet-ef migrations add / dotnet-ef database update) garantindo consistência entre modelo e esquema.
+
+### 🧩 [Models](./Models/)
+
+- O que é: contém as classes que representam as entidades do domínio (ex: Contato.cs).
+- Função conceitual: definem a forma dos dados, validações e regras simples de negócio no nível da entidade.
+- Código típico e o que faz:
+  - propriedades (ex: int Id, string Nome, string Email, string Telefone).
+  - Data Annotations ([Key], [Required], [MaxLength], [EmailAddress]) — definem validação e influenciam migrações (tamanho de colunas, nulabilidade).
+  - possivelmente métodos auxiliares ou validações internas (ex: validar formato, máscaras).
+- Resultado para o programa: modelos definem contrato de dados usados pelo DbContext, pelas migrações e pelos controllers; garantem validação automática do modelo recebido na API.
+
+Resumo de integração
+
+- Fluxo típico: Controller recebe a requisição -> valida o Model (ModelState) -> usa ApplicationDbContext (Context) para consultar/alterar Models -> EF gera SQL baseado nas Models/Migrations -> banco persiste os dados.
+- Ferramentas importantes: dotnet-ef para gerar e aplicar Migrations; DI do .NET para injetar o DbContext; atributos de validação para proteger a entrada de dados.
+
+Boas práticas rápidas
+
+- Manter Models simples e focadas em dados; regras de negócio mais complexas podem ir para uma camada de serviço.
+- Usar DTOs para entrada/saída quando precisar separar entidade de contrato HTTP.
+- Versionar migrações e não editar migrações já aplicadas em produção; gere novas migrações para alterações.
+- Tratar exceções de acesso a dados e retornar códigos HTTP adequados

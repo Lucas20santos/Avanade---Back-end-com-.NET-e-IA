@@ -13,23 +13,7 @@
             "server": "localhost",
             "port": 1433,
             "driver": "MSSQL",
-            "name": "tarefas",
-            "username": "sa"
-        },
-        {
-            "connectionTimeout": 15,
-            "mssqlOptions": {
-                "appName": "SQLTools",
-                "useUTC": true,
-                "encrypt": true,
-                "trustServerCertificate": false
-            },
-            "ssh": "Disabled",
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 1433,
-            "driver": "MSSQL",
-            "name": "Tarefa2",
+            "name": "tarefa1",
             "username": "sa"
         }
     ]
