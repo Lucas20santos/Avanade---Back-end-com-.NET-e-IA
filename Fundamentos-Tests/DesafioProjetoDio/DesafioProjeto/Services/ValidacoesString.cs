@@ -2,20 +2,8 @@ namespace DesafioProjeto.Services
 {
     public class ValidacoesString
     {
-        public int RetornarQuantidadeCaracteres(string texto)
-        {
-            var numeroCaracteres = texto.Length;
-            return numeroCaracteres;
-        }
-        public bool ContemCaractere(string texto, string textoProcurado)
-        {
-            var contem = texto.Contains(textoProcurado);
-            return contem;
-        }
-        public bool TextoTerminaCom(string texto, string textoProcurado)
-        {
-            var termina = texto.EndsWith(textoProcurado);
-            return termina;
-        }
+        public int RetornarQuantidadeCaracteres(string texto) => string.IsNullOrEmpty(texto) ? 0 : texto.Length;
+        public bool ContemCaractere(string texto, string textoProcurado) => !string.IsNullOrEmpty(texto) && !string.IsNullOrEmpty(textoProcurado) && texto.Contains(textoProcurado);
+        public bool TextoTerminaCom(string texto, string textoProcurado) => !string.IsNullOrEmpty(texto) && !string.IsNullOrEmpty(textoProcurado) && texto.EndsWith(textoProcurado);
     }
 }
