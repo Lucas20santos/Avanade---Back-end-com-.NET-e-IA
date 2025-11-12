@@ -1,6 +1,4 @@
-﻿
-
-using Calculadora.Services;
+﻿using Calculadora.Services;
 
 CalculadoraImp c = new CalculadoraImp();
 

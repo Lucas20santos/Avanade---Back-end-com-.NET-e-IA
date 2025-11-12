@@ -59,3 +59,41 @@ Um usuário do sistema só é cadastrado se possuir um CPF e um e-mail válido. 
     cd CalculadoraTests
     dotnet add reference ../Calculadora/Calculadora.csproj
 ```
+
+## Criando testes
+
+```cs
+using Calculadora.Services;
+
+
+namespace CalculadoraTests;
+
+public class CalculadoraTests
+{
+    private CalculadoraImp _calc;
+
+    public CalculadoraTests()
+    {
+        _calc = new CalculadoraImp();
+    }
+    [Fact]
+    public void DeveSomar5Com10ERetornar15()
+    {
+        // Arrange: Serve para montar o meu cenário
+        int num1 = 5;
+        int num2 = 10;
+        //Act: Chamar o cenário para o que ele deve fazer
+        int resultado = _calc.Somar(num1, num2);
+        // Assert: Para validade se o resultado é o esperado
+        Assert.Equal(15, resultado);
+    }
+}
+```
+
+### Executando o teste
+
+```bash
+
+cd CalculadoraTests
+dotnet test
+```

@@ -5,6 +5,6 @@ namespace Calculadora.Services
         public int Somar(int num1, int num2) => num1 + num2;
         public int Subtrair(int num1, int num2) => num1 - num2;
         public int Multiplicar(int num1, int num2) => num1 * num2;
-        public float Dividir(int num1, int num2) => num2 == 0 ? 0: num1 / num2;
+        public double Dividir(double num1, double num2) => num2 == 0.0 ? 0.0: num1 / num2;
     }
 }
