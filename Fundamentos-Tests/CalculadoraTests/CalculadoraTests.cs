@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Calculadora.Services;
 
 
@@ -54,5 +55,31 @@ public class CalculadoraTests
         double num2 = 0;
         double resultado = _calc.Dividir(num1, num2);
         Assert.Equal(0.0, resultado);        
+    }
+    [Fact]
+    public void VerificarSe2EPar()
+    {
+        int num = 2;
+        bool resultado = _calc.EPar(num);
+        Assert.True(resultado);
+    }
+    // O Theory é um conjunto de cenarios que irão passar pelo teste.
+    [Theory]
+    [InlineData(2)]
+    [InlineData(4)]
+    [InlineData(6)]
+    [InlineData(8)]
+    [InlineData(10)]
+    public void DeveVerificarSeMeusNumerosPassadosSaoParesERetornarVerdadeiros(int num)
+    {
+        bool resultado = _calc.EPar(num);
+        Assert.True(resultado);
+    }
+    [Theory]
+    [InlineData(new int[] {2, 4 })]
+    [InlineData(new int[] {6, 8, 10})]
+    public void DeveVerificarSeMinhasListasDeNumerosPassadosSaoParesERetornarVerdadeiros(int[] num)
+    {
+        Assert.All(num, x => Assert.True(_calc.EPar(x)));
     }
 }
