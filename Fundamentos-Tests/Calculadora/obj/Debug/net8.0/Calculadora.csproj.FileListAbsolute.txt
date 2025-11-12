@@ -1,0 +1,15 @@
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/bin/Debug/net8.0/Calculadora
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/bin/Debug/net8.0/Calculadora.deps.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/bin/Debug/net8.0/Calculadora.runtimeconfig.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/bin/Debug/net8.0/Calculadora.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/bin/Debug/net8.0/Calculadora.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/obj/Debug/net8.0/Calculadora.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/obj/Debug/net8.0/Calculadora.AssemblyInfoInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/obj/Debug/net8.0/Calculadora.AssemblyInfo.cs
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/obj/Debug/net8.0/Calculadora.csproj.CoreCompileInputs.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/obj/Debug/net8.0/Calculadora.sourcelink.json
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/obj/Debug/net8.0/Calculadora.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/obj/Debug/net8.0/refint/Calculadora.dll
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/obj/Debug/net8.0/Calculadora.pdb
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/obj/Debug/net8.0/Calculadora.genruntimeconfig.cache
+/workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-Tests/Calculadora/obj/Debug/net8.0/ref/Calculadora.dll
