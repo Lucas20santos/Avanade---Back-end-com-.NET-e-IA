@@ -31,7 +31,6 @@ public class CalculadoraTests
         int resultado = _calc.Subtrair(num1, num2);
         Assert.Equal(5, resultado);
     }
-
     [Fact]
     public void DeveMultiplicar10Com5ERetornar50()
     {
