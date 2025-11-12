@@ -54,4 +54,8 @@ Um usuário do sistema só é cadastrado se possuir um CPF e um e-mail válido. 
     # Adicionando os projetos na solution
     dotnet sln add Calculadora/Calculadora.csproj
     dotnet sln add CalculadoraTests/CalculadoraTests.csproj
+
+    # Adicionando a referencia do meu projeto console dentro do meu projeto tests
+    cd CalculadoraTests
+    dotnet add reference ../Calculadora/Calculadora.csproj
 ```
