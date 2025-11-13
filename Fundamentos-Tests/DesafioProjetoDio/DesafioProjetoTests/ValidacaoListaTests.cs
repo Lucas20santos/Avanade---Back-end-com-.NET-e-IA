@@ -44,7 +44,7 @@ namespace DesafioProjetoTests
             Assert.Throws<ArgumentNullException>(() => _validacoes.RemoverNumerosNegativos(lista!));
         }
         // ========= Final dos Testes para Testar o Método Remover Numeros Negativos =========
-        
+
         // ========= Inicio dos Testes para Testar o Método que verifica se contem numero na lista =========        
         public static IEnumerable<object[]> ListaDeTesteContemNumeroTrue => new List<object[]>
         {
@@ -99,7 +99,7 @@ namespace DesafioProjetoTests
         }
         // ========= Final dos Testes para Testar o Método Remover Numeros Negativos =========
 
-
+        // #######################################################################################################################
         public static IEnumerable<object[]> ListaDeTesteMultiplicarTodosElementosPorUmNumero => new List<object[]>
         {
             new object[] { new List<int> { 2, 3, 4 }, 2, new List<int> { 4, 6, 8 } },
@@ -134,6 +134,100 @@ namespace DesafioProjetoTests
 
             // Act & Assert
             Assert.Throws<ArgumentNullException>(() => _validacoes.MultiplicarNumerosLista(lista, 5));
+        }
+
+        // #######################################################################################################################
+        public static IEnumerable<object[]> ListaDeTestDeNumerosParaRetornarOMaior => new List<object[]>
+        {
+            new object[] {new List<int> { 1, 2, 3, 4, 5}, 5 },
+            new object[] {new List<int> { -10, -5, -3, -8}, -3 },
+            new object[] {new List<int> { -2, 7, 0, -1}, 7 },
+            new object[] {new List<int> { 9 }, 9 },
+            new object[] {new List<int> { 2, 2, 2, 2 }, 2 },
+            new object[] {new List<int> { 1000, 5000, 3000 }, 5000}
+        };
+        [Theory]
+        [MemberData(nameof(ListaDeTestDeNumerosParaRetornarOMaior))]
+        public void RetornarMaiorNumeroLista_DeveRetornarMaiorValor_QuandoPassadoListaDeNumero(List<int> lista, int resultadoEsperado)
+        {
+            // Arrange
+            // Act
+            var resultado = _validacoes.RetornarMaiorNumeroLista(lista);
+
+            // Assert
+            Assert.Equal(resultadoEsperado, resultado);
+        }
+        [Fact]
+        public void RetornarMaiorNumeroLista_DeveRetornarExcecoes_QuandoPassadoListaDeNumeroNula()
+        {
+            // Arrange
+            List<int> lista = null;
+
+
+            // Act
+            var excessao = Assert.Throws<ArgumentException>(() => _validacoes.RetornarMaiorNumeroLista(lista));
+
+            // Assert
+            Assert.Equal("Lista nula ou vazia", excessao.Message);
+        }
+        [Fact]
+        public void RetornarMaiorNumeroLista_DeveRetornarExcecoes_QuandoPassadoListaDeNumeroVazia()
+        {
+            // Arrange
+            List<int> lista = new List<int> { };
+
+            // Act
+            var excessao = Assert.Throws<ArgumentException>(() => _validacoes.RetornarMaiorNumeroLista(lista));
+
+            // Assert
+            Assert.Equal("Lista nula ou vazia", excessao.Message);
+        }
+
+        // #######################################################################################################################
+        public static IEnumerable<object[]> ListaDeTestDeNumerosParaRetornarOMenor => new List<object[]>
+        {
+            new object[] {new List<int> { 1, 2, 3, 4, 5}, 1 },
+            new object[] {new List<int> { -10, -5, -3, -8}, -10 },
+            new object[] {new List<int> { -2, 7, 0, -1}, -2 },
+            new object[] {new List<int> { 9 }, 9 },
+            new object[] {new List<int> { 2, 2, 2, 2 }, 2 },
+            new object[] {new List<int> { 1000, 5000, 3000 }, 1000}
+        };
+        [Theory]
+        [MemberData(nameof(ListaDeTestDeNumerosParaRetornarOMaior))]
+        public void RetornarMenorNumeroLista_DeveRetornarMenorValor_QuandoPassadoListaDeNumero(List<int> lista, int resultadoEsperado)
+        {
+            // Arrange
+            // Act
+            var resultado = _validacoes.RetornarMaiorNumeroLista(lista);
+
+            // Assert
+            Assert.Equal(resultadoEsperado, resultado);
+        }
+        [Fact]
+        public void RetornarMenorNumeroLista_DeveRetornarExcecoes_QuandoPassadoListaDeNumeroNula()
+        {
+            // Arrange
+            List<int> lista = null;
+
+
+            // Act
+            var excessao = Assert.Throws<ArgumentException>(() => _validacoes.RetornarMaiorNumeroLista(lista));
+
+            // Assert
+            Assert.Equal("Lista nula ou vazia", excessao.Message);
+        }
+        [Fact]
+        public void RetornarMenorNumeroLista_DeveRetornarExcecoes_QuandoPassadoListaDeNumeroVazia()
+        {
+            // Arrange
+            List<int> lista = new List<int> { };
+
+            // Act
+            var excessao = Assert.Throws<ArgumentException>(() => _validacoes.RetornarMaiorNumeroLista(lista));
+
+            // Assert
+            Assert.Equal("Lista nula ou vazia", excessao.Message);
         }
     }
 }
