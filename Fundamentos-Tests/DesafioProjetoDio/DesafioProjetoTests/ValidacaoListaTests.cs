@@ -5,11 +5,12 @@ namespace DesafioProjetoTests
     public class ValidacaoListaTests
     {
         private readonly ValidacoesLista _validacoes;
-        
+
         public ValidacaoListaTests()
         {
             _validacoes = new ValidacoesLista();
         }
+        // ========= Inicio dos Testes para Testar o Método Remover Numeros Negativos =========
         public static IEnumerable<object[]> ListasDeTesteNumerosNegativos => new List<object[]>
         {
             new object[] {new List<int> {5, 6, 7, -8, 9},                           new List<int> {5, 6, 7, 9}},
@@ -42,6 +43,9 @@ namespace DesafioProjetoTests
             // Act & Assert
             Assert.Throws<ArgumentNullException>(() => _validacoes.RemoverNumerosNegativos(lista!));
         }
+        // ========= Final dos Testes para Testar o Método Remover Numeros Negativos =========
+        
+        // ========= Inicio dos Testes para Testar o Método que verifica se contem numero na lista =========        
         public static IEnumerable<object[]> ListaDeTesteContemNumeroTrue => new List<object[]>
         {
             new object[] { new List<int> {1, 2, 3}, 2},
@@ -92,6 +96,44 @@ namespace DesafioProjetoTests
 
             // Act & Assert
             Assert.Throws<ArgumentNullException>(() => _validacoes.ListaContemDeterminadoNumero(lista, 5));
+        }
+        // ========= Final dos Testes para Testar o Método Remover Numeros Negativos =========
+
+
+        public static IEnumerable<object[]> ListaDeTesteMultiplicarTodosElementosPorUmNumero => new List<object[]>
+        {
+            new object[] { new List<int> { 2, 3, 4 }, 2, new List<int> { 4, 6, 8 } },
+            new object[] { new List<int> { 5 }, 3, new List<int> { 15 } },
+            new object[] { new List<int> { 2, 0, 4 }, 5, new List<int> { 10, 0, 20 } },
+            new object[] { new List<int>(), 10, new List<int>() },
+            new object[] { new List<int> { -2, 3, 4 }, 2, new List<int> { -4, 6, 8 } },
+            new object[] { new List<int> { -2, -3, 4 }, 3, new List<int> { -6, -9, 12 } },
+            new object[] { new List<int> { -2, -3, -4 }, -1, new List<int> { 2, 3, 4 } },
+            new object[] { new List<int> { 1000, 2000, 3000 }, 2, new List<int> { 2000, 4000, 6000 } },
+            new object[] { new List<int> { 2, 2, 2 }, 2, new List<int> { 4, 4, 4 } },
+            new object[] { new List<int> { 2, 3, 4 }, 0, new List<int> { 0, 0, 0 } }
+        };
+
+        [Theory]
+        [MemberData(nameof(ListaDeTesteMultiplicarTodosElementosPorUmNumero))]
+        public void MultiplicarNumeroDaLista_DeveRetornarUmaListaComElementosMultiplicadosPeloNumero(
+            List<int> lista, int numero, List<int> resultadoEsperado)
+        {
+            // Arrange
+            // Act
+            var resultado = _validacoes.MultiplicarNumerosLista(lista, numero);
+
+            // Assert
+            Assert.Equal(resultadoEsperado, resultado);
+        }
+        [Fact]
+        public void MultiplicarNumeroDaLista_DeveLancarExcecao_QuandoListaForNula()
+        {
+            // Arrange
+            List<int> lista = null;
+
+            // Act & Assert
+            Assert.Throws<ArgumentNullException>(() => _validacoes.MultiplicarNumerosLista(lista, 5));
         }
     }
 }
