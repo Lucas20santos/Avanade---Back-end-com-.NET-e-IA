@@ -79,3 +79,65 @@ public class CalculadoraTests
 cd CalculadoraTests
 dotnet test
 ```
+
+```cs
+    using DesafioProjeto.Services;
+using Xunit;
+
+namespace DesafioProjetoTests
+{
+    public class ValidacoesListaTests
+    {
+        private readonly ValidacoesLista _validacoes = new ValidacoesLista();
+
+        // 🔹 Fonte de dados para os testes
+        public static IEnumerable<object[]> ListasDeTeste =>
+            new List<object[]>
+            {
+                // Caso 1: mistura de positivos e negativos
+                new object[] { new List<int> { 5, 6, 7, -8, 9 }, new List<int> { 5, 6, 7, 9 } },
+
+                // Caso 2: apenas positivos
+                new object[] { new List<int> { 1, 2, 3, 4 }, new List<int> { 1, 2, 3, 4 } },
+
+                // Caso 3: apenas negativos
+                new object[] { new List<int> { -1, -2, -3 }, new List<int>() },
+
+                // Caso 4: contendo zero
+                new object[] { new List<int> { -1, 0, 1 }, new List<int> { 1 } },
+
+                // Caso 5: lista vazia
+                new object[] { new List<int>(), new List<int>() },
+
+                // Caso 6: valores repetidos
+                new object[] { new List<int> { -1, 2, 2, 3, -4, 3 }, new List<int> { 2, 2, 3, 3 } },
+
+                // Caso 7: valores extremos
+                new object[] { new List<int> { int.MinValue, -1, 0, 1, int.MaxValue }, new List<int> { 1, int.MaxValue } },
+            };
+
+        // 🔹 Teste principal com [MemberData]
+        [Theory]
+        [MemberData(nameof(ListasDeTeste))]
+        public void ObterSomenteNumerosPositivos_DeveRetornarApenasNumerosPositivos(List<int> listaOriginal, List<int> listaEsperada)
+        {
+            // Act
+            var resultado = _validacoes.ObterSomenteNumerosPositivos(listaOriginal);
+
+            // Assert
+            Assert.Equal(listaEsperada, resultado);
+        }
+
+        // 🔹 Teste adicional para caso nulo
+        [Fact]
+        public void ObterSomenteNumerosPositivos_DeveLancarExcecao_QuandoListaForNula()
+        {
+            // Arrange
+            List<int>? lista = null;
+
+            // Act & Assert
+            Assert.Throws<ArgumentNullException>(() => _validacoes.ObterSomenteNumerosPositivos(lista!));
+        }
+    }
+}
+```
