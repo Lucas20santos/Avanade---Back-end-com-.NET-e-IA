@@ -5,7 +5,8 @@
 ### 1. Crie o banco de dados
 
 ```sql
--- cria o banco (rode apenas se quiser um DB novo)
+### cria o banco (rode apenas se quiser um DB novo)
+
 IF DB_ID('FilmesDB') IS NOT NULL
     DROP DATABASE FilmesDB;
 
@@ -30,7 +31,8 @@ CREATE TABLE Atores (
     Id INT IDENTITY(1,1) PRIMARY KEY,
     PrimeiroNome VARCHAR(20) NULL,
     UltimoNome  VARCHAR(20) NULL,
-    Genero      VARCHAR(1)  NULL  -- se for M/F ou usar FK para Generos se preferir
+    Genero      VARCHAR(1)  NULL  ### se for M/F ou usar FK para Generos se preferir
+
 );
 ```
 
@@ -216,4 +218,107 @@ INSERT INTO FilmesGenero (IdGenero, IdFilme) VALUES
 (13, 4);
 ```
 
----
+## Consultas dados dados e repostas ao Desafio
+
+### Usando a tabela FilmesDb
+
+```sql
+Use FilmesDb;
+```
+
+### Buscando por nome e ano
+
+```sql
+SELECT Nome, Ano FROM Filmes;
+```
+
+### Buscar o nome e ano dos filmes, ordenados por ordem crescente pelo ano
+
+```sql
+SELECT Nome, Ano, Duracao FROM Filmes
+ORDER BY ANO;
+```
+
+### Buscar pelo filme de volta para o futuro, trazendo o nome, ano e a duração
+
+```sql
+SELECT Nome, Ano, Duracao FROM Filmes
+WHERE Nome = 'De Volta Para o Futuro'
+```
+
+### Buscar os filmes lançados em 1997
+
+```sql
+SELECT Nome, Ano, Duracao FROM Filmes
+WHERE Ano = 1997
+```
+
+### Buscar os filmes lançados APÓS o ano 2000
+
+```sql
+SELECT Nome, Ano, Duracao FROM Filmes
+WHERE Ano > 2000
+```
+
+### Buscar os filmes com a duracao maior que 100 e menor que 150, ordenando pela duracao em ordem crescente
+
+```sql
+SELECT Nome, Ano, Duracao FROM Filmes
+WHERE Duracao > 100 and Duracao < 150
+ORDER BY Duracao
+```
+
+### Buscar a quantidade de filmes lançadas no ano, agrupando por ano, ordenando pela duracao em ordem decrescente
+
+```sql
+SELECT Ano, COUNT(*) QUANTIDADE FROM Filmes
+GROUP BY Ano
+ORDER BY QUANTIDADE DESC
+```
+
+### Buscar os Atores do gênero masculino, retornando o PrimeiroNome, UltimoNome
+
+```sql
+SELECT * FROM Atores
+WHERE Genero = 'M'
+```
+
+### Buscar os Atores do gênero feminino, retornando o PrimeiroNome, UltimoNome, e ordenando pelo PrimeiroNome
+
+```sql
+SELECT * FROM Atores
+WHERE Genero = 'F'
+ORDER BY PrimeiroNome
+```
+
+### Buscar o nome do filme e o gênero
+
+```sql
+SELECT 
+    f.Nome AS Filme,
+    g.Genero AS Genero
+FROM Filmes f
+INNER JOIN FilmesGenero fg ON f.Id = fg.IdFilme
+INNER JOIN Generos g ON fg.IdGenero = g.Id
+```
+
+### Buscar o nome do filme e o gênero do tipo "Mistério"
+
+```sql
+SELECT 
+    f.Nome AS Filme,
+    g.Genero AS Genero
+FROM Filmes f
+INNER JOIN FilmesGenero fg ON f.Id = fg.IdFilme
+INNER JOIN Generos g ON fg.IdGenero = g.Id
+WHERE g.Genero = 'Mistério'
+```
+
+### Buscar o nome do filme e os atores, trazendo o PrimeiroNome, UltimoNome e seu Papel
+
+```sql
+SELECT  f.Nome AS Filme, a.PrimeiroNome, a.UltimoNome, ef.Papel
+FROM Filmes f
+INNER JOIN ElencoFilme ef ON f.Id = ef.IdFilme
+INNER JOIN Atores a ON ef.IdAtor = a.Id
+```
