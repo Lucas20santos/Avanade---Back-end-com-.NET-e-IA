@@ -1,81 +1,6 @@
-# Resolucao do Desafio do Projeto
+Use FilmesDb
 
-## Criação do Banco de Dados e Tabelas
-
-### 1. Crie o banco de dados
-
-```sql
--- cria o banco (rode apenas se quiser um DB novo)
-IF DB_ID('FilmesDB') IS NOT NULL
-    DROP DATABASE FilmesDB;
-
-CREATE DATABASE FilmesDB;
-
-USE FilmesDB;
-```
-
-### 2. Criar tabela Generos
-
-```sql
-CREATE TABLE Generos (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
-    Genero VARCHAR(20) NULL
-);
-```
-
-### 3. Criar tabela Atores
-
-```sql
-CREATE TABLE Atores (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
-    PrimeiroNome VARCHAR(20) NULL,
-    UltimoNome  VARCHAR(20) NULL,
-    Genero      VARCHAR(1)  NULL  -- se for M/F ou usar FK para Generos se preferir
-);
-```
-
-### 4. Criar tabela Filmes
-
-```sql
-CREATE TABLE Filmes (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
-    Nome VARCHAR(50) NULL,
-    Ano  INT NULL,
-    Duracao INT NULL
-);
-
-```
-
-### 5. Criar tabela de ligação FilmesGenero (muitos-para-muitos Filmes <-> Generos)
-
-```sql
-CREATE TABLE FilmesGenero (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
-    IdGenero INT NULL,
-    IdFilme  INT NULL,
-    CONSTRAINT FK_FilmesGenero_Generos FOREIGN KEY (IdGenero) REFERENCES Generos(Id),
-    CONSTRAINT FK_FilmesGenero_Filmes  FOREIGN KEY (IdFilme)  REFERENCES Filmes(Id)
-);
-```
-
-### 6. Criar tabela ElencoFilme (atores em filmes — outro many-to-many com role)
-
-```sql
-CREATE TABLE ElencoFilme (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
-    IdAtor INT NOT NULL,
-    IdFilme INT NULL,
-    Papel VARCHAR(30) NULL,
-    CONSTRAINT FK_ElencoFilme_Atores FOREIGN KEY (IdAtor) REFERENCES Atores(Id),
-    CONSTRAINT FK_ElencoFilme_Filmes  FOREIGN KEY (IdFilme) REFERENCES Filmes(Id)
-);
-```
-
-## Inserindo dados
-
-### 🎭 **Atores**
-
-```sql
+-- INSERIR REGISTROS NA TABELA DE ATORES DO BANCO DE DADOS FilmesDb
 INSERT INTO Atores (PrimeiroNome, UltimoNome, Genero) VALUES
 ('James', 'Stewart', 'M'),
 ('Deborah', 'Kerr', 'F'),
@@ -99,13 +24,11 @@ INSERT INTO Atores (PrimeiroNome, UltimoNome, Genero) VALUES
 ('Sigourney', 'Weaver', 'F'),
 ('David', 'Aston', 'M'),
 ('Ali', 'Astin', 'F');
-```
 
----
+SELECT * FROM Atores;
 
-### 🎬 **Filmes**
+-- INSERINDO REGISTROS NA TABELA DE FILMES
 
-```sql
 INSERT INTO Filmes (Nome, Ano, Duracao) VALUES
 ('Um Corpo que Cai', 1958, 128),
 ('Os Inocentes', 1961, 100),
@@ -135,13 +58,11 @@ INSERT INTO Filmes (Nome, Ano, Duracao) VALUES
 ('Os Sete Samurais', 1954, 207),
 ('A Viagem de Chihiro', 2001, 125),
 ('De Volta para o Futuro', 1985, 116);
-```
 
----
+SELECT * FROM Filmes;
 
-### 🎭 **ElencoFilme**
+-- INSERINDO REGISTRO NA TABELA DE ELENCOFILMES
 
-```sql
 INSERT INTO ElencoFilme (IdAtor, IdFilme, Papel) VALUES
 (1, 1, 'John Scottie Ferguson'),
 (2, 2, 'Miss Giddens'),
@@ -164,13 +85,8 @@ INSERT INTO ElencoFilme (IdAtor, IdFilme, Papel) VALUES
 (21, 22, 'Ripley'),
 (13, 23, 'Bobby Darin'),
 (18, 19, 'Alfred Borden');
-```
 
----
-
-### 🏷 **Generos**
-
-```sql
+-- INSERINDO REGISTRO NA TABELA DE GENERO
 INSERT INTO Generos (Genero) VALUES
 ('Ação'),
 ('Aventura'),
@@ -185,15 +101,10 @@ INSERT INTO Generos (Genero) VALUES
 ('Romance'),
 ('Suspense'),
 ('Guerra');
-```
 
----
 
-### 🎞 **FilmesGenero**
+-- INSERINDO REGISTRO NA TABELA DE FILMESGENERO
 
-Aqui também só colocamos **IdGenero e IdFilme**, sem o ID.
-
-```sql
 INSERT INTO FilmesGenero (IdGenero, IdFilme) VALUES
 (1, 22),
 (2, 17),
@@ -214,6 +125,10 @@ INSERT INTO FilmesGenero (IdGenero, IdFilme) VALUES
 (11, 14),
 (12, 6),
 (13, 4);
-```
 
----
+
+SELECT * FROM Filmes;
+SELECT * FROM ElencoFilme;
+SELECT * FROM Atores;
+SELECT * FROM FilmesGenero;
+SELECT * FROM Generos;
