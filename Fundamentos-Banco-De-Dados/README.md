@@ -1,324 +1,285 @@
-# Resolucao do Desafio do Projeto
+# 🎬 FilmesDB — Banco de Dados de Filmes
 
-## Criação do Banco de Dados e Tabelas
+Um projeto completo de banco de dados para registrar **filmes, gêneros, atores e participação no elenco**, utilizando **SQL Server em Docker** e visualização via **DBeaver**.
 
-### 1. Crie o banco de dados
+<p align="center">
+  <img src="https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoftsqlserver&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/DBeaver-372923?logo=dbeaver&logoColor=white" />
+  <img src="https://img.shields.io/badge/Status-Ativo-brightgreen" />
+</p>
 
-```sql
-### cria o banco (rode apenas se quiser um DB novo)
+---
 
-IF DB_ID('FilmesDB') IS NOT NULL
-    DROP DATABASE FilmesDB;
+## 📚 **Sumário**
 
-CREATE DATABASE FilmesDB;
+* [Descrição](#-descrição)
+* [Arquitetura do Banco](#-arquitetura-do-banco)
+* [Tecnologias Usadas](#-tecnologias-usadas)
+* [Como Rodar o SQL Server no Docker](#-como-rodar-o-sql-server-no-docker)
+* [Importando no DBeaver](#-importando-no-dbeaver)
+* [Script de Criação das Tabelas](#-script-de-criação-das-tabelas)
+* [Inserts de Exemplo](#-inserts-de-exemplo)
+* [Consultas Úteis](#-consultas-úteis)
+* [Contribuição](#-contribuição)
+* [Licença](#-licença)
 
-USE FilmesDB;
+---
+
+## 📝 **Descrição**
+
+O **FilmesDB** é um banco de dados projetado para armazenar informações relacionadas a filmes, incluindo:
+
+* Dados dos filmes
+* Gêneros
+* Atores e elenco
+* Relacionamentos entre tabelas com cardinalidade N:N
+
+Ideal para estudos de SQL, normalização e consultas com JOINs.
+
+---
+
+## 🏛️ **Arquitetura do Banco**
+
+```
+📁 filmes-db
+│
+├── Filmes
+│     └── Id, Nome, Ano, Duracao, Diretor
+│
+├── Generos
+│     └── Id, Genero
+│
+├── Atores
+│     └── Id, PrimeiroNome, UltimoNome, DataNascimento
+│
+├── FilmesGenero  (N:N)
+│     └── IdFilme, IdGenero
+│
+└── ElencoFilme   (N:N)
+      └── IdFilme, IdAtor, Papel
 ```
 
-### 2. Criar tabela Generos
+---
 
-```sql
-CREATE TABLE Generos (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
-    Genero VARCHAR(20) NULL
-);
+## 🛠️ **Tecnologias Usadas**
+
+* **SQL Server 2022** (rodando em Docker)
+* **Docker Desktop / Docker Engine**
+* **DBeaver Community Edition**
+* **SQL (T-SQL)**
+
+---
+
+## 🐳 **Como Rodar o SQL Server no Docker**
+
+### 1️⃣ Baixe a imagem
+
+```bash
+docker pull mcr.microsoft.com/mssql/server:2022-latest
 ```
 
-### 3. Criar tabela Atores
+### 2️⃣ Suba o container
 
-```sql
-CREATE TABLE Atores (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
-    PrimeiroNome VARCHAR(20) NULL,
-    UltimoNome  VARCHAR(20) NULL,
-    Genero      VARCHAR(1)  NULL  ### se for M/F ou usar FK para Generos se preferir
-
-);
+```bash
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=YourStrong!Passw0rd" \
+   -p 1433:1433 --name sqlserver -d mcr.microsoft.com/mssql/server:2022-latest
 ```
 
-### 4. Criar tabela Filmes
+✔ Porta exposta: `1433`
+✔ Usuário padrão: `sa`
+
+---
+
+## 🦫 **Importando no DBeaver**
+
+1. Abra o DBeaver
+2. Clique em **New Connection**
+3. Escolha **SQL Server**
+4. Configure:
+
+   * Host: `localhost`
+   * Porta: `1433`
+   * Usuário: `sa`
+   * Senha: *sua senha*
+5. Teste a conexão e finalize
+
+---
+
+## 🧱 **Script de Criação das Tabelas**
 
 ```sql
 CREATE TABLE Filmes (
     Id INT IDENTITY(1,1) PRIMARY KEY,
-    Nome VARCHAR(50) NULL,
-    Ano  INT NULL,
-    Duracao INT NULL
+    Nome VARCHAR(100),
+    Ano INT,
+    Duracao INT,
+    Diretor VARCHAR(100)
 );
 
-```
+CREATE TABLE Generos (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Genero VARCHAR(100)
+);
 
-### 5. Criar tabela de ligação FilmesGenero (muitos-para-muitos Filmes <-> Generos)
+CREATE TABLE Atores (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    PrimeiroNome VARCHAR(50),
+    UltimoNome VARCHAR(50),
+    DataNascimento DATE
+);
 
-```sql
 CREATE TABLE FilmesGenero (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
-    IdGenero INT NULL,
-    IdFilme  INT NULL,
-    CONSTRAINT FK_FilmesGenero_Generos FOREIGN KEY (IdGenero) REFERENCES Generos(Id),
-    CONSTRAINT FK_FilmesGenero_Filmes  FOREIGN KEY (IdFilme)  REFERENCES Filmes(Id)
+    IdFilme INT FOREIGN KEY REFERENCES Filmes(Id),
+    IdGenero INT FOREIGN KEY REFERENCES Generos(Id)
 );
-```
 
-### 6. Criar tabela ElencoFilme (atores em filmes — outro many-to-many com role)
-
-```sql
 CREATE TABLE ElencoFilme (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
-    IdAtor INT NOT NULL,
-    IdFilme INT NULL,
-    Papel VARCHAR(30) NULL,
-    CONSTRAINT FK_ElencoFilme_Atores FOREIGN KEY (IdAtor) REFERENCES Atores(Id),
-    CONSTRAINT FK_ElencoFilme_Filmes  FOREIGN KEY (IdFilme) REFERENCES Filmes(Id)
+    IdFilme INT FOREIGN KEY REFERENCES Filmes(Id),
+    IdAtor INT FOREIGN KEY REFERENCES Atores(Id),
+    Papel VARCHAR(100)
 );
 ```
 
-## Inserindo dados
-
-### 🎭 **Atores**
-
-```sql
-INSERT INTO Atores (PrimeiroNome, UltimoNome, Genero) VALUES
-('James', 'Stewart', 'M'),
-('Deborah', 'Kerr', 'F'),
-('Peter', 'OToole', 'M'),
-('Robert', 'DeNiro', 'M'),
-('Harrison', 'Ford', 'M'),
-('Stephen', 'Baldwin', 'M'),
-('Jack', 'Nicholson', 'M'),
-('Mark', 'Wahlberg', 'M'),
-('Woody', 'Allen', 'M'),
-('Claire', 'Danes', 'F'),
-('Tim', 'Robbins', 'M'),
-('Kevin', 'Spacey', 'M'),
-('Kate', 'Winslet', 'F'),
-('Robin', 'Williams', 'M'),
-('Jon', 'Voight', 'M'),
-('Ewan', 'McGregor', 'M'),
-('Christian', 'Bale', 'M'),
-('Maggie', 'Gyllenhaal', 'F'),
-('Dev', 'Patel', 'M'),
-('Sigourney', 'Weaver', 'F'),
-('David', 'Aston', 'M'),
-('Ali', 'Astin', 'F');
-```
-
 ---
 
-### 🎬 **Filmes**
-
-```sql
-INSERT INTO Filmes (Nome, Ano, Duracao) VALUES
-('Um Corpo que Cai', 1958, 128),
-('Os Inocentes', 1961, 100),
-('Lawrence da Arábia', 1962, 216),
-('O Franco Atirador', 1978, 183),
-('Amadeus', 1984, 160),
-('Blade Runner', 1982, 117),
-('De Olhos Bem Fechados', 1999, 159),
-('Os Suspeitos', 1995, 106),
-('Chinatown', 1974, 130),
-('Boogie Nights - Prazer Sem Limites', 1997, 155),
-('Noivo Neurótico, Noiva Nervosa', 1977, 93),
-('Princesa Mononoke', 1997, 134),
-('Um Sonho de Liberdade', 1994, 142),
-('Beleza Americana', 1999, 122),
-('Titanic', 1997, 194),
-('Gênio Indomável', 1997, 126),
-('Amargo pesadelo', 1972, 109),
-('Trainspotting - Sem Limites', 1996, 94),
-('O Grande Truque', 2006, 130),
-('Donnie Darko', 2001, 113),
-('Quem Quer Ser um Milionário?', 2008, 120),
-('Aliens, O Resgate', 1986, 137),
-('Uma Vida sem Limites', 2004, 118),
-('Avatar', 2009, 162),
-('Coração Valente', 1995, 178),
-('Os Sete Samurais', 1954, 207),
-('A Viagem de Chihiro', 2001, 125),
-('De Volta para o Futuro', 1985, 116);
-```
-
----
-
-### 🎭 **ElencoFilme**
-
-```sql
-INSERT INTO ElencoFilme (IdAtor, IdFilme, Papel) VALUES
-(1, 1, 'John Scottie Ferguson'),
-(2, 2, 'Miss Giddens'),
-(3, 3, 'T.E. Lawrence'),
-(4, 4, 'Michael'),
-(5, 6, 'Rick Deckard'),
-(6, 8, 'McManus'),
-(8, 9, 'J.J. Gittes'),
-(9, 10, 'Eddie Adams'),
-(10, 11, 'Alvy Singer'),
-(11, 12, 'San'),
-(12, 13, 'Andy Dufresne'),
-(13, 14, 'Lester Burnham'),
-(14, 15, 'Rose DeWitt Bukater'),
-(15, 16, 'Sean Maguire'),
-(16, 17, 'Ed'),
-(17, 18, 'Renton'),
-(19, 20, 'Elizabeth Darko'),
-(20, 21, 'Older Jamal'),
-(21, 22, 'Ripley'),
-(13, 23, 'Bobby Darin'),
-(18, 19, 'Alfred Borden');
-```
-
----
-
-### 🏷 **Generos**
+## 🧩 **Inserts de Exemplo**
 
 ```sql
 INSERT INTO Generos (Genero) VALUES
-('Ação'),
-('Aventura'),
-('Animação'),
-('Biografia'),
-('Comédia'),
-('Crime'),
-('Drama'),
-('Horror'),
-('Musical'),
-('Mistério'),
-('Romance'),
-('Suspense'),
-('Guerra');
+('Ação'), ('Drama'), ('Comédia'), ('Mistério');
+
+INSERT INTO Filmes (Nome, Ano, Duracao, Diretor) VALUES
+('O Enigma', 2012, 140, 'John Kent'),
+('Noite Sombria', 2017, 118, 'Marco Alves');
+
+INSERT INTO Atores (PrimeiroNome, UltimoNome, DataNascimento) VALUES
+('Ana', 'Souza', '1990-04-10'),
+('Carlos', 'Lima', '1982-11-22');
+
+INSERT INTO FilmesGenero VALUES (1,4), (2,1);
+INSERT INTO ElencoFilme VALUES (1,1,'Detetive'),(1,2,'Vilão');
 ```
 
 ---
 
-### 🎞 **FilmesGenero**
+## 🔍 **Consultas Úteis**
 
-Aqui também só colocamos **IdGenero e IdFilme**, sem o ID.
-
-```sql
-INSERT INTO FilmesGenero (IdGenero, IdFilme) VALUES
-(1, 22),
-(2, 17),
-(2, 3),
-(3, 12),
-(5, 11),
-(6, 8),
-(6, 13),
-(7, 26),
-(7, 28),
-(7, 18),
-(7, 21),
-(8, 2),
-(9, 23),
-(10, 7),
-(10, 27),
-(10, 1),
-(11, 14),
-(12, 6),
-(13, 4);
-```
-
-## Consultas dados dados e repostas ao Desafio
-
-### Usando a tabela FilmesDb
+### 🎥 Filmes e seus gêneros
 
 ```sql
-Use FilmesDb;
-```
-
-### Buscando por nome e ano
-
-```sql
-SELECT Nome, Ano FROM Filmes;
-```
-
-### Buscar o nome e ano dos filmes, ordenados por ordem crescente pelo ano
-
-```sql
-SELECT Nome, Ano, Duracao FROM Filmes
-ORDER BY ANO;
-```
-
-### Buscar pelo filme de volta para o futuro, trazendo o nome, ano e a duração
-
-```sql
-SELECT Nome, Ano, Duracao FROM Filmes
-WHERE Nome = 'De Volta Para o Futuro'
-```
-
-### Buscar os filmes lançados em 1997
-
-```sql
-SELECT Nome, Ano, Duracao FROM Filmes
-WHERE Ano = 1997
-```
-
-### Buscar os filmes lançados APÓS o ano 2000
-
-```sql
-SELECT Nome, Ano, Duracao FROM Filmes
-WHERE Ano > 2000
-```
-
-### Buscar os filmes com a duracao maior que 100 e menor que 150, ordenando pela duracao em ordem crescente
-
-```sql
-SELECT Nome, Ano, Duracao FROM Filmes
-WHERE Duracao > 100 and Duracao < 150
-ORDER BY Duracao
-```
-
-### Buscar a quantidade de filmes lançadas no ano, agrupando por ano, ordenando pela duracao em ordem decrescente
-
-```sql
-SELECT Ano, COUNT(*) QUANTIDADE FROM Filmes
-GROUP BY Ano
-ORDER BY QUANTIDADE DESC
-```
-
-### Buscar os Atores do gênero masculino, retornando o PrimeiroNome, UltimoNome
-
-```sql
-SELECT * FROM Atores
-WHERE Genero = 'M'
-```
-
-### Buscar os Atores do gênero feminino, retornando o PrimeiroNome, UltimoNome, e ordenando pelo PrimeiroNome
-
-```sql
-SELECT * FROM Atores
-WHERE Genero = 'F'
-ORDER BY PrimeiroNome
-```
-
-### Buscar o nome do filme e o gênero
-
-```sql
-SELECT 
-    f.Nome AS Filme,
-    g.Genero AS Genero
+SELECT f.Nome, g.Genero
 FROM Filmes f
-INNER JOIN FilmesGenero fg ON f.Id = fg.IdFilme
-INNER JOIN Generos g ON fg.IdGenero = g.Id
+JOIN FilmesGenero fg ON f.Id = fg.IdFilme
+JOIN Generos g ON g.Id = fg.IdGenero;
 ```
 
-### Buscar o nome do filme e o gênero do tipo "Mistério"
+### 🎭 Filmes e atores do elenco
 
 ```sql
-SELECT 
-    f.Nome AS Filme,
-    g.Genero AS Genero
+SELECT f.Nome, a.PrimeiroNome, a.UltimoNome, ef.Papel
 FROM Filmes f
-INNER JOIN FilmesGenero fg ON f.Id = fg.IdFilme
-INNER JOIN Generos g ON fg.IdGenero = g.Id
-WHERE g.Genero = 'Mistério'
+JOIN ElencoFilme ef ON f.Id = ef.IdFilme
+JOIN Atores a ON a.Id = ef.IdAtor;
 ```
 
-### Buscar o nome do filme e os atores, trazendo o PrimeiroNome, UltimoNome e seu Papel
+### 🕵️ Filmes de gênero “Mistério”
 
 ```sql
-SELECT  f.Nome AS Filme, a.PrimeiroNome, a.UltimoNome, ef.Papel
+SELECT f.Nome, g.Genero
 FROM Filmes f
-INNER JOIN ElencoFilme ef ON f.Id = ef.IdFilme
-INNER JOIN Atores a ON ef.IdAtor = a.Id
+JOIN FilmesGenero fg ON f.Id = fg.IdFilme
+JOIN Generos g ON g.Id = fg.IdGenero
+WHERE g.Genero = 'Mistério';
 ```
+
+---
+
+## 🤝 **Contribuição**
+
+Contribuições são bem-vindas!
+Sinta-se livre para abrir **Issues** ou **Pull Requests**.
+
+---
+
+## 📄 **Licença**
+
+Este projeto está sob a licença MIT. Pode usar, modificar e distribuir.
+
+---
+
+💬 Caso deseje, posso adicionar:
+
+* GIF do banco funcionando
+* Mais badges
+* Imagens do DBeaver
+* Scripts de migração
+
+Só pedir! 🚀
+
+---
+
+## 🗺️ **Roadmap do Projeto**
+
+* [x] Modelagem do banco de dados
+* [x] Criação das tabelas
+* [x] Criação dos INSERTs iniciais
+* [x] Configuração do SQL Server no Docker
+* [x] Conexão com DBeaver
+* [ ] Criar stored procedures úteis
+* [ ] Criar triggers de auditoria
+* [ ] Criar views para relatórios
+* [ ] Adicionar mais datasets (filmes, atores, gêneros)
+* [ ] Criar versionamento com scripts de migração
+
+---
+
+## 📸 **Screenshots (Placeholders)**
+
+<p align="center">
+  <img src="https://via.placeholder.com/600x300?text=DBeaver+-+Vis%C3%A3o+Geral+do+Banco" />
+  <br>
+  <em>DBeaver visualizando as tabelas do FilmesDB</em>
+</p>
+
+<p align="center">
+  <img src="https://via.placeholder.com/600x300?text=Consulta+SQL+Executada+com+Sucesso" />
+  <br>
+  <em>Consulta SQL retornando filmes e atores</em>
+</p>
+
+---
+
+## 🎞️ **Demonstração do Projeto (GIF Placeholder)**
+
+<p align="center">
+  <img src="https://via.placeholder.com/500x280?text=GIF+da+Execu%C3%A7%C3%A3o+do+Projeto" />
+  <br>
+  <em>GIF mostrando a execução de consultas no DBeaver</em>
+</p>
+
+---
+
+## 🎨 **Logo do Projeto (Minimalista)**
+
+<p align="center">
+  <img src="https://via.placeholder.com/150?text=FilmesDB+Logo" />
+  <br>
+  <em>Logo simples para o projeto</em>
+</p>
+
+---
+
+## 📘 **Aprendizados com o Projeto**
+
+Durante o desenvolvimento do FilmesDB, foram reforçados conhecimentos essenciais como:
+
+* Criação e normalização de banco de dados
+* Relacionamentos N:N utilizando tabelas intermediárias
+* JOINs simples e avançados
+* Configuração de containers Docker com SQL Server
+* Importação e visualização de dados no DBeaver
+* Execução de consultas complexas e análise de resultados
+* Organização de um projeto técnico para portfólio
+
+Este projeto demonstra domínio prático de SQL, modelagem e infraestrutura leve com Docker — ideal para apresentar em entrevistas e no GitHub.
