@@ -10,6 +10,6 @@ namespace FundamentosWebApiMVC.Context
 
         }
 
-        DbSet<Contato> Contatos { get; set; }
+        public DbSet<Contato> Contatos { get; set; }
     }
 }
