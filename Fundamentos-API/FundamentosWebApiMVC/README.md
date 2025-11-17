@@ -4,4 +4,5 @@
 
 ```bash
     dotnet new mvc
+    dotnet watch run
 ```
