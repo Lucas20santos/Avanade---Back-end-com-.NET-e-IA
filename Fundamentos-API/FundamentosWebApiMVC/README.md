@@ -12,7 +12,6 @@
 
 ### Erro na adicição dos pacotes SqlServer e Design
 
-
 É muito incomum que o comando `dotnet add package` não adicione a referência ao arquivo **.csproj**. O comportamento padrão é que ele insira a tag `<PackageReference>` automaticamente.
 
 O problema que você está enfrentando é quase sempre causado por uma das duas razões principais:
