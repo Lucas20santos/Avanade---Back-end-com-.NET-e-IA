@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FundamentosWebApiMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d345e29f2f5a2bd7253a0234e7390e4609728b3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80229946501f29c284d5b2ea389fbb178a934c72")]
 [assembly: System.Reflection.AssemblyProductAttribute("FundamentosWebApiMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FundamentosWebApiMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
