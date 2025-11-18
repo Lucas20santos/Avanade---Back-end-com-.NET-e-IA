@@ -1,4 +1,7 @@
 ﻿// ################### Exercicio 01 ###################
-// 1. "Escreva um programa que imprima ""Hello, C# World!"" no console.","I/O, Console.WriteLine()"
+// 1. "Crie duas variáveis inteiras, some-as e exiba o resultado.","Variáveis, Operadores"
 
-Console.WriteLine("Hello, c# World!");
+int num1 = 10;
+int num2 = 20;
+
+Console.WriteLine(num1 + num2);
