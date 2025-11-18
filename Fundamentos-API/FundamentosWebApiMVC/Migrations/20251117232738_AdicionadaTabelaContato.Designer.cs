@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FundamentosWebApiMVC.Migrations
 {
     [DbContext(typeof(AgendaContext))]
-    [Migration("20251117201550_AdicionadaTabelaContato")]
+    [Migration("20251117232738_AdicionadaTabelaContato")]
     partial class AdicionadaTabelaContato
     {
         /// <inheritdoc />

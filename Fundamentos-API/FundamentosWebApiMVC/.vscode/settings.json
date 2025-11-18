@@ -13,7 +13,7 @@
             "server": "localhost",
             "port": 1433,
             "driver": "MSSQL",
-            "name": "Agenda1",
+            "name": "Agenda2",
             "username": "SA"
         }
     ]

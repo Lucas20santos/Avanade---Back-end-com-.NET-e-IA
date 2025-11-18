@@ -31,5 +31,54 @@ namespace FundamentosWebApiMVC.Controllers
             }
             return View(contato);
         }
+        public IActionResult Editar(int Id)
+        {
+            Contato contato = _context.Contatos.Find(Id);
+
+            if (contato == null) RedirectToAction(nameof(Index));
+
+            return View(contato);
+        }
+        [HttpPost]
+        public IActionResult Editar(Contato contato)
+        {
+            var novoContato = _context.Contatos.Find(contato.Id);
+
+            novoContato.Nome = contato.Nome;
+            novoContato.Telefone = contato.Telefone;
+            novoContato.Ativo = contato.Ativo;
+
+            _context.Contatos.Update(novoContato);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Detalhes(int Id)
+        {
+            var contato = _context.Contatos.Find(Id);
+
+            if (contato == null) return RedirectToAction(nameof(Index));
+
+            return View(contato);
+        }
+        public IActionResult Deletar(int Id)
+        {
+            var contato = _context.Contatos.Find(Id);
+
+            if (contato == null) return RedirectToAction(nameof(Index));
+
+            return View(contato);
+        }
+        [HttpPost]
+        public IActionResult Deletar(Contato contato)
+        {
+            var contatoBanco = _context.Contatos.Find(contato.Id);
+
+            _context.Contatos.Remove(contatoBanco);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
