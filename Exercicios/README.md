@@ -31,7 +31,7 @@
 1. Preencha um Array de 10 posições com números digitados pelo usuário.,"Array, Laço for"
 1. Encontre o maior e o menor valor em um Array de 10 números.,"Array, Laço, Lógica de comparação"
 1. Calcule a média dos valores de um Array de double.,"Array, Laço, Acumulador"
-1. Use a classe List\<string> para criar uma lista de compras e adicione 3 itens.,"List<T>, Add()"
+1. Use a classe List\<string> para criar uma lista de compras e adicione 3 itens.,"List<\T>, Add()"
 1. Remova um item específico de uma List\<int> dado o seu valor.,"List\<T>, Remove()"
 1. Verifique se um nome específico está presente em uma List\<string>.,"List\<T>, Contains()"
 1. Use LINQ para encontrar todos os números pares em uma List\<int>.,LINQ (Where)
@@ -58,12 +58,12 @@
 1. Crie um método que recebe um string e um int (idade) e imprime uma frase completa.,"static void, Múltiplos parâmetros"
 1. Crie um método que inverte uma string e use-o no Program.cs.,Reuso de Código
 1. "Crie um método com parâmetros opcionais para calcular potência (base e expoente, expoente padrão = 2).",Parâmetros Opcionais
-1. Crie um método que aceita um Array<int> e retorna a soma de seus elementos.,Parâmetro Array
+1. Crie um método que aceita um Array<\int> e retorna a soma de seus elementos.,Parâmetro Array
 1. "Crie um método que converte um valor de dólar para real, usando uma taxa fixa.",static double
 1. Refatore o exercício da Tabuada (Ex. 15) para ser um método GerarTabuada(int numero).,Refatoração para Método
 1. Crie um método recursivo para calcular o fatorial de um número.,Recursão
 1. Crie um método que recebe um string e retorna se ela é um palíndromo (lida da mesma forma de trás para frente).,Lógica em método
-1. Crie um método que recebe um Array<int> e retorna o número de elementos pares.,"Laço, Retorno de int"
+1. Crie um método que recebe um Array<\int> e retorna o número de elementos pares.,"Laço, Retorno de int"
 1. "Crie um método que simula um lançamento de dado, retornando um número aleatório entre 1 e 6.",Classe Random
 1. Crie um método com parâmetro out para retornar a soma e a subtração de dois números simultaneamente.,Parâmetro out
 1. Crie um método com parâmetro ref para dobrar o valor de uma variável passada.,Parâmetro ref
