@@ -16,5 +16,7 @@
             "name": "Agenda2",
             "username": "SA"
         }
-    ]
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": []
 }
