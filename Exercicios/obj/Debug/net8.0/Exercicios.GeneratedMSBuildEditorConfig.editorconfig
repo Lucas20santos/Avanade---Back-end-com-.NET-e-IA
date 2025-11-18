@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Exercicios
-build_property.ProjectDir = /workspaces/Avanade---Back-end-com-.NET-e-IA/Fundamentos-API/Exercicios/
+build_property.ProjectDir = /home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

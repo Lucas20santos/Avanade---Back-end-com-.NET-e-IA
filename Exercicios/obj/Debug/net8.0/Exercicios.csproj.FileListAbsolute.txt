@@ -1,0 +1,15 @@
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/bin/Debug/net8.0/Exercicios
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/bin/Debug/net8.0/Exercicios.deps.json
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/bin/Debug/net8.0/Exercicios.runtimeconfig.json
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/bin/Debug/net8.0/Exercicios.dll
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/bin/Debug/net8.0/Exercicios.pdb
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/obj/Debug/net8.0/Exercicios.GeneratedMSBuildEditorConfig.editorconfig
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/obj/Debug/net8.0/Exercicios.AssemblyInfoInputs.cache
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/obj/Debug/net8.0/Exercicios.AssemblyInfo.cs
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/obj/Debug/net8.0/Exercicios.csproj.CoreCompileInputs.cache
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/obj/Debug/net8.0/Exercicios.sourcelink.json
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/obj/Debug/net8.0/Exercicios.dll
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/obj/Debug/net8.0/refint/Exercicios.dll
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/obj/Debug/net8.0/Exercicios.pdb
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/obj/Debug/net8.0/Exercicios.genruntimeconfig.cache
+/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/obj/Debug/net8.0/ref/Exercicios.dll
