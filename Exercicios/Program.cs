@@ -1,20 +1,14 @@
 ﻿// 1. Calcule a área de um retângulo pedindo a altura e a largura ao usuário.,
 // "Variáveis, Conversão de Tipo (int.Parse ou Convert.ToInt32)"
 
-Console.WriteLine("Informe a altura de um retângulo: ");
-
-if (!double.TryParse(Console.ReadLine(), out double altura))
+void fibonacci(int atualA, int atualB, out int novoA, out int novoB)
 {
-    Console.WriteLine("Valor inválido para altura!");
-    return;
+    novoA = atualB;
+    novoB = atualA + atualB;
 }
 
-Console.WriteLine("Informe a largura do retângulo: ");
+int a = 0, b = 1;
 
-if (!double.TryParse(Console.ReadLine(), out double largura))
-{
-    Console.WriteLine("Valor inválido para largura!");
-    return;
-}
+fibonacci(a, b, out a, out b);
+Console.WriteLine(a, b);
 
-Console.WriteLine($"Área = Altura x Largura = {altura * largura}");

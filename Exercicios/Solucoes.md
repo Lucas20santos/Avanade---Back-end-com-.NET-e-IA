@@ -66,3 +66,5 @@
 
     Console.WriteLine($"Área = {altura * largura}");
 ```
+
+- ```out double largura``` ou ```out double largura``` pega o valor digitado de Console.ReadLine()

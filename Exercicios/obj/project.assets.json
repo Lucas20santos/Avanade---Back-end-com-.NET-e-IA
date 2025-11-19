@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/lucas/.nuget/packages/": {}
+    "/home/codespace/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/Exercicios.csproj",
+      "projectUniqueName": "/workspaces/Avanade---Back-end-com-.NET-e-IA/Exercicios/Exercicios.csproj",
       "projectName": "Exercicios",
-      "projectPath": "/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/Exercicios.csproj",
-      "packagesPath": "/home/lucas/.nuget/packages/",
-      "outputPath": "/home/lucas/Documentos/Repositorio/Avanade---Back-end-com-.NET-e-IA/Exercicios/obj/",
+      "projectPath": "/workspaces/Avanade---Back-end-com-.NET-e-IA/Exercicios/Exercicios.csproj",
+      "packagesPath": "/home/codespace/.nuget/packages/",
+      "outputPath": "/workspaces/Avanade---Back-end-com-.NET-e-IA/Exercicios/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/lucas/.nuget/NuGet/NuGet.Config"
+        "/home/codespace/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -38,6 +38,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -59,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.415/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
