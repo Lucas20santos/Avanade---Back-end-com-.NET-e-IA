@@ -1,4 +1,13 @@
-﻿// 1. Calcule a área de um retângulo pedindo a altura e a largura ao usuário.,
-// "Variáveis, Conversão de Tipo (int.Parse ou Convert.ToInt32)"
+﻿// 1. Calcule o dobro de um número fornecido pelo usuário.,"Variáveis, Multiplicação"
 
+Console.WriteLine("Informe o número: ");
 
+string? leitura = Console.ReadLine();
+
+if(!double.TryParse(leitura, out double numero))
+{
+    Console.WriteLine("Valor inválido para numero");
+    return;
+}
+
+Console.WriteLine($"O dobro de {numero} é {2 * numero}");
