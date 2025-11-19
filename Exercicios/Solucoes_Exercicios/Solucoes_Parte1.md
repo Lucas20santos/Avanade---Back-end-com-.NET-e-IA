@@ -68,3 +68,35 @@
 ```
 
 - ```out double largura``` ou ```out double largura``` pega o valor digitado de Console.ReadLine()
+
+### Exemplo de com 'out'
+
+```cs
+double Divisao(double a, double b, out double resto, out string mensagem)
+{
+    if (b == 0)
+    {
+        mensagem = "Divisao Por Zero";
+        resto = a;
+        return 0;
+    }
+    else
+    {
+        resto = a % b;
+        mensagem = "ok";
+        return a / b;
+    }
+}
+
+double num1 = 10;
+double num2 = 3;
+string mens;
+double r;
+double quociente = Divisao(num1, num2, out r, out mens);
+
+if (mens == "ok")
+{
+    Console.WriteLine("Resultado: ");
+    Console.WriteLine($"Quociente = {quociente}, Resto = {r}, mensagem = {mens}");
+}
+```
